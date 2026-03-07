@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+<t t-name="upgrade_project.DashboardTongHop" owl="1">
+    <div class="upg-dashboard">
+
+        <!--  HEADER  -->
+        <div class="upg-db-header">
+            <h1> Dashboard TechCorp</h1>
+            <div class="upg-db-header-meta">
+                <t t-if="state.last_update">
+                    <span class="upg-last-update"> Cập nhật: <t t-esc="state.last_update"/></span>
+                </t>
+                <button class="upg-btn-refresh" t-on-click="onRefresh">
+                     Làm Mới
+                </button>
+            </div>
+        </div>
+
+        <!--  LOADING  -->
+        <t t-if="state.loading">
+            <div class="upg-loading">
+                <div class="upg-spinner"/>
+                <p>Đang tải dữ liệu...</p>
+            </div>
+        </t>
+
+        <!--  ERROR  -->
+        <t t-elif="state.error">
+            <div class="upg-error">
+                <p> <t t-esc="state.error"/></p>
+                <button class="upg-btn-refresh" t-on-click="onRefresh" style="margin-top:.5rem">Thử Lại</button>
+            </div>
+        </t>
+
+        <!--  MAIN CONTENT  -->
+        <t t-else="">
+
+            <!--  Tabs  -->
+            <div class="upg-tabs">
+                <button class="upg-tab-btn" t-att-class="state.active_tab === 'overview' ? 'active' : ''"
+                        t-on-click="() => setTab('overview')"> Tổng Quan</button>
+                <button class="upg-tab-btn" t-att-class="state.active_tab === 'nhan_su' ? 'active' : ''"
+                        t-on-click="() => setTab('nhan_su')"> Nhân Sự</button>
+                <button class="upg-tab-btn" t-att-class="state.active_tab === 'tai_chinh' ? 'active' : ''"
+                        t-on-click="() => setTab('tai_chinh')"> Tài Chính</button>
+                <button class="upg-tab-btn" t-att-class="state.active_tab === 'tai_san' ? 'active' : ''"
+                        t-on-click="() => setTab('tai_san')"> Tài Sản</button>
+            </div>
+
+            <div class="upg-db-content">
+
+                <!-- 
+                     TAB: TỔNG QUAN
+                 -->
+                <t t-if="state.active_tab === 'overview'">
+
+                    <!-- Alert Banners -->
+                    <div class="upg-alert-row">
+                        <t t-if="taiChinh.bt_cho_duyet > 0">
+                            <div class="upg-alert upg-alert-warning">
+                                 <strong><t t-esc="taiChinh.bt_cho_duyet"/> bút toán</strong> đang chờ phê duyệt
+                                <a t-on-click="() => goTo('qtc.but_toan')" style="margin-left:.5rem;cursor:pointer;text-decoration:underline">Xem ngay </a>
+                            </div>
+                        </t>
+                        <t t-if="taiSan.kh_cho_ghi_so > 0">
+                            <div class="upg-alert upg-alert-info">
+                                 <strong><t t-esc="taiSan.kh_cho_ghi_so"/> khấu hao</strong> chờ ghi sổ
+                            </div>
+                        </t>
+                        <t t-if="nhanSu.hop_dong_sap_het > 0">
+                            <div class="upg-alert upg-alert-danger">
+                                 <strong><t t-esc="nhanSu.hop_dong_sap_het"/> hợp đồng</strong> sắp hết hạn (30 ngày)
+                            </div>
+                        </t>
+                    </div>
+
+                    <!-- KPI Grid: tổng hợp -->
+                    <p class="upg-section-title"> KPI Tổng Hợp</p>
+                    <div class="upg-kpi-grid">
+                        <div class="upg-kpi-card primary" t-on-click="() => goTo('ns.nhan_vien')">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="nhanSu.dang_lam || 0"/></div>
+                                <div class="upg-kpi-label">Nhân Viên Đang Làm</div>
+                            </div>
+                        </div>
+                        <div class="upg-kpi-card success">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="fmtMoney(nhanSu.luong_thang)"/></div>
+                                <div class="upg-kpi-label">Chi Phí Lương Tháng</div>
+                            </div>
+                        </div>
+                        <div class="upg-kpi-card info" t-on-click="() => goTo('qts.tai_san')">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="taiSan.tong || 0"/></div>
+                                <div class="upg-kpi-label">Tổng Tài Sản Cố Định</div>
+                            </div>
+                        </div>
+                        <div class="upg-kpi-card purple">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="fmtMoney(taiSan.tong_gtcl)"/></div>
+                                <div class="upg-kpi-label">Tổng GTCL Tài Sản</div>
+                            </div>
+                        </div>
+                        <div class="upg-kpi-card warning" t-on-click="() => goTo('qtc.but_toan')">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="taiChinh.bt_cho_duyet || 0"/></div>
+                                <div class="upg-kpi-label">Bút Toán Chờ Duyệt</div>
+                            </div>
+                        </div>
+                        <div class="upg-kpi-card danger">
+                            <div class="upg-kpi-icon"></div>
+                            <div class="upg-kpi-body">
+                                <div class="upg-kpi-value"><t t-esc="taiChinh.cp_khau_hao || 0"/></div>
+                                <div class="upg-kpi-label">CP Khấu Hao Tháng</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts: CP tháng + Pie -->
+                    <div class="upg-charts-grid">
+                        <div class="upg-chart-panel">
+                            <div class="upg-chart-canvas-wrap">
+                                <canvas t-ref="canvas_cp_thang"/>
+                            </div>
+                        </div>
+                        <div class="upg-chart-panel">
+                            <div class="upg-chart-canvas-wrap">
+                                <canvas t-ref="canvas_nv_pb"/>
+                            </div>
+                        </div>
+                        <div class="upg-chart-panel">
+                            <div class="upg-chart-canvas-wrap">
+                                <canvas t-ref="canvas_ts_loai"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tables: top TS + NV mới -->
+                    <div class="upg-tables-grid">
+                        <div class="upg-table-panel">
+                            <div class="upg-table-header"> Top 5 Tài Sản Có Giá Trị Cao Nhất</div>
+                            <div class="upg-table-body">
+                                <table>
+                                    <thead>
+                                        <tr><th>Tài Sản</th><th>Loại</th><th>Nguyên Giá</th><th>GTCL</th><th>TT</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-if="topTaiSan.length === 0">
+                                            <tr><td colspan="5" class="upg-empty">Chưa có dữ liệu</td></tr>
+                                        </t>
+                                        <t t-foreach="topTaiSan" t-as="ts" t-key="ts.ma">
+                                            <tr>
+                                                <td><strong><t t-esc="ts.ten"/></strong><br/><small class="text-muted"><t t-esc="ts.ma"/></small></td>
+                                                <td><t t-esc="ts.loai"/></td>
+                                                <td class="upg-money"><t t-esc="fmtMoney(ts.nguyen_gia)"/></td>
+                                                <td class="upg-money-success"><t t-esc="fmtMoney(ts.gtcl)"/></td>
+                                                <td><span t-attf-class="upg-badge upg-badge-#{badgeColor(ts.trang_thai)}"><t t-esc="ts.trang_thai"/></span></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="upg-table-panel">
+                            <div class="upg-table-header"> Nhân Viên Mới (30 Ngày)</div>
+                            <div class="upg-table-body">
+                                <table>
+                                    <thead>
+                                        <tr><th>Nhân Viên</th><th>Phòng Ban</th><th>Chức Danh</th><th>Vào Làm</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-if="nvMoi.length === 0">
+                                            <tr><td colspan="4" class="upg-empty">Không có nhân viên mới</td></tr>
+                                        </t>
+                                        <t t-foreach="nvMoi" t-as="nv" t-key="nv.ma">
+                                            <tr>
+                                                <td><strong><t t-esc="nv.ho_ten"/></strong><br/><small class="text-muted"><t t-esc="nv.ma"/></small></td>
+                                                <td><t t-esc="nv.phong_ban"/></td>
+                                                <td><t t-esc="nv.chuc_danh"/></td>
+                                                <td><t t-esc="nv.ngay_vao_lam"/></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tables: BT chờ duyệt + Mua sắm -->
+                    <div class="upg-tables-grid">
+                        <div class="upg-table-panel">
+                            <div class="upg-table-header"> Bút Toán Chờ Duyệt</div>
+                            <div class="upg-table-body">
+                                <table>
+                                    <thead><tr><th>Mã</th><th>Diễn Giải</th><th>Loại</th><th>Số Tiền</th><th>Nguồn</th></tr></thead>
+                                    <tbody>
+                                        <t t-if="btChoDuyet.length === 0">
+                                            <tr><td colspan="5" class="upg-empty"> Không có bút toán chờ duyệt</td></tr>
+                                        </t>
+                                        <t t-foreach="btChoDuyet" t-as="bt" t-key="bt.ma">
+                                            <tr>
+                                                <td><code><t t-esc="bt.ma"/></code></td>
+                                                <td><t t-esc="bt.ten"/></td>
+                                                <td><span t-attf-class="upg-badge upg-badge-info"><t t-esc="bt.loai"/></span></td>
+                                                <td class="upg-money"><t t-esc="fmtMoney(bt.so_tien)"/></td>
+                                                <td><span t-attf-class="upg-badge upg-badge-#{bt.nguon_tao !== 'thu_cong' ? 'success' : 'secondary'}">
+                                                    <t t-if="bt.nguon_tao !== 'thu_cong'"> Auto</t>
+                                                    <t t-else=""> Thủ công</t>
+                                                </span></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="upg-table-panel">
+                            <div class="upg-table-header"> Đề Nghị Mua Sắm Chờ Duyệt</div>
+                            <div class="upg-table-body">
+                                <table>
+                                    <thead><tr><th>Số ĐN</th><th>Tài Sản</th><th>Phòng Ban</th><th>Tổng GT</th><th>Bước</th></tr></thead>
+                                    <tbody>
+                                        <t t-if="muaSamCd.length === 0">
+                                            <tr><td colspan="5" class="upg-empty"> Không có đề nghị chờ duyệt</td></tr>
+                                        </t>
+                                        <t t-foreach="muaSamCd" t-as="ms" t-key="ms.so">
+                                            <tr>
+                                                <td><code><t t-esc="ms.so"/></code></td>
+                                                <td><t t-esc="ms.ten"/></td>
+                                                <td><t t-esc="ms.phong_ban"/></td>
+                                                <td class="upg-money"><t t-esc="fmtMoney(ms.tong_gia_tri)"/></td>
+                                                <td><span t-attf-class="upg-badge upg-badge-warning"><t t-esc="ms.trang_thai"/></span></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Line chart + BT nguồn -->
+                    <div class="upg-charts-grid-2">
+                        <div class="upg-chart-panel">
+                            <div class="upg-chart-canvas-wrap">
+                                <canvas t-ref="canvas_luong_12"/>
+                            </div>
+                        </div>
+                        <div class="upg-chart-panel">
+                            <div class="upg-chart-canvas-wrap">
+                                <canvas t-ref="canvas_bt_nguon"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </t><!-- end overview tab -->
+
+            </div><!-- end upg-db-content -->
+        </t><!-- end main content -->
+    </div><!-- end upg-dashboard -->
+</t>
+
+</templates>

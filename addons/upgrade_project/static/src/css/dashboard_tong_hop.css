@@ -1,0 +1,424 @@
+/* =============================================
+   DASHBOARD TỔNG HỢP TECHCORP - ~400 dòng CSS
+   Theme: Professional Blue/Green, Material Design
+   ============================================= */
+
+/* ── Root Variables ── */
+:root {
+    --db-primary:    #2563eb;
+    --db-success:    #16a34a;
+    --db-warning:    #d97706;
+    --db-danger:     #dc2626;
+    --db-info:       #0891b2;
+    --db-purple:     #7c3aed;
+    --db-gray-50:    #f8fafc;
+    --db-gray-100:   #f1f5f9;
+    --db-gray-200:   #e2e8f0;
+    --db-gray-600:   #475569;
+    --db-gray-800:   #1e293b;
+    --db-shadow-sm:  0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --db-shadow:     0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+    --db-shadow-lg:  0 10px 15px rgba(0,0,0,.08), 0 4px 6px rgba(0,0,0,.06);
+    --db-radius:     .75rem;
+    --db-radius-sm:  .5rem;
+    --db-transition: all .2s ease;
+}
+
+/* ── Layout ── */
+.upg-dashboard {
+    background: var(--db-gray-100);
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--db-gray-800);
+}
+
+/* ── Header ── */
+.upg-db-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0891b2 100%);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--db-shadow);
+}
+
+.upg-db-header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.upg-db-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255,255,255,.8);
+    font-size: .85rem;
+}
+
+.upg-db-header-meta .upg-last-update {
+    background: rgba(255,255,255,.15);
+    padding: .25rem .75rem;
+    border-radius: 999px;
+}
+
+/* ── Refresh Button ── */
+.upg-btn-refresh {
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.3);
+    padding: .4rem .9rem;
+    border-radius: var(--db-radius-sm);
+    cursor: pointer;
+    font-size: .85rem;
+    transition: var(--db-transition);
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+.upg-btn-refresh:hover {
+    background: rgba(255,255,255,.3);
+    transform: scale(1.05);
+}
+
+/* ── Tab Navigation ── */
+.upg-tabs {
+    background: #fff;
+    border-bottom: 2px solid var(--db-gray-200);
+    display: flex;
+    gap: 0;
+    padding: 0 2rem;
+    overflow-x: auto;
+}
+
+.upg-tab-btn {
+    padding: .85rem 1.25rem;
+    border: none;
+    background: none;
+    color: var(--db-gray-600);
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: var(--db-transition);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.upg-tab-btn:hover {
+    color: var(--db-primary);
+    background: var(--db-gray-50);
+}
+
+.upg-tab-btn.active {
+    color: var(--db-primary);
+    border-bottom-color: var(--db-primary);
+    background: #eff6ff;
+}
+
+/* ── Content Area ── */
+.upg-db-content {
+    padding: 1.5rem 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ── KPI Cards Grid ── */
+.upg-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upg-kpi-card {
+    background: #fff;
+    border-radius: var(--db-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--db-shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--db-transition);
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.upg-kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    opacity: .05;
+    transform: translate(15px, -15px);
+}
+
+.upg-kpi-card:hover {
+    box-shadow: var(--db-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.upg-kpi-card.primary   { border-left-color: var(--db-primary); }
+.upg-kpi-card.primary::before { background: var(--db-primary); }
+.upg-kpi-card.success   { border-left-color: var(--db-success); }
+.upg-kpi-card.success::before { background: var(--db-success); }
+.upg-kpi-card.warning   { border-left-color: var(--db-warning); }
+.upg-kpi-card.warning::before { background: var(--db-warning); }
+.upg-kpi-card.danger    { border-left-color: var(--db-danger); }
+.upg-kpi-card.danger::before  { background: var(--db-danger); }
+.upg-kpi-card.info      { border-left-color: var(--db-info); }
+.upg-kpi-card.info::before    { background: var(--db-info); }
+.upg-kpi-card.purple    { border-left-color: var(--db-purple); }
+.upg-kpi-card.purple::before  { background: var(--db-purple); }
+
+.upg-kpi-icon {
+    width: 48px; height: 48px;
+    border-radius: var(--db-radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.upg-kpi-card.primary .upg-kpi-icon { background: #eff6ff; }
+.upg-kpi-card.success .upg-kpi-icon { background: #f0fdf4; }
+.upg-kpi-card.warning .upg-kpi-icon { background: #fffbeb; }
+.upg-kpi-card.danger  .upg-kpi-icon { background: #fef2f2; }
+.upg-kpi-card.info    .upg-kpi-icon { background: #f0fdfa; }
+.upg-kpi-card.purple  .upg-kpi-icon { background: #faf5ff; }
+
+.upg-kpi-body { flex: 1; min-width: 0; }
+
+.upg-kpi-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--db-gray-800);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upg-kpi-label {
+    font-size: .78rem;
+    color: var(--db-gray-600);
+    margin-top: .15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Section Title ── */
+.upg-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--db-gray-800);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.upg-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--db-gray-200);
+    margin-left: .5rem;
+}
+
+/* ── Chart Panels ── */
+.upg-charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upg-charts-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upg-chart-panel {
+    background: #fff;
+    border-radius: var(--db-radius);
+    padding: 1.25rem;
+    box-shadow: var(--db-shadow-sm);
+}
+
+.upg-chart-panel.wide  { grid-column: span 1; }
+.upg-chart-panel.full  { grid-column: 1 / -1; }
+
+.upg-chart-canvas-wrap {
+    height: 280px;
+    position: relative;
+}
+
+/* ── Tables ── */
+.upg-tables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upg-table-panel {
+    background: #fff;
+    border-radius: var(--db-radius);
+    box-shadow: var(--db-shadow-sm);
+    overflow: hidden;
+}
+
+.upg-table-header {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: .9rem;
+    background: var(--db-gray-50);
+    border-bottom: 1px solid var(--db-gray-200);
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.upg-table-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .82rem;
+}
+
+.upg-table-body th {
+    background: var(--db-gray-50);
+    padding: .5rem .75rem;
+    text-align: left;
+    color: var(--db-gray-600);
+    font-weight: 600;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    border-bottom: 1px solid var(--db-gray-200);
+}
+
+.upg-table-body td {
+    padding: .55rem .75rem;
+    border-bottom: 1px solid var(--db-gray-100);
+    vertical-align: middle;
+}
+
+.upg-table-body tr:last-child td { border-bottom: none; }
+.upg-table-body tr:hover td { background: var(--db-gray-50); }
+
+/* ── Badges ── */
+.upg-badge {
+    display: inline-block;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.upg-badge-success  { background: #dcfce7; color: #15803d; }
+.upg-badge-warning  { background: #fef9c3; color: #92400e; }
+.upg-badge-danger   { background: #fee2e2; color: #991b1b; }
+.upg-badge-info     { background: #e0f2fe; color: #075985; }
+.upg-badge-secondary{ background: #f1f5f9; color: #475569; }
+
+/* ── Empty State ── */
+.upg-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--db-gray-600);
+    font-size: .85rem;
+}
+
+/* ── Loading Overlay ── */
+.upg-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 1rem;
+    color: var(--db-gray-600);
+}
+
+.upg-spinner {
+    width: 40px; height: 40px;
+    border: 3px solid var(--db-gray-200);
+    border-top-color: var(--db-primary);
+    border-radius: 50%;
+    animation: upg-spin .8s linear infinite;
+}
+
+@keyframes upg-spin { to { transform: rotate(360deg); } }
+
+/* ── Error State ── */
+.upg-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: var(--db-radius);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--db-danger);
+    margin: 2rem;
+}
+
+/* ── Money value highlight ── */
+.upg-money {
+    font-weight: 600;
+    color: var(--db-primary);
+}
+
+.upg-money-danger  { font-weight: 600; color: var(--db-danger); }
+.upg-money-success { font-weight: 600; color: var(--db-success); }
+
+/* ── Alert Banners ── */
+.upg-alert-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.upg-alert {
+    flex: 1;
+    min-width: 200px;
+    padding: .75rem 1rem;
+    border-radius: var(--db-radius-sm);
+    font-size: .85rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 500;
+}
+
+.upg-alert-warning { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+.upg-alert-danger  { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.upg-alert-info    { background: #f0fdfa; border: 1px solid #6ee7b7; color: #065f46; }
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+    .upg-charts-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .upg-db-header { padding: 1rem; flex-direction: column; gap: .75rem; text-align: center; }
+    .upg-db-content { padding: 1rem; }
+    .upg-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .upg-charts-grid, .upg-charts-grid-2, .upg-tables-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .upg-kpi-grid { grid-template-columns: 1fr; }
+}

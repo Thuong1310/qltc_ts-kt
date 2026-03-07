@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Fallback form view for upg.dashboard model -->
+    <record id="view_upg_dashboard_form" model="ir.ui.view">
+        <field name="name">upg.dashboard.form</field>
+        <field name="model">upg.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard TechCorp" create="false" delete="false">
+                <sheet>
+                    <h2> <field name="ten" readonly="1"/></h2>
+                    <p class="text-muted">Dashboard tương tác được render bởi component JavaScript. Truy cập từ menu chính.</p>
+                    <group string=" KPI Nhân Sự">
+                        <group>
+                            <field name="kpi_tong_nv" readonly="1"/>
+                            <field name="kpi_nv_dang_lam" readonly="1"/>
+                            <field name="kpi_nv_thu_viec" readonly="1"/>
+                            <field name="kpi_so_phong_ban" readonly="1"/>
+                            <field name="kpi_hop_dong_sap_het" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="kpi_luong_thang" widget="monetary" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string=" KPI Tài Chính">
+                        <group>
+                            <field name="kpi_bt_cho_duyet" readonly="1"/>
+                            <field name="kpi_bt_da_ghi_so" readonly="1"/>
+                            <field name="kpi_mua_sam_cho_duyet" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="kpi_cp_luong_thang" widget="monetary" readonly="1"/>
+                            <field name="kpi_cp_khau_hao_thang" widget="monetary" readonly="1"/>
+                            <field name="kpi_doanh_thu_thang" widget="monetary" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string=" KPI Tài Sản">
+                        <group>
+                            <field name="kpi_tong_tai_san" readonly="1"/>
+                            <field name="kpi_ts_dang_su_dung" readonly="1"/>
+                            <field name="kpi_ts_cho_dua_vao" readonly="1"/>
+                            <field name="kpi_kh_cho_ghi_so" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="kpi_tong_nguyen_gia" widget="monetary" readonly="1"/>
+                            <field name="kpi_tong_gtcl" widget="monetary" readonly="1"/>
+                            <field name="kpi_ty_le_khau_hao" readonly="1" string="% Đã Khấu Hao"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

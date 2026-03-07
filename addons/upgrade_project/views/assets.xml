@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Dashboard Tổng Hợp - Action + Menu -->
+    <record id="action_upg_dashboard" model="ir.actions.client">
+        <field name="name"> Dashboard TechCorp</field>
+        <field name="tag">upg_dashboard_tong_hop</field>
+    </record>
+
+    <menuitem id="menu_upg_root"
+              name=" Dashboard"
+              sequence="1"
+              action="action_upg_dashboard"/>
+
+    <!-- Assets cho Odoo 15 -->
+    <template id="assets_backend" name="upgrade_project assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/upgrade_project/static/src/css/dashboard_tong_hop.css"/>
+            <script type="text/javascript" src="/upgrade_project/static/src/js/dashboard_tong_hop.js"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View - Quản lý mượn trả tài sản -->
+        <record id="view_muon_tra_tai_san_form" model="ir.ui.view">
+            <field name="name">muon_tra_tai_san.view.form</field>
+            <field name="model">muon_tra_tai_san</field>
+            <field name="arch" type="xml">
+                <form string="Quản Lý Mượn Trả Tài Sản">
+                    <header>
+                        <!-- Quản lý có thể: Duyệt, Từ chối, Xác nhận cho mượn, Xác nhận trả -->
+                        <button name="action_duyet_don" string="✅ Duyệt cho mượn" type="object"
+                            class="btn-success"
+                            attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                        
+                        <button name="action_tu_choi_don" string="❌ Từ chối" type="object"
+                            class="btn-danger"
+                            attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                        
+                        <button name="action_xac_nhan_cho_muon" string="📦 Xác nhận đã giao tài sản" type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': [('trang_thai', '!=', 'da_duyet')]}"/>
+                        
+                        <button name="action_xac_nhan_tra" string="✅ Xác nhận đã nhận trả" type="object"
+                            class="btn-success"
+                            attrs="{'invisible': [('trang_thai', '!=', 'dang_muon')]}"/>
+                        
+                        <button name="action_gia_han" string="⏰ Gia hạn" type="object"
+                            class="btn-warning"
+                            attrs="{'invisible': [('trang_thai', 'not in', ['dang_muon', 'qua_han'])]}"/>
+                        
+                        <!-- Status bar -->
+                        <field name="trang_thai" widget="statusbar" 
+                            statusbar_visible="cho_duyet,da_duyet,dang_muon,da_tra"/>
+                    </header>
+                    
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_don_muon" type="object"
+                                class="oe_stat_button" icon="fa-file-text-o"
+                                attrs="{'invisible': [('ma_don_muon_id', '=', False)]}">
+                                <span class="o_stat_text">Xem đơn gốc</span>
+                            </button>
+                        </div>
+                        
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ma_phieu_muon_tra" readonly="1"/>
+                            </h1>
+                            <h3>
+                                <field name="tinh_trang" readonly="1"/>
+                            </h3>
+                        </div>
+                        
+                        <group>
+                            <group string="Thông tin đơn mượn">
+                                <field name="ma_don_muon_id" readonly="1"
+                                    attrs="{'invisible': [('ma_don_muon_id', '=', False)]}"/>
+                                <field name="ten_phieu_muon_tra" string="Tên phiếu"/>
+                                <field name="phong_ban_cho_muon_id" string="Phòng ban cho mượn"
+                                    attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                                <field name="nhan_vien_muon_id" string="Nhân viên mượn" readonly="1"/>
+                            </group>
+                            <group string="Thời gian">
+                                <field name="thoi_gian_muon" string="Thời gian mượn dự kiến"
+                                    attrs="{'readonly': [('trang_thai', 'not in', ['cho_duyet', 'da_duyet'])]}"/>
+                                <field name="thoi_gian_tra_du_kien" string="Thời gian trả dự kiến"
+                                    attrs="{'readonly': [('trang_thai', 'not in', ['cho_duyet', 'da_duyet'])]}"/>
+                                <field name="thoi_gian_tra_thuc_te" string="Thời gian trả thực tế"
+                                    attrs="{'invisible': [('trang_thai', '!=', 'da_tra')]}"/>
+                            </group>
+                        </group>
+                        
+                        <group>
+                            <group string="Thông tin duyệt" 
+                                attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}">
+                                <field name="nguoi_duyet_id" string="Người duyệt"/>
+                                <field name="ngay_duyet"/>
+                                <field name="nguoi_giao_id" string="Người giao" 
+                                    attrs="{'invisible': [('trang_thai', 'in', ['cho_duyet', 'da_duyet', 'tu_choi'])]}"/>
+                                <field name="nguoi_nhan_tra_id" string="Người nhận trả"
+                                    attrs="{'invisible': [('trang_thai', '!=', 'da_tra')]}"/>
+                                <field name="ly_do_tu_choi" 
+                                    attrs="{'invisible': [('trang_thai', '!=', 'tu_choi')]}"/>
+                            </group>
+                            <group string="Ghi chú">
+                                <field name="ly_do_muon" string="Lý do mượn" readonly="1"/>
+                                <field name="ghi_chu" nolabel="1" placeholder="Ghi chú của quản lý..."/>
+                            </group>
+                        </group>
+                        
+                        <notebook>
+                            <page name="dsts" string="Danh sách tài sản mượn">
+                                <field name="ds_tai_san_chua_muon" invisible="1"/>
+                                <field name="muon_tra_line_ids" 
+                                    attrs="{'readonly': [('trang_thai', 'not in', ['cho_duyet', 'da_duyet'])]}">
+                                    <tree editable="bottom">
+                                        <field name="phan_bo_tai_san_id" 
+                                            string="Tài sản"
+                                            domain="[('id','in',parent.ds_tai_san_chua_muon)]"/>
+                                        <field name="ghi_chu" string="Ghi chú"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_muon_tra_tai_san_tree" model="ir.ui.view">
+            <field name="name">muon_tra_tai_san.view.tree</field>
+            <field name="model">muon_tra_tai_san</field>
+            <field name="arch" type="xml">
+                <tree string="Quản lý mượn trả tài sản"
+                    decoration-info="trang_thai == 'cho_duyet'"
+                    decoration-success="trang_thai == 'da_tra'"
+                    decoration-warning="trang_thai == 'dang_muon'"
+                    decoration-danger="trang_thai == 'qua_han'">
+                    <field name="ma_phieu_muon_tra"/>
+                    <field name="ten_phieu_muon_tra"/>
+                    <field name="phong_ban_cho_muon_id"/>
+                    <field name="nhan_vien_muon_id"/>
+                    <field name="thoi_gian_muon"/>
+                    <field name="thoi_gian_tra_du_kien"/>
+                    <field name="so_tai_san" string="Số TS"/>
+                    <field name="tinh_trang"/>
+                    <field name="trang_thai" widget="badge" 
+                        decoration-info="trang_thai == 'cho_duyet'"
+                        decoration-success="trang_thai == 'da_tra'"
+                        decoration-warning="trang_thai == 'dang_muon'"
+                        decoration-danger="trang_thai == 'qua_han'"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_muon_tra_tai_san_search" model="ir.ui.view">
+            <field name="name">muon_tra_tai_san.view.search</field>
+            <field name="model">muon_tra_tai_san</field>
+            <field name="arch" type="xml">
+                <search string="Tìm kiếm phiếu mượn trả">
+                    <field name="ma_phieu_muon_tra" string="Mã phiếu"/>
+                    <field name="ten_phieu_muon_tra" string="Tên phiếu"/>
+                    <field name="phong_ban_cho_muon_id" string="Phòng ban"/>
+                    <field name="nhan_vien_muon_id" string="Nhân viên"/>
+                    <separator/>
+                    <filter name="filter_cho_duyet" string="Chờ duyệt" domain="[('trang_thai', '=', 'cho_duyet')]"/>
+                    <filter name="filter_da_duyet" string="Đã duyệt" domain="[('trang_thai', '=', 'da_duyet')]"/>
+                    <filter name="filter_dang_muon" string="Đang mượn" domain="[('trang_thai', '=', 'dang_muon')]"/>
+                    <filter name="filter_qua_han" string="Quá hạn" domain="[('trang_thai', '=', 'qua_han')]"/>
+                    <filter name="filter_da_tra" string="Đã trả" domain="[('trang_thai', '=', 'da_tra')]"/>
+                    <separator/>
+                    <group expand="0" string="Nhóm theo">
+                        <filter name="group_by_trang_thai" string="Trạng thái" context="{'group_by': 'trang_thai'}"/>
+                        <filter name="group_by_phong_ban" string="Phòng ban" context="{'group_by': 'phong_ban_cho_muon_id'}"/>
+                        <filter name="group_by_nhan_vien" string="Nhân viên" context="{'group_by': 'nhan_vien_muon_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="muon_tra_tai_san_action" model="ir.actions.act_window">
+            <field name="name">Quản Lý Mượn Trả Tài Sản</field>
+            <field name="res_model">muon_tra_tai_san</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_filter_cho_duyet': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Chưa có yêu cầu mượn tài sản nào
+                </p>
+                <p>
+                    Các đơn đăng ký mượn tài sản từ nhân viên sẽ xuất hiện ở đây để bạn duyệt.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

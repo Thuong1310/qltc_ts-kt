@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record id="danh_muc_tai_san_view_form" model="ir.ui.view">
+			<field name="name">
+				danh_muc_tai_san.view.form
+			</field>
+			<field name="model">danh_muc_tai_san</field>
+			<field name="arch" type="xml">
+				<form string="Danh mục TS">
+					<sheet>
+						<group col="4" string="Thông tin chung">
+							<field name="ma_danh_muc_ts" />
+							<field name="ten_danh_muc_ts" />
+							<field name="mo_ta_danh_muc_ts" />
+							<field name="so_luong_tong" />
+						</group>
+						<notebook>
+							<page string="Tài sản cụ thể">
+								<field name="tai_san_ids" readonly="True">
+									<tree>
+										<field name="ma_tai_san" />
+										<field name="ten_tai_san" />
+										<field name="ngay_mua_ts" />
+										<field name="don_vi_tien_te" />
+										<field name="don_vi_tinh" />
+										<field name="ghi_chu" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- Tree view -->
+		<record id="danh_muc_tai_san_view_tree" model="ir.ui.view">
+			<field name="name">
+				danh_muc_tai_san.view.tree
+			</field>
+			<field name="model">danh_muc_tai_san</field>
+			<field name="arch" type="xml">
+				<tree string="Danh sách loại tài sản">
+					<field name="ma_danh_muc_ts" />
+					<field name="ten_danh_muc_ts" />
+					<field name="mo_ta_danh_muc_ts" />
+				</tree>
+			</field>
+		</record>
+		<!-- Search View -->
+		<record id="danh_muc_tai_san_view_search" model="ir.ui.view">
+			<field name="name">
+				danh_muc_tai_san.view.search
+			</field>
+			<field name="model">danh_muc_tai_san</field>
+			<field name="arch" type="xml">
+				<search string="Tìm kiếm loại tài sản">
+					<field name="ma_danh_muc_ts" string="Mã danh mục"/>
+					<field name="ten_danh_muc_ts" string="Tên danh mục"/>
+					<field name="mo_ta_danh_muc_ts" string="Mô tả"/>
+				</search>
+			</field>
+		</record>
+		<!-- Action -->
+		<record id="danh_muc_tai_san_action" model="ir.actions.act_window">
+			<field name="name">Loại tài sản</field>
+			<field name="res_model">danh_muc_tai_san</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>

@@ -12,42 +12,23 @@
             sequence="1"
             action="action_nhan_vien"
         />
-
-        <menuitem name="Danh mục chung" 
-            id="menu_danh_muc_chung" 
+        <menuitem name="Quản lý phòng ban" 
+            id="menu_phong_ban" 
             parent="menu_root" 
             sequence="1"
+            action="action_phong_ban"
         />
-
-        <menuitem name="Danh mục đơn vị" 
-            id="menu_don_vi" 
-            parent="menu_danh_muc_chung" 
-            sequence="1"
-            action="action_don_vi"
-        />
-        <menuitem name="Danh mục chức vụ" 
+         <menuitem name="Quản lý chức vụ" 
             id="menu_chuc_vu" 
-            parent="menu_danh_muc_chung" 
-            sequence="2"
+            parent="menu_root" 
+            sequence="1"
             action="action_chuc_vu"
         />
-        <menuitem name="Danh mục chứng chỉ, bằng cấp" 
-            id="menu_chung_chi_bang_cap" 
-            parent="menu_danh_muc_chung" 
-            sequence="3"
-            action="action_chung_chi_bang_cap"
-        />
-        <menuitem name="Lịch sử công tác" 
+         <menuitem name="Lịch sử công tác" 
             id="menu_lich_su_cong_tac" 
             parent="menu_root" 
-            sequence="4"
+            sequence="1"
             action="action_lich_su_cong_tac"
-        />
-        <menuitem name="Danh sách chứng chỉ, bằng cấp" 
-            id="menu_danh_sach_chung_chi_bang_cap" 
-            parent="menu_root" 
-            sequence="4"
-            action="action_danh_sach_chung_chi_bang_cap"
         />
     </data>
 </odoo>

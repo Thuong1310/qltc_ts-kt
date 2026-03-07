@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_thanh_ly_tai_san_form" model="ir.ui.view">
+        <field name="name">thanh.ly.tai.san.form</field>
+        <field name="model">thanh_ly_tai_san</field>
+        <field name="arch" type="xml">
+            <form string="Thanh lý tài sản">
+                <sheet>
+                    <group>
+                        <group string="Thông tin chung">
+                            <field name="ma_thanh_ly"/>
+                            <field name="hanh_dong"/>
+                            <field name="thoi_gian_thanh_ly"/>
+                            <field name="nguoi_thanh_ly_id"/>
+                            <field name="ly_do_thanh_ly"/>
+                        </group>
+                        <group string="Thông tin chi tiết">
+                            <field name="tai_san_id"
+                                domain="['|',('trang_thai_thanh_ly','=','chua_thanh_ly'),('trang_thai_thanh_ly','=','chua_phan_bo')]"/>
+                            <field name="gia_goc"/>
+                            <field name="gia_ban" 
+                                attrs="{'invisible':[('hanh_dong','=','huy')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_thanh_ly_tai_san_tree" model="ir.ui.view">
+        <field name="name">thanh.ly.tai.san.tree</field>
+        <field name="model">thanh_ly_tai_san</field>
+        <field name="arch" type="xml">
+            <tree string="Lịch sử thanh lý tài sản">
+                <field name="ma_thanh_ly"/>
+                <field name="hanh_dong"/>
+                <field name="tai_san_id"/>
+                <field name="thoi_gian_thanh_ly"/>
+                <field name="ly_do_thanh_ly"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="thanh_ly_tai_san_action" model="ir.actions.act_window">
+        <field name="name">Thanh lý tài sản</field>
+        <field name="res_model">thanh_ly_tai_san</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

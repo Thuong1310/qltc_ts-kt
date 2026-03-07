@@ -92,9 +92,9 @@ Lệnh chạy
 ```
 python3 odoo-bin.py -c odoo.conf -u all
 ```
-Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
+Người sử d ụng truy cập theo đường dẫn http://localhost:8069 để đăng nhập vào hệ thống.
 
-## 📝 5. License
+## 📝 5. License    
 
 © 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
