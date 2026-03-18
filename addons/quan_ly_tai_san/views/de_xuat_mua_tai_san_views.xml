@@ -81,8 +81,7 @@
                         </group>
                         <group string="Tài chính">
                             <field name="don_vi_tien_te"/>
-                            <field name="tong_gia_tri" widget="monetary" 
-                                   options="{'currency_field': 'don_vi_tien_te'}"/>
+                            <field name="tong_gia_tri"/>
                             <field name="phe_duyet_id" invisible="1"/>
                         </group>
                     </group>
@@ -97,8 +96,8 @@
                                     <field name="danh_muc_ts_id"/>
                                     <field name="so_luong"/>
                                     <field name="don_vi_tinh"/>
-                                    <field name="don_gia" widget="monetary"/>
-                                    <field name="thanh_tien" widget="monetary" sum="Tổng"/>
+                                    <field name="don_gia"/>
+                                    <field name="thanh_tien" sum="Tổng"/>
                                     <field name="pp_khau_hao"/>
                                     <field name="thoi_gian_su_dung"/>
                                     <field name="ty_le_khau_hao" string="TL KH (%)" readonly="1"/>
@@ -178,7 +177,7 @@
                 <field name="ngay_de_xuat"/>
                 <field name="nguoi_de_xuat_id"/>
                 <field name="phong_ban_id"/>
-                <field name="tong_gia_tri" sum="Tổng" widget="monetary"/>
+                <field name="tong_gia_tri" sum="Tổng"/>
                 <field name="don_vi_tien_te" invisible="1"/>
                 <field name="ngay_du_kien_nhan"/>
                 <field name="state" widget="badge"

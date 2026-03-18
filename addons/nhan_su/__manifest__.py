@@ -1,42 +1,36 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+    'name': "Quản Lý Nhân Sự",
+    'summary': "Module quản lý nhân sự toàn diện: nhân viên, hợp đồng, chấm công, lương, KPI",
     'description': """
-        Long description of module's purpose
+        Module Quản Lý Nhân Sự (QLNS) cung cấp đầy đủ các tính năng:
+        - Quản lý nhân viên, phòng ban, chức vụ
+        - Hợp đồng lao động (thử việc, chính thức, thời vụ)
+        - Chấm công và quản lý nghỉ phép
+        - Tính lương, phụ cấp và thưởng
+        - Đánh giá năng lực KPI theo kỳ
     """,
-
-    'author': "My Company",
+    'author': "QLNS Team",
     'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+    'category': 'Human Resources',
+    'version': '2.0',
+    'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence.xml',
         'data/qlns_demo.xml',
         'views/nhan_vien.xml',
-         'views/phong_ban.xml',
-         'views/chuc_vu.xml',
-         'views/lich_su_cong_tac.xml',
+        'views/phong_ban.xml',
+        'views/chuc_vu.xml',
+        'views/lich_su_cong_tac.xml',
+        'views/hop_dong_lao_dong.xml',
+        'views/cham_cong.xml',
+        'views/nghi_phep.xml',
+        'views/luong.xml',
+        'views/kpi.xml',
         'views/menu.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
     'installable': True,
     'application': True,
-
+    'license': 'LGPL-3',
 }

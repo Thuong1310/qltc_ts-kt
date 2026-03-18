@@ -1,34 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <menuitem
-            id="menu_root"
-            name="QLNS"
-            sequence="0"/>
-          
-        <menuitem name="Quản lý nhân viên" 
-            id="menu_nhan_vien" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_nhan_vien"
-        />
-        <menuitem name="Quản lý phòng ban" 
-            id="menu_phong_ban" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_phong_ban"
-        />
-         <menuitem name="Quản lý chức vụ" 
-            id="menu_chuc_vu" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_chuc_vu"
-        />
-         <menuitem name="Lịch sử công tác" 
-            id="menu_lich_su_cong_tac" 
-            parent="menu_root" 
-            sequence="1"
-            action="action_lich_su_cong_tac"
-        />
-    </data>
+<data>
+<menuitem id="menu_root" name="Quản Lý Nhân Sự" sequence="10"/>
+<!--  Danh mục  -->
+<menuitem name="Danh mục" id="menu_danh_muc" parent="menu_root" sequence="5"/>
+<menuitem name="Phòng ban" id="menu_phong_ban" parent="menu_danh_muc" sequence="1" action="action_phong_ban"/>
+<menuitem name="Chức vụ" id="menu_chuc_vu" parent="menu_danh_muc" sequence="2" action="action_chuc_vu"/>
+<!--  Nhân viên  -->
+<menuitem name="Nhân viên" id="menu_nhan_vien_group" parent="menu_root" sequence="10"/>
+<menuitem name="Danh sách nhân viên" id="menu_nhan_vien" parent="menu_nhan_vien_group" sequence="1" action="action_nhan_vien"/>
+<menuitem name="Lịch sử công tác" id="menu_lich_su_cong_tac" parent="menu_nhan_vien_group" sequence="2" action="action_lich_su_cong_tac"/>
+<!--  Hợp đồng  -->
+<menuitem name="Hợp đồng" id="menu_hop_dong_group" parent="menu_root" sequence="20"/>
+<menuitem name="Hợp đồng lao động" id="menu_hop_dong" parent="menu_hop_dong_group" sequence="1" action="action_hop_dong_lao_dong"/>
+<!--  Chấm công  -->
+<menuitem name="Chấm công" id="menu_cham_cong_group" parent="menu_root" sequence="30"/>
+<menuitem name="Bảng chấm công" id="menu_cham_cong" parent="menu_cham_cong_group" sequence="1" action="action_cham_cong"/>
+<menuitem name="Đơn nghỉ phép" id="menu_nghi_phep" parent="menu_cham_cong_group" sequence="2" action="action_nghi_phep"/>
+<!--  Lương  -->
+<menuitem name="Tiền lương" id="menu_luong_group" parent="menu_root" sequence="40"/>
+<menuitem name="Bảng lương" id="menu_bang_luong" parent="menu_luong_group" sequence="1" action="action_bang_luong"/>
+<!--  KPI  -->
+<menuitem name="Đánh giá KPI" id="menu_kpi_group" parent="menu_root" sequence="50"/>
+<menuitem name="Đợt đánh giá" id="menu_kpi_dot" parent="menu_kpi_group" sequence="1" action="action_kpi_dot_danh_gia"/>
+<menuitem name="KPI nhân viên" id="menu_kpi_nv" parent="menu_kpi_group" sequence="2" action="action_kpi_nhan_vien"/>
+</data>
 </odoo>

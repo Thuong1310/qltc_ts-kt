@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
-from odoo.exceptions import UserError, AccessDenied
 import hashlib
 
 
@@ -7,20 +7,45 @@ class NhanVien(models.Model):
     _name = 'nhan_vien'
     _description = 'Bảng chứa thông tin nhân viên'
     _rec_name = 'ho_ten'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    ma_dinh_danh = fields.Char("Mã định danh", required=True)
-    ho_ten = fields.Char("Họ tên", required=True, default='')
+    ma_dinh_danh = fields.Char("Mã định danh", required=True, copy=False,
+                                default=lambda self: self.env['ir.sequence'].next_by_code('nhan_vien') or 'NV/001')
+    ho_ten = fields.Char("Họ tên", required=True, default='', tracking=True)
+    gioi_tinh = fields.Selection([('nam', 'Nam'), ('nu', 'Nữ'), ('khac', 'Khác')], string="Giới tính", default='nam')
     ngay_sinh = fields.Date("Ngày sinh")
+    tuoi = fields.Integer("Tuổi", compute="_compute_tuoi", store=True)
     que_quan = fields.Char("Quê quán")
+    dia_chi = fields.Char("Địa chỉ thường trú")
+    anh_dai_dien = fields.Binary("Ảnh đại diện", attachment=True)
+    so_cmnd = fields.Char("Số CMND/CCCD")
+    ngay_cap_cmnd = fields.Date("Ngày cấp")
+    noi_cap_cmnd = fields.Char("Nơi cấp")
     email = fields.Char("Email")
     so_dien_thoai = fields.Char("Số điện thoại")
-    lich_su_cong_tac_ids = fields.One2many("lich_su_cong_tac", string="Danh sách lịch sử công tác", inverse_name="nhan_vien_id")
-    tuoi = fields.Integer("Tuổi", compute="_compute_tuoi", store=True)
-    
-    # Liên kết với User Odoo (nếu có)
+    trang_thai = fields.Selection([
+        ('dang_lam', 'Đang làm việc'),
+        ('thu_viec', 'Đang thử việc'),
+        ('nghi_thai_san', 'Nghỉ thai sản'),
+        ('nghi_viec', 'Đã nghỉ việc'),
+    ], string="Trạng thái", default='dang_lam', tracking=True)
+    ngay_vao_lam = fields.Date("Ngày vào làm")
+    ngay_nghi_viec = fields.Date("Ngày nghỉ việc")
+    tham_nien = fields.Integer("Thâm niên (năm)", compute="_compute_tham_nien", store=True)
+    phong_ban_hien_tai = fields.Many2one('phong_ban', string="Phòng ban hiện tại",
+                                          compute='_compute_vi_tri_hien_tai', store=True)
+    chuc_vu_hien_tai = fields.Many2one('chuc_vu', string="Chức vụ hiện tại",
+                                        compute='_compute_vi_tri_hien_tai', store=True)
+    so_tai_khoan = fields.Char("Số tài khoản ngân hàng")
+    ngan_hang = fields.Char("Ngân hàng")
+    ma_so_thue = fields.Char("Mã số thuế cá nhân")
+    so_nguoi_phu_thuoc = fields.Integer("Số người phụ thuộc", default=0)
+    lich_su_cong_tac_ids = fields.One2many("lich_su_cong_tac", string="Lịch sử công tác", inverse_name="nhan_vien_id")
+    hop_dong_ids = fields.One2many("hop_dong_lao_dong", string="Hợp đồng lao động", inverse_name="nhan_vien_id")
+    cham_cong_ids = fields.One2many("cham_cong", string="Chấm công", inverse_name="nhan_vien_id")
+    bang_luong_ids = fields.One2many("bang_luong", string="Bảng lương", inverse_name="nhan_vien_id")
+    kpi_ids = fields.One2many("kpi_nhan_vien", string="Đánh giá KPI", inverse_name="nhan_vien_id")
     user_id = fields.Many2one('res.users', string='Tài khoản Odoo', ondelete='set null')
-    
-    # Thông tin đăng nhập riêng cho web app bên ngoài
     web_username = fields.Char("Tên đăng nhập web")
     web_password_hash = fields.Char("Mật khẩu (hash)")
     is_web_active = fields.Boolean("Kích hoạt web", default=False)
@@ -28,135 +53,36 @@ class NhanVien(models.Model):
 
     @api.depends('ngay_sinh')
     def _compute_tuoi(self):
-        for record in self:
-            if record.ngay_sinh:
-                record.tuoi = (fields.Date.today() - record.ngay_sinh).days // 365
+        for r in self:
+            r.tuoi = (fields.Date.today() - r.ngay_sinh).days // 365 if r.ngay_sinh else 0
+
+    @api.depends('ngay_vao_lam')
+    def _compute_tham_nien(self):
+        for r in self:
+            r.tham_nien = (fields.Date.today() - r.ngay_vao_lam).days // 365 if r.ngay_vao_lam else 0
+
+    @api.depends('lich_su_cong_tac_ids', 'lich_su_cong_tac_ids.time_start')
+    def _compute_vi_tri_hien_tai(self):
+        for r in self:
+            if r.lich_su_cong_tac_ids:
+                latest = r.lich_su_cong_tac_ids.sorted('time_start', reverse=True)[0]
+                r.phong_ban_hien_tai = latest.phong_ban_id
+                r.chuc_vu_hien_tai = latest.chuc_vu_id
+            else:
+                r.phong_ban_hien_tai = False
+                r.chuc_vu_hien_tai = False
 
     def _hash_password(self, password):
-        """Hash mật khẩu sử dụng SHA256"""
         return hashlib.sha256(password.encode()).hexdigest()
 
     @api.model
-    def web_register(self, data):
-        """
-        Đăng ký tài khoản web mới
-        Args:
-            data: dict với keys: ma_dinh_danh, ho_ten, email, so_dien_thoai, username, password
-        Returns:
-            dict: {success: bool, message: str, employee_id: int}
-        """
-        try:
-            # Kiểm tra username đã tồn tại chưa
-            existing = self.sudo().search([('web_username', '=', data.get('username'))], limit=1)
-            if existing:
-                return {'success': False, 'message': 'Tên đăng nhập đã tồn tại'}
-            
-            # Kiểm tra mã định danh đã tồn tại chưa
-            existing_employee = self.sudo().search([('ma_dinh_danh', '=', data.get('ma_dinh_danh'))], limit=1)
-            if existing_employee:
-                return {'success': False, 'message': 'Mã định danh đã tồn tại'}
-            
-            # Tạo nhân viên mới
-            employee = self.sudo().create({
-                'ma_dinh_danh': data.get('ma_dinh_danh'),
-                'ho_ten': data.get('ho_ten'),
-                'email': data.get('email'),
-                'so_dien_thoai': data.get('so_dien_thoai'),
-                'web_username': data.get('username'),
-                'web_password_hash': self._hash_password(data.get('password', '')),
-                'is_web_active': True,
-            })
-            
-            return {
-                'success': True,
-                'message': 'Đăng ký thành công',
-                'employee_id': employee.id,
-                'employee': {
-                    'id': employee.id,
-                    'ma_dinh_danh': employee.ma_dinh_danh,
-                    'ho_ten': employee.ho_ten,
-                    'email': employee.email,
-                }
-            }
-        except Exception as e:
-            return {'success': False, 'message': str(e)}
-
-    @api.model
     def web_login(self, username, password):
-        """
-        Đăng nhập cho web app bên ngoài
-        Args:
-            username: tên đăng nhập
-            password: mật khẩu (chưa hash)
-        Returns:
-            dict: {success: bool, message: str, employee: dict}
-        """
-        try:
-            password_hash = self._hash_password(password)
-            employee = self.sudo().search([
-                ('web_username', '=', username),
-                ('web_password_hash', '=', password_hash),
-                ('is_web_active', '=', True)
-            ], limit=1)
-            
-            if not employee:
-                return {'success': False, 'message': 'Tên đăng nhập hoặc mật khẩu không đúng'}
-            
-            # Cập nhật thời gian đăng nhập
-            employee.sudo().write({'last_login': fields.Datetime.now()})
-            
-            return {
-                'success': True,
-                'message': 'Đăng nhập thành công',
-                'employee': {
-                    'id': employee.id,
-                    'ma_dinh_danh': employee.ma_dinh_danh,
-                    'ho_ten': employee.ho_ten,
-                    'email': employee.email,
-                    'so_dien_thoai': employee.so_dien_thoai,
-                    'tuoi': employee.tuoi,
-                }
-            }
-        except Exception as e:
-            return {'success': False, 'message': str(e)}
-
-    @api.model
-    def web_change_password(self, username, old_password, new_password):
-        """Đổi mật khẩu"""
-        try:
-            old_hash = self._hash_password(old_password)
-            employee = self.sudo().search([
-                ('web_username', '=', username),
-                ('web_password_hash', '=', old_hash),
-            ], limit=1)
-            
-            if not employee:
-                return {'success': False, 'message': 'Mật khẩu cũ không đúng'}
-            
-            employee.sudo().write({
-                'web_password_hash': self._hash_password(new_password)
-            })
-            
-            return {'success': True, 'message': 'Đổi mật khẩu thành công'}
-        except Exception as e:
-            return {'success': False, 'message': str(e)}
-
-    @api.model
-    def get_employee_by_username(self, username):
-        """Lấy thông tin nhân viên theo username"""
-        employee = self.sudo().search([('web_username', '=', username)], limit=1)
+        employee = self.sudo().search([
+            ('web_username', '=', username),
+            ('web_password_hash', '=', self._hash_password(password)),
+            ('is_web_active', '=', True)
+        ], limit=1)
         if not employee:
-            return {'success': False, 'message': 'Không tìm thấy nhân viên'}
-        
-        return {
-            'success': True,
-            'employee': {
-                'id': employee.id,
-                'ma_dinh_danh': employee.ma_dinh_danh,
-                'ho_ten': employee.ho_ten,
-                'email': employee.email,
-                'so_dien_thoai': employee.so_dien_thoai,
-                'tuoi': employee.tuoi,
-                'last_login': employee.last_login.isoformat() if employee.last_login else None,
-            }
-        }
+            return {'success': False, 'message': 'Tên đăng nhập hoặc mật khẩu không đúng'}
+        employee.sudo().write({'last_login': fields.Datetime.now()})
+        return {'success': True, 'employee': {'id': employee.id, 'ho_ten': employee.ho_ten}}

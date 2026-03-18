@@ -1,5 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_nhan_vien,nhan_vien.nhan_vien,model_nhan_vien,base.group_user,1,1,1,1
-access_phong_ban,phong_ban.phong_ban,model_phong_ban,base.group_user,1,1,1,1
-access_chuc_vu,chuc_vu.chuc_vu,model_chuc_vu,base.group_user,1,1,1,1
-access_lich_su_cong_tac,lich_su_cong_tac.lich_su_cong_tac,model_lich_su_cong_tac,base.group_user,1,1,1,1
+access_nhan_vien,nhan_vien,model_nhan_vien,base.group_user,1,1,1,1
+access_phong_ban,phong_ban,model_phong_ban,base.group_user,1,1,1,1
+access_chuc_vu,chuc_vu,model_chuc_vu,base.group_user,1,1,1,1
+access_lich_su_cong_tac,lich_su_cong_tac,model_lich_su_cong_tac,base.group_user,1,1,1,1
+access_hop_dong_lao_dong,hop_dong_lao_dong,model_hop_dong_lao_dong,base.group_user,1,1,1,1
+access_cham_cong,cham_cong,model_cham_cong,base.group_user,1,1,1,1
+access_nghi_phep,nghi_phep,model_nghi_phep,base.group_user,1,1,1,1
+access_bang_luong,bang_luong,model_bang_luong,base.group_user,1,1,1,0
+access_kpi_dot_danh_gia,kpi_dot_danh_gia,model_kpi_dot_danh_gia,base.group_user,1,1,1,1
+access_kpi_nhan_vien,kpi_nhan_vien,model_kpi_nhan_vien,base.group_user,1,1,1,1
+access_kpi_tieu_chi,kpi_tieu_chi,model_kpi_tieu_chi,base.group_user,1,1,1,1

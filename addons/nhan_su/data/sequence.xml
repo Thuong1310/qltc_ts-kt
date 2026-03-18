@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_nhan_vien" model="ir.sequence">
+            <field name="name">Mã nhân viên</field>
+            <field name="code">nhan_vien</field>
+            <field name="prefix">NV/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+        <record id="seq_hop_dong" model="ir.sequence">
+            <field name="name">Số hợp đồng lao động</field>
+            <field name="code">hop_dong_lao_dong</field>
+            <field name="prefix">HĐ/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+        <record id="seq_nghi_phep" model="ir.sequence">
+            <field name="name">Số đơn nghỉ phép</field>
+            <field name="code">nghi_phep</field>
+            <field name="prefix">NP/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>
