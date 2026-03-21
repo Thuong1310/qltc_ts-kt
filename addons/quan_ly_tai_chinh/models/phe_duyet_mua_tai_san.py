@@ -228,10 +228,17 @@ class PheDuyetMuaTaiSan(models.Model):
                     record.ma_de_xuat = False
                     continue
                 
-                # Kiểm tra 2: Record có tồn tại trong DB không
-                if not record.de_xuat_mua_id.exists():
+                # Kiểm tra 2: Tránh _unknown object (virtual record trong onchange)
+                try:
+                    rec_id = record.de_xuat_mua_id.id
+                except AttributeError:
                     record.ma_de_xuat = False
                     continue
+                # Chỉ kiểm tra exists() với record thực (id là int dương)
+                if isinstance(rec_id, int) and rec_id > 0:
+                    if not record.de_xuat_mua_id.exists():
+                        record.ma_de_xuat = False
+                        continue
                 
                 # Kiểm tra 3: Truy cập an toàn thuộc tính ma_de_xuat
                 ma = record.de_xuat_mua_id.ma_de_xuat
@@ -256,18 +263,23 @@ class PheDuyetMuaTaiSan(models.Model):
         Xử lý khi thay đổi đề xuất mua
         Đảm bảo không gây lỗi _unknown object
         """
-        # Không làm gì nếu không có đề xuất
-        if not self.de_xuat_mua_id:
-            return
-        
-        # Kiểm tra đề xuất có tồn tại không
-        if not self.de_xuat_mua_id.exists():
+        try:
+            if not self.de_xuat_mua_id:
+                return
+            # Kiểm tra an toàn: _unknown object không có thuộc tính 'id' hợp lệ
+            try:
+                rec_id = self.de_xuat_mua_id.id
+            except AttributeError:
+                self.de_xuat_mua_id = False
+                return
+            # Nếu id không phải int hợp lệ (virtual record từ onchange), bỏ qua
+            if not isinstance(rec_id, int) or rec_id <= 0:
+                return
+            # Kiểm tra đề xuất có tồn tại trong DB không
+            if not self.de_xuat_mua_id.exists():
+                self.de_xuat_mua_id = False
+        except Exception:
             self.de_xuat_mua_id = False
-            return
-        
-        # Trigger recompute cho ma_de_xuat
-        # Field sẽ tự động compute an toàn qua _compute_ma_de_xuat
-        pass
     
     # ============ CRUD METHODS ============
     @api.model

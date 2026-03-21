@@ -26,7 +26,8 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
-        'data/tai_san_demo.xml',  # ← THÊM vào đây để luôn load
+        'data/tai_san_demo.xml',
+
         'views/danh_muc_tai_san.xml',
         'views/kiem_ke_tai_san.xml',
         'views/lich_su_khau_hao.xml',

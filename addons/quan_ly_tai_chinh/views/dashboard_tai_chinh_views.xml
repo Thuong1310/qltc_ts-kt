@@ -17,22 +17,22 @@
                         <!-- Row 1: Thống kê đơn phê duyệt -->
                         <div class="stats-grid">
                             <div class="dash-card stat-card primary">
-                                <div class="stat-icon"><i class="fa fa-file-text-o"/></div>
+                                <div class="stat-icon"><i class="fa fa-file-text-o" title="Tổng Đơn"/></div>
                                 <div class="stat-value"><field name="tong_phe_duyet"/></div>
                                 <div class="stat-label">Tổng Đơn</div>
                             </div>
                             <div class="dash-card stat-card warning">
-                                <div class="stat-icon"><i class="fa fa-clock-o"/></div>
+                                <div class="stat-icon"><i class="fa fa-clock-o" title="Chờ Duyệt"/></div>
                                 <div class="stat-value"><field name="phe_duyet_cho_duyet"/></div>
                                 <div class="stat-label">Chờ Duyệt</div>
                             </div>
                             <div class="dash-card stat-card success">
-                                <div class="stat-icon"><i class="fa fa-check-circle"/></div>
+                                <div class="stat-icon"><i class="fa fa-check-circle" title="Đã Duyệt"/></div>
                                 <div class="stat-value"><field name="phe_duyet_da_duyet"/></div>
                                 <div class="stat-label">Đã Duyệt</div>
                             </div>
                             <div class="dash-card stat-card danger">
-                                <div class="stat-icon"><i class="fa fa-times-circle"/></div>
+                                <div class="stat-icon"><i class="fa fa-times-circle" title="Từ Chối"/></div>
                                 <div class="stat-value"><field name="phe_duyet_bi_tu_choi"/></div>
                                 <div class="stat-label">Từ Chối</div>
                             </div>
@@ -42,21 +42,21 @@
                         <div class="values-grid">
                             <div class="dash-card value-card green">
                                 <div class="value-header">
-                                    <i class="fa fa-building-o"/>
+                                    <i class="fa fa-building-o" title="Tổng Giá Trị Tài Sản"/>
                                     <span>Tổng Giá Trị Tài Sản</span>
                                 </div>
                                 <div class="value-amount"><field name="tong_gia_tri_tai_san" widget="monetary"/></div>
                             </div>
                             <div class="dash-card value-card orange">
                                 <div class="value-header">
-                                    <i class="fa fa-minus-circle"/>
+                                    <i class="fa fa-minus-circle" title="Tích Lũy Khấu Hao"/>
                                     <span>Tích Lũy Khấu Hao</span>
                                 </div>
                                 <div class="value-amount"><field name="tong_khau_hao_tich_luy" widget="monetary"/></div>
                             </div>
                             <div class="dash-card value-card blue">
                                 <div class="value-header">
-                                    <i class="fa fa-balance-scale"/>
+                                    <i class="fa fa-balance-scale" title="Giá Trị Còn Lại"/>
                                     <span>Giá Trị Còn Lại</span>
                                 </div>
                                 <div class="value-amount"><field name="tong_gia_tri_con_lai" widget="monetary"/></div>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="dash-card value-card green">
                                 <div class="value-header">
-                                    <i class="fa fa-money"/>
+                                    <i class="fa fa-money" title="Tổng Giá Trị Bút Toán"/>
                                     <span>Tổng Giá Trị Bút Toán</span>
                                 </div>
                                 <div class="value-amount"><field name="tong_gia_tri_but_toan" widget="monetary"/></div>

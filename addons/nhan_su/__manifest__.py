@@ -19,6 +19,7 @@
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'data/qlns_demo.xml',
+        'data/qlns_demo_full.xml',
         'views/nhan_vien.xml',
         'views/phong_ban.xml',
         'views/chuc_vu.xml',

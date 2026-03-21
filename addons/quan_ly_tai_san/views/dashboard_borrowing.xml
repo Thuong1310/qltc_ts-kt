@@ -18,17 +18,17 @@
                             <!-- Row 1: Thống kê mượn trả -->
                             <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
                                 <div class="dash-card stat-card primary">
-                                    <div class="stat-icon"><i class="fa fa-clock-o"/></div>
+                                    <div class="stat-icon"><i class="fa fa-clock-o" title="Đang Mượn"/></div>
                                     <div class="stat-value pending_requests">0</div>
                                     <div class="stat-label">Đang Chờ Duyệt</div>
                                 </div>
                                 <div class="dash-card stat-card success">
-                                    <div class="stat-icon"><i class="fa fa-check"/></div>
+                                    <div class="stat-icon"><i class="fa fa-check" title="Đã Trả"/></div>
                                     <div class="stat-value approved_not_returned">0</div>
                                     <div class="stat-label">Đã Duyệt (Chưa Trả)</div>
                                 </div>
                                 <div class="dash-card stat-card warning">
-                                    <div class="stat-icon"><i class="fa fa-hand-paper-o"/></div>
+                                    <div class="stat-icon"><i class="fa fa-hand-paper-o" title="Quá Hạn"/></div>
                                     <div class="stat-value borrowed_assets_count">0</div>
                                     <div class="stat-label">Tài Sản Đang Mượn</div>
                                 </div>

@@ -3,7 +3,7 @@ from odoo import api, fields, models
 class AssetDashboard(models.Model):
     _name = 'asset.dashboard'
     _description = 'Dashboard for Asset Management'
-    _auto = False
+    # _auto = False đã xóa: model này không có SQL view/table thủ công
 
     @api.model
     def name_get(self):

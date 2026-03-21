@@ -85,38 +85,31 @@
 
                         <notebook>
                             <page string="Danh sách tài sản mượn" name="tai_san">
-                                <field name="don_muon_tai_san_ids" 
+                                <field name="don_muon_tai_san_ids"
                                     attrs="{'readonly': [('trang_thai', 'not in', ['nhap', 'cho_duyet'])]}">
                                     <tree editable="bottom">
-                                        <field name="phan_bo_tai_san_id" 
+                                        <field name="phan_bo_tai_san_id"
                                             string="Tài sản"
                                             domain="[('id','in',parent.ds_tai_san_chua_muon)]"
+                                            options="{'no_create': True, 'no_open': True}"
                                             attrs="{'readonly': [('trang_thai_line', '!=', 'cho_muon')]}"/>
-                                        <field name="tinh_trang_truoc_muon" 
+                                        <field name="tinh_trang_truoc_muon"
                                             string="TT trước mượn"
                                             attrs="{'readonly': [('trang_thai_line', '!=', 'cho_muon')]}"/>
+                                        <!-- Các cột chi tiết: ẩn khi chưa cho mượn -->
+                                        <field name="thoi_gian_cho_muon" string="Thời gian cho mượn"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet'])]}"/>
+                                        <field name="nguoi_giao_id" string="Người giao"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet'])]}"/>
+                                        <field name="tinh_trang_sau_tra" string="TT sau trả"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet','da_duyet'])]}"/>
+                                        <field name="thoi_gian_tra_thuc_te" string="Thời gian trả"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet','da_duyet'])]}"/>
+                                        <field name="nguoi_nhan_tra_id" string="Người nhận trả"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet','da_duyet'])]}"/>
                                         <field name="ghi_chu" string="Ghi chú"/>
-                                        <field name="trang_thai_line" widget="badge"
-                                            decoration-info="trang_thai_line == 'cho_muon'"
-                                            decoration-warning="trang_thai_line == 'dang_muon'"
-                                            decoration-success="trang_thai_line == 'da_tra'"
-                                            decoration-danger="trang_thai_line in ['hong', 'mat']"/>
-                                    </tree>
-                                </field>
-                            </page>
-                            
-                            <page string="Chi tiết mượn/trả" name="chi_tiet" 
-                                attrs="{'invisible': [('trang_thai', 'in', ['nhap', 'cho_duyet'])]}">
-                                <field name="don_muon_tai_san_ids" readonly="1">
-                                    <tree>
-                                        <field name="phan_bo_tai_san_id" string="Tài sản"/>
-                                        <field name="tinh_trang_truoc_muon" string="TT trước mượn"/>
-                                        <field name="thoi_gian_cho_muon" string="Thời gian cho mượn"/>
-                                        <field name="nguoi_giao_id" string="Người giao"/>
-                                        <field name="tinh_trang_sau_tra" string="TT sau trả"/>
-                                        <field name="thoi_gian_tra_thuc_te" string="Thời gian trả"/>
-                                        <field name="nguoi_nhan_tra_id" string="Người nhận trả"/>
-                                        <field name="ghi_chu_tinh_trang" string="Ghi chú TT"/>
+                                        <field name="ghi_chu_tinh_trang" string="Ghi chú TT"
+                                            attrs="{'column_invisible': [('parent.trang_thai', 'in', ['nhap','cho_duyet'])]}"/>
                                         <field name="trang_thai_line" widget="badge"
                                             decoration-info="trang_thai_line == 'cho_muon'"
                                             decoration-warning="trang_thai_line == 'dang_muon'"

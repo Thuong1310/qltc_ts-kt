@@ -1,239 +1,3501 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
-    <!-- ==================== DANH MỤC TÀI SẢN MẪU ==================== -->
-    <record id="demo_danh_muc_may_tinh" model="danh_muc_tai_san">
+    <data noupdate="1">
+
+    <!-- ==================== DANH MỤC TÀI SẢN ==================== -->
+    <record id="demo_dm_DM001" model="danh_muc_tai_san">
         <field name="ma_danh_muc_ts">DM001</field>
-        <field name="ten_danh_muc_ts">Máy tính &amp; Thiết bị CNTT</field>
-        <field name="mo_ta_danh_muc_ts">Máy tính, laptop, máy in, máy chiếu, thiết bị mạng</field>
+        <field name="ten_danh_muc_ts">Thiết bị công nghệ thông tin</field>
+        <field name="mo_ta_danh_muc_ts">Máy tính, laptop, server, thiết bị mạng</field>
     </record>
-    
-    <record id="demo_danh_muc_noi_that" model="danh_muc_tai_san">
+    <record id="demo_dm_DM002" model="danh_muc_tai_san">
         <field name="ma_danh_muc_ts">DM002</field>
-        <field name="ten_danh_muc_ts">Nội thất văn phòng</field>
-        <field name="mo_ta_danh_muc_ts">Bàn làm việc, ghế, tủ hồ sơ, kệ sách</field>
+        <field name="ten_danh_muc_ts">Thiết bị văn phòng</field>
+        <field name="mo_ta_danh_muc_ts">Máy in, máy scan, máy fax, máy photo</field>
     </record>
-    
-    <record id="demo_danh_muc_phuong_tien" model="danh_muc_tai_san">
+    <record id="demo_dm_DM003" model="danh_muc_tai_san">
         <field name="ma_danh_muc_ts">DM003</field>
-        <field name="ten_danh_muc_ts">Phương tiện đi lại</field>
-        <field name="mo_ta_danh_muc_ts">Xe ô tô, xe máy phục vụ công tác</field>
+        <field name="ten_danh_muc_ts">Phương tiện vận tải</field>
+        <field name="mo_ta_danh_muc_ts">Ô tô, xe máy, xe tải</field>
     </record>
-    
-    <record id="demo_danh_muc_thiet_bi_ky_thuat" model="danh_muc_tai_san">
+    <record id="demo_dm_DM004" model="danh_muc_tai_san">
         <field name="ma_danh_muc_ts">DM004</field>
-        <field name="ten_danh_muc_ts">Thiết bị kỹ thuật</field>
-        <field name="mo_ta_danh_muc_ts">Máy móc, thiết bị chuyên dụng phục vụ sản xuất</field>
+        <field name="ten_danh_muc_ts">Thiết bị điện lạnh</field>
+        <field name="mo_ta_danh_muc_ts">Điều hoà, tủ lạnh, quạt công nghiệp</field>
     </record>
-    
-    <!-- ==================== TÀI SẢN MẪU ==================== -->
-    <!-- Laptop 1 -->
-    <record id="demo_tai_san_laptop_1" model="tai_san">
+    <record id="demo_dm_DM005" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM005</field>
+        <field name="ten_danh_muc_ts">Nội thất văn phòng</field>
+        <field name="mo_ta_danh_muc_ts">Bàn ghế, tủ đựng tài liệu, kệ sách</field>
+    </record>
+    <record id="demo_dm_DM006" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM006</field>
+        <field name="ten_danh_muc_ts">Thiết bị âm thanh hình ảnh</field>
+        <field name="mo_ta_danh_muc_ts">Máy chiếu, tivi, loa, màn hình</field>
+    </record>
+    <record id="demo_dm_DM007" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM007</field>
+        <field name="ten_danh_muc_ts">Thiết bị an ninh</field>
+        <field name="mo_ta_danh_muc_ts">Camera, hệ thống kiểm soát vào ra, khóa điện tử</field>
+    </record>
+    <record id="demo_dm_DM008" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM008</field>
+        <field name="ten_danh_muc_ts">Thiết bị điện</field>
+        <field name="mo_ta_danh_muc_ts">UPS, máy phát điện, tủ điện</field>
+    </record>
+    <record id="demo_dm_DM009" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM009</field>
+        <field name="ten_danh_muc_ts">Thiết bị chuyên dụng</field>
+        <field name="mo_ta_danh_muc_ts">Máy móc sản xuất, thiết bị đo lường</field>
+    </record>
+    <record id="demo_dm_DM010" model="danh_muc_tai_san">
+        <field name="ma_danh_muc_ts">DM010</field>
+        <field name="ten_danh_muc_ts">Công cụ dụng cụ</field>
+        <field name="mo_ta_danh_muc_ts">Dụng cụ sửa chữa, bảo trì</field>
+    </record>
+
+    <!-- ==================== TÀI SẢN (40 records) ==================== -->
+    <record id="demo_ts_TS001" model="tai_san">
         <field name="ma_tai_san">TS001</field>
-        <field name="ten_tai_san">Laptop Dell XPS 15</field>
-        <field name="ngay_mua_ts">2023-01-15</field>
+        <field name="ten_tai_san">Laptop Dell XPS 15 i7</field>
+        <field name="ngay_mua_ts">2022-01-15</field>
         <field name="don_vi_tien_te">vnd</field>
         <field name="gia_tri_ban_dau">25000000</field>
-        <field name="gia_tri_hien_tai">20000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_may_tinh"/>
+        <field name="gia_tri_hien_tai">18000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
         <field name="pp_khau_hao">straight-line</field>
-        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_su_dung">3</field>
         <field name="thoi_gian_toi_da">5</field>
-        <field name="ty_le_khau_hao">20</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Laptop cao cấp cho quản lý</field>
+        <field name="ghi_chu">Phòng kinh doanh</field>
     </record>
-    
-    <!-- Laptop 2 -->
-    <record id="demo_tai_san_laptop_2" model="tai_san">
+    <record id="demo_ts_TS002" model="tai_san">
         <field name="ma_tai_san">TS002</field>
-        <field name="ten_tai_san">Laptop HP Pavilion</field>
-        <field name="ngay_mua_ts">2023-03-20</field>
+        <field name="ten_tai_san">Laptop Lenovo ThinkPad E14</field>
+        <field name="ngay_mua_ts">2022-03-20</field>
         <field name="don_vi_tien_te">vnd</field>
         <field name="gia_tri_ban_dau">18000000</field>
-        <field name="gia_tri_hien_tai">15000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_may_tinh"/>
-        <field name="pp_khau_hao">degressive</field>
-        <field name="thoi_gian_su_dung">1</field>
-        <field name="thoi_gian_toi_da">4</field>
-        <field name="ty_le_khau_hao">25</field>
+        <field name="gia_tri_hien_tai">12000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">3</field>
+        <field name="thoi_gian_toi_da">5</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Laptop cho nhân viên</field>
+        <field name="ghi_chu">Phòng hành chính</field>
     </record>
-    
-    <!-- Máy in -->
-    <record id="demo_tai_san_may_in" model="tai_san">
+    <record id="demo_ts_TS003" model="tai_san">
         <field name="ma_tai_san">TS003</field>
-        <field name="ten_tai_san">Máy in HP LaserJet Pro</field>
-        <field name="ngay_mua_ts">2022-11-10</field>
+        <field name="ten_tai_san">Laptop HP ProBook 450</field>
+        <field name="ngay_mua_ts">2021-06-10</field>
         <field name="don_vi_tien_te">vnd</field>
-        <field name="gia_tri_ban_dau">8000000</field>
-        <field name="gia_tri_hien_tai">6000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_may_tinh"/>
+        <field name="gia_tri_ban_dau">22000000</field>
+        <field name="gia_tri_hien_tai">13000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kế toán</field>
+    </record>
+    <record id="demo_ts_TS004" model="tai_san">
+        <field name="ma_tai_san">TS004</field>
+        <field name="ten_tai_san">Máy tính để bàn HP EliteDesk</field>
+        <field name="ngay_mua_ts">2020-09-01</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">15000000</field>
+        <field name="gia_tri_hien_tai">7000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Bộ</field>
+        <field name="ghi_chu">Phòng kỹ thuật</field>
+    </record>
+    <record id="demo_ts_TS005" model="tai_san">
+        <field name="ma_tai_san">TS005</field>
+        <field name="ten_tai_san">Máy tính để bàn Dell OptiPlex</field>
+        <field name="ngay_mua_ts">2021-11-15</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">16500000</field>
+        <field name="gia_tri_hien_tai">9000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Bộ</field>
+        <field name="ghi_chu">Phòng nhân sự</field>
+    </record>
+    <record id="demo_ts_TS006" model="tai_san">
+        <field name="ma_tai_san">TS006</field>
+        <field name="ten_tai_san">Server Dell PowerEdge T440</field>
+        <field name="ngay_mua_ts">2021-02-28</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">180000000</field>
+        <field name="gia_tri_hien_tai">120000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">3</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kỹ thuật - Trung tâm DL</field>
+    </record>
+    <record id="demo_ts_TS007" model="tai_san">
+        <field name="ma_tai_san">TS007</field>
+        <field name="ten_tai_san">Switch mạng Cisco Catalyst 2960</field>
+        <field name="ngay_mua_ts">2022-05-10</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">28000000</field>
+        <field name="gia_tri_hien_tai">20000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">2</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kỹ thuật</field>
+    </record>
+    <record id="demo_ts_TS008" model="tai_san">
+        <field name="ma_tai_san">TS008</field>
+        <field name="ten_tai_san">Máy in HP LaserJet Pro M404n</field>
+        <field name="ngay_mua_ts">2021-08-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">12000000</field>
+        <field name="gia_tri_hien_tai">7500000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">3</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng hành chính</field>
+    </record>
+    <record id="demo_ts_TS009" model="tai_san">
+        <field name="ma_tai_san">TS009</field>
+        <field name="ten_tai_san">Máy in màu Canon LBP623Cdw</field>
+        <field name="ngay_mua_ts">2022-07-05</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">18000000</field>
+        <field name="gia_tri_hien_tai">13000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
         <field name="pp_khau_hao">straight-line</field>
         <field name="thoi_gian_su_dung">2</field>
         <field name="thoi_gian_toi_da">5</field>
-        <field name="ty_le_khau_hao">20</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Máy in laser đen trắng</field>
+        <field name="ghi_chu">Phòng marketing</field>
     </record>
-    
-    <!-- Máy chiếu -->
-    <record id="demo_tai_san_may_chieu" model="tai_san">
-        <field name="ma_tai_san">TS004</field>
-        <field name="ten_tai_san">Máy chiếu Sony VPL</field>
-        <field name="ngay_mua_ts">2023-05-05</field>
+    <record id="demo_ts_TS010" model="tai_san">
+        <field name="ma_tai_san">TS010</field>
+        <field name="ten_tai_san">Máy photo Ricoh IM 2702</field>
+        <field name="ngay_mua_ts">2023-01-12</field>
         <field name="don_vi_tien_te">vnd</field>
-        <field name="gia_tri_ban_dau">15000000</field>
-        <field name="gia_tri_hien_tai">14000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_may_tinh"/>
-        <field name="pp_khau_hao">none</field>
-        <field name="thoi_gian_su_dung">0</field>
-        <field name="thoi_gian_toi_da">7</field>
-        <field name="ty_le_khau_hao">15</field>
+        <field name="gia_tri_ban_dau">95000000</field>
+        <field name="gia_tri_hien_tai">88000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">8</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Máy chiếu phòng họp</field>
+        <field name="ghi_chu">Phòng hành chính</field>
     </record>
-    
-    <!-- Bàn làm việc -->
-    <record id="demo_tai_san_ban_lam_viec" model="tai_san">
-        <field name="ma_tai_san">TS005</field>
-        <field name="ten_tai_san">Bàn làm việc gỗ công nghiệp</field>
-        <field name="ngay_mua_ts">2022-08-15</field>
+    <record id="demo_ts_TS011" model="tai_san">
+        <field name="ma_tai_san">TS011</field>
+        <field name="ten_tai_san">Máy scan HP ScanJet Pro 3600</field>
+        <field name="ngay_mua_ts">2022-04-18</field>
         <field name="don_vi_tien_te">vnd</field>
-        <field name="gia_tri_ban_dau">3500000</field>
-        <field name="gia_tri_hien_tai">3000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_noi_that"/>
+        <field name="gia_tri_ban_dau">8500000</field>
+        <field name="gia_tri_hien_tai">6000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">2</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kế toán</field>
+    </record>
+    <record id="demo_ts_TS012" model="tai_san">
+        <field name="ma_tai_san">TS012</field>
+        <field name="ten_tai_san">Xe ô tô Toyota Fortuner 2.7</field>
+        <field name="ngay_mua_ts">2020-06-15</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">1050000000</field>
+        <field name="gia_tri_hien_tai">750000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM003"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Xe công ty - đi công tác</field>
+    </record>
+    <record id="demo_ts_TS013" model="tai_san">
+        <field name="ma_tai_san">TS013</field>
+        <field name="ten_tai_san">Xe ô tô Toyota Innova 2.0</field>
+        <field name="ngay_mua_ts">2019-03-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">820000000</field>
+        <field name="gia_tri_hien_tai">500000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM003"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">6</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Xe công ty - đưa đón khách</field>
+    </record>
+    <record id="demo_ts_TS014" model="tai_san">
+        <field name="ma_tai_san">TS014</field>
+        <field name="ten_tai_san">Xe máy Honda Wave 110</field>
+        <field name="ngay_mua_ts">2021-10-05</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">25000000</field>
+        <field name="gia_tri_hien_tai">18000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM003"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">3</field>
+        <field name="thoi_gian_toi_da">8</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Xe giao hàng nội bộ</field>
+    </record>
+    <record id="demo_ts_TS015" model="tai_san">
+        <field name="ma_tai_san">TS015</field>
+        <field name="ten_tai_san">Điều hoà Daikin FTKC25UVMV 1HP</field>
+        <field name="ngay_mua_ts">2022-02-14</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">12000000</field>
+        <field name="gia_tri_hien_tai">9000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
         <field name="pp_khau_hao">straight-line</field>
         <field name="thoi_gian_su_dung">2</field>
         <field name="thoi_gian_toi_da">10</field>
-        <field name="ty_le_khau_hao">10</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Bàn làm việc tiêu chuẩn</field>
+        <field name="ghi_chu">Phòng giám đốc</field>
     </record>
-    
-    <!-- Ghế văn phòng -->
-    <record id="demo_tai_san_ghe_van_phong" model="tai_san">
-        <field name="ma_tai_san">TS006</field>
-        <field name="ten_tai_san">Ghế văn phòng hạng sang</field>
-        <field name="ngay_mua_ts">2023-02-28</field>
+    <record id="demo_ts_TS016" model="tai_san">
+        <field name="ma_tai_san">TS016</field>
+        <field name="ten_tai_san">Điều hoà Daikin FTKC50UVMV 2HP</field>
+        <field name="ngay_mua_ts">2022-08-30</field>
         <field name="don_vi_tien_te">vnd</field>
-        <field name="gia_tri_ban_dau">5000000</field>
-        <field name="gia_tri_hien_tai">4500000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_noi_that"/>
-        <field name="pp_khau_hao">degressive</field>
+        <field name="gia_tri_ban_dau">22000000</field>
+        <field name="gia_tri_hien_tai">17000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="pp_khau_hao">straight-line</field>
         <field name="thoi_gian_su_dung">1</field>
-        <field name="thoi_gian_toi_da">8</field>
-        <field name="ty_le_khau_hao">12.5</field>
+        <field name="thoi_gian_toi_da">10</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Ghế cho quản lý</field>
+        <field name="ghi_chu">Phòng họp lớn</field>
     </record>
-    
-    <!-- Xe ô tô -->
-    <record id="demo_tai_san_xe_oto" model="tai_san">
-        <field name="ma_tai_san">TS007</field>
-        <field name="ten_tai_san">Xe ô tô Toyota Innova</field>
-        <field name="ngay_mua_ts">2021-06-10</field>
+    <record id="demo_ts_TS017" model="tai_san">
+        <field name="ma_tai_san">TS017</field>
+        <field name="ten_tai_san">Tủ lạnh Sharp SJ-XP620PG</field>
+        <field name="ngay_mua_ts">2021-05-20</field>
         <field name="don_vi_tien_te">vnd</field>
-        <field name="gia_tri_ban_dau">800000000</field>
-        <field name="gia_tri_hien_tai">600000000</field>
-        <field name="danh_muc_ts_id" ref="demo_danh_muc_phuong_tien"/>
-        <field name="pp_khau_hao">degressive</field>
+        <field name="gia_tri_ban_dau">12500000</field>
+        <field name="gia_tri_hien_tai">9000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="pp_khau_hao">straight-line</field>
         <field name="thoi_gian_su_dung">3</field>
         <field name="thoi_gian_toi_da">10</field>
-        <field name="ty_le_khau_hao">20</field>
         <field name="don_vi_tinh">Chiếc</field>
-        <field name="ghi_chu">Xe phục vụ công tác</field>
+        <field name="ghi_chu">Pantry tầng 3</field>
     </record>
-    
-    <!-- ==================== PHÂN BỔ TÀI SẢN MẪU ==================== -->
-    <!-- Phân bổ laptop 1 cho Giám đốc -->
-    <record id="demo_phan_bo_laptop_1" model="phan_bo_tai_san">
-        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
-        <field name="tai_san_id" ref="demo_tai_san_laptop_1"/>
-        <field name="ngay_phat">2023-01-20</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_1"/>
-        <field name="trang_thai">in-use</field>
-        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
-        <field name="ghi_chu">Cấp cho Giám đốc sử dụng</field>
+    <record id="demo_ts_TS018" model="tai_san">
+        <field name="ma_tai_san">TS018</field>
+        <field name="ten_tai_san">Bàn làm việc văn phòng 1m6</field>
+        <field name="ngay_mua_ts">2020-11-10</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">3500000</field>
+        <field name="gia_tri_hien_tai">2500000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kinh doanh</field>
     </record>
-    
-    <!-- Phân bổ laptop 2 cho Phòng Kinh doanh -->
-    <record id="demo_phan_bo_laptop_2" model="phan_bo_tai_san">
+    <record id="demo_ts_TS019" model="tai_san">
+        <field name="ma_tai_san">TS019</field>
+        <field name="ten_tai_san">Ghế xoay văn phòng ergonomic</field>
+        <field name="ngay_mua_ts">2021-03-15</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">4200000</field>
+        <field name="gia_tri_hien_tai">3200000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">8</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Toàn văn phòng</field>
+    </record>
+    <record id="demo_ts_TS020" model="tai_san">
+        <field name="ma_tai_san">TS020</field>
+        <field name="ten_tai_san">Tủ đựng tài liệu 4 ngăn</field>
+        <field name="ngay_mua_ts">2020-08-25</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">2800000</field>
+        <field name="gia_tri_hien_tai">2000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kế toán</field>
+    </record>
+    <record id="demo_ts_TS021" model="tai_san">
+        <field name="ma_tai_san">TS021</field>
+        <field name="ten_tai_san">Máy chiếu Epson EB-X49</field>
+        <field name="ngay_mua_ts">2022-09-12</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">18000000</field>
+        <field name="gia_tri_hien_tai">14000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng họp A</field>
+    </record>
+    <record id="demo_ts_TS022" model="tai_san">
+        <field name="ma_tai_san">TS022</field>
+        <field name="ten_tai_san">Tivi Samsung 75 inch 4K</field>
+        <field name="ngay_mua_ts">2023-03-08</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">38000000</field>
+        <field name="gia_tri_hien_tai">36000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng họp lớn</field>
+    </record>
+    <record id="demo_ts_TS023" model="tai_san">
+        <field name="ma_tai_san">TS023</field>
+        <field name="ten_tai_san">Màn hình Dell 27 inch UHD</field>
+        <field name="ngay_mua_ts">2022-11-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">9800000</field>
+        <field name="gia_tri_hien_tai">8000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kỹ thuật</field>
+    </record>
+    <record id="demo_ts_TS024" model="tai_san">
+        <field name="ma_tai_san">TS024</field>
+        <field name="ten_tai_san">Camera IP Hikvision 4MP</field>
+        <field name="ngay_mua_ts">2022-06-15</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">4500000</field>
+        <field name="gia_tri_hien_tai">3500000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">2</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Hành lang tầng 1-3</field>
+    </record>
+    <record id="demo_ts_TS025" model="tai_san">
+        <field name="ma_tai_san">TS025</field>
+        <field name="ten_tai_san">Hệ thống kiểm soát vào ra</field>
+        <field name="ngay_mua_ts">2021-12-01</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">85000000</field>
+        <field name="gia_tri_hien_tai">65000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">3</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Bộ</field>
+        <field name="ghi_chu">Cổng chính + cổng phụ</field>
+    </record>
+    <record id="demo_ts_TS026" model="tai_san">
+        <field name="ma_tai_san">TS026</field>
+        <field name="ten_tai_san">Khóa điện tử Samsung SHS-2320</field>
+        <field name="ngay_mua_ts">2022-04-25</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">3800000</field>
+        <field name="gia_tri_hien_tai">3000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">2</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng server</field>
+    </record>
+    <record id="demo_ts_TS027" model="tai_san">
+        <field name="ma_tai_san">TS027</field>
+        <field name="ten_tai_san">UPS APC Smart-UPS 3000VA</field>
+        <field name="ngay_mua_ts">2022-01-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">15000000</field>
+        <field name="gia_tri_hien_tai">12000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM008"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">2</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng server</field>
+    </record>
+    <record id="demo_ts_TS028" model="tai_san">
+        <field name="ma_tai_san">TS028</field>
+        <field name="ten_tai_san">Máy phát điện Honda 7.5KVA</field>
+        <field name="ngay_mua_ts">2020-07-10</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">85000000</field>
+        <field name="gia_tri_hien_tai">65000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM008"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">15</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Sân thượng</field>
+    </record>
+    <record id="demo_ts_TS029" model="tai_san">
+        <field name="ma_tai_san">TS029</field>
+        <field name="ten_tai_san">Bảng trắng thông minh 86 inch</field>
+        <field name="ngay_mua_ts">2023-05-15</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">25000000</field>
+        <field name="gia_tri_hien_tai">24000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng họp B</field>
+    </record>
+    <record id="demo_ts_TS030" model="tai_san">
+        <field name="ma_tai_san">TS030</field>
+        <field name="ten_tai_san">Điện thoại IP Cisco CP-7942G</field>
+        <field name="ngay_mua_ts">2021-09-05</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">3200000</field>
+        <field name="gia_tri_hien_tai">2000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Lễ tân</field>
+    </record>
+    <record id="demo_ts_TS031" model="tai_san">
+        <field name="ma_tai_san">TS031</field>
+        <field name="ten_tai_san">Laptop MacBook Pro M2 14 inch</field>
+        <field name="ngay_mua_ts">2023-09-01</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">45000000</field>
+        <field name="gia_tri_hien_tai">44000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng marketing - thiết kế</field>
+    </record>
+    <record id="demo_ts_TS032" model="tai_san">
+        <field name="ma_tai_san">TS032</field>
+        <field name="ten_tai_san">Webcam Logitech C920 HD Pro</field>
+        <field name="ngay_mua_ts">2023-02-10</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">2500000</field>
+        <field name="gia_tri_hien_tai">2300000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng họp online</field>
+    </record>
+    <record id="demo_ts_TS033" model="tai_san">
+        <field name="ma_tai_san">TS033</field>
+        <field name="ten_tai_san">Máy hủy tài liệu Fujitsu</field>
+        <field name="ngay_mua_ts">2022-10-18</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">3800000</field>
+        <field name="gia_tri_hien_tai">3200000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">8</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kế toán</field>
+    </record>
+    <record id="demo_ts_TS034" model="tai_san">
+        <field name="ma_tai_san">TS034</field>
+        <field name="ten_tai_san">Bộ ghế sofa tiếp khách</field>
+        <field name="ngay_mua_ts">2021-07-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">15000000</field>
+        <field name="gia_tri_hien_tai">11000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Bộ</field>
+        <field name="ghi_chu">Phòng giám đốc</field>
+    </record>
+    <record id="demo_ts_TS035" model="tai_san">
+        <field name="ma_tai_san">TS035</field>
+        <field name="ten_tai_san">Tủ sắt đựng hồ sơ mật</field>
+        <field name="ngay_mua_ts">2020-05-14</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">8500000</field>
+        <field name="gia_tri_hien_tai">7000000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="thoi_gian_toi_da">15</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng giám đốc</field>
+    </record>
+    <record id="demo_ts_TS036" model="tai_san">
+        <field name="ma_tai_san">TS036</field>
+        <field name="ten_tai_san">Access Point WiFi 6 Ubiquiti</field>
+        <field name="ngay_mua_ts">2023-07-25</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">4800000</field>
+        <field name="gia_tri_hien_tai">4700000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Tầng 2-4</field>
+    </record>
+    <record id="demo_ts_TS037" model="tai_san">
+        <field name="ma_tai_san">TS037</field>
+        <field name="ten_tai_san">Máy lọc nước RO Kangaroo</field>
+        <field name="ngay_mua_ts">2022-12-05</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">6200000</field>
+        <field name="gia_tri_hien_tai">5500000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">8</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Pantry tầng 2</field>
+    </record>
+    <record id="demo_ts_TS038" model="tai_san">
+        <field name="ma_tai_san">TS038</field>
+        <field name="ten_tai_san">Bảng flipchart văn phòng</field>
+        <field name="ngay_mua_ts">2021-04-10</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">1800000</field>
+        <field name="gia_tri_hien_tai">1200000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">4</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng đào tạo</field>
+    </record>
+    <record id="demo_ts_TS039" model="tai_san">
+        <field name="ma_tai_san">TS039</field>
+        <field name="ten_tai_san">Máy đếm tiền Xiudeli</field>
+        <field name="ngay_mua_ts">2022-08-08</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">4500000</field>
+        <field name="gia_tri_hien_tai">3800000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">1</field>
+        <field name="thoi_gian_toi_da">7</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng kế toán</field>
+    </record>
+    <record id="demo_ts_TS040" model="tai_san">
+        <field name="ma_tai_san">TS040</field>
+        <field name="ten_tai_san">Điều hoà âm trần Panasonic 4HP</field>
+        <field name="ngay_mua_ts">2023-04-20</field>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="gia_tri_ban_dau">45000000</field>
+        <field name="gia_tri_hien_tai">44500000</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="thoi_gian_toi_da">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="ghi_chu">Phòng hội thảo</field>
+    </record>
+
+    <!-- ==================== PHÂN BỔ TÀI SẢN (40 records) ==================== -->
+    <record id="demo_pb_001" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS001"/>
         <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
-        <field name="tai_san_id" ref="demo_tai_san_laptop_2"/>
-        <field name="ngay_phat">2023-04-01</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_3"/>
-        <field name="trang_thai">in-use</field>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_001"/>
         <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
-        <field name="ghi_chu">Cấp cho Trưởng phòng Kinh doanh</field>
-    </record>
-    
-    <!-- Phân bổ máy in cho Phòng Kế toán -->
-    <record id="demo_phan_bo_may_in" model="phan_bo_tai_san">
-        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
-        <!-- ĐÃ SỬA: tai_sAN_id → tai_san_id -->
-        <field name="tai_san_id" ref="demo_tai_san_may_in"/>
-        <field name="ngay_phat">2022-11-15</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_4"/>
+        <field name="ngay_phat">2022-01-18</field>
         <field name="trang_thai">in-use</field>
-        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
-        <field name="ghi_chu">Máy in phòng Kế toán</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Cấp cho trưởng phòng kinh doanh</field>
     </record>
-    
-    <!-- Phân bổ máy chiếu cho Phòng Hành chính -->
-    <record id="demo_phan_bo_may_chieu" model="phan_bo_tai_san">
+    <record id="demo_pb_002" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS002"/>
         <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
-        <field name="tai_san_id" ref="demo_tai_san_may_chieu"/>
-        <field name="ngay_phat">2023-05-10</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_7"/>
-        <field name="trang_thai">in-use</field>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
         <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
-        <field name="ghi_chu">Máy chiếu phòng họp</field>
-    </record>
-    
-    <!-- Phân bổ bàn làm việc cho Phòng Kinh doanh -->
-    <record id="demo_phan_bo_ban_lam_viec" model="phan_bo_tai_san">
-        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
-        <field name="tai_san_id" ref="demo_tai_san_ban_lam_viec"/>
-        <field name="ngay_phat">2022-08-20</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_3"/>
+        <field name="ngay_phat">2022-03-22</field>
         <field name="trang_thai">in-use</field>
-        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
-        <field name="ghi_chu">Bàn làm việc Trưởng phòng</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Cấp cho nhân viên hành chính</field>
     </record>
-    
-    <!-- Phân bổ ghế văn phòng cho Phòng Kế toán -->
-    <record id="demo_phan_bo_ghe_van_phong" model="phan_bo_tai_san">
+    <record id="demo_pb_003" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS003"/>
         <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
-        <field name="tai_san_id" ref="demo_tai_san_ghe_van_phong"/>
-        <field name="ngay_phat">2023-03-05</field>
-        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nhan_vien_4"/>
-        <field name="trang_thai">in-use</field>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_004"/>
         <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
-        <field name="ghi_chu">Ghế Kế toán trưởng</field>
+        <field name="ngay_phat">2021-06-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Cấp cho kế toán trưởng</field>
     </record>
-    
-    <!-- ==================== KIỂM KÊ TÀI SẢN MẪU ==================== -->
-    <!-- Phiếu kiểm kê Phòng Kế toán -->
-    <record id="demo_kiem_ke_ke_toan" model="kiem_ke_tai_san">
-        <field name="ma_phieu_kiem_ke">KKTS-202401-001</field>
-        <field name="ten_phieu_kiem_ke">Kiểm kê tài sản Phòng Kế toán 2024</field>
+    <record id="demo_pb_004" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS004"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_003"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2020-09-03</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy trạm phòng kỹ thuật</field>
+    </record>
+    <record id="demo_pb_005" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS005"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_017"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="ngay_phat">2021-11-17</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Cấp cho chuyên viên nhân sự</field>
+    </record>
+    <record id="demo_pb_006" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS006"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_018"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2021-03-01</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Server chính - phòng kỹ thuật</field>
+    </record>
+    <record id="demo_pb_007" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS007"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_012"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2022-05-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Switch core tầng 2</field>
+    </record>
+    <record id="demo_pb_008" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS008"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_010"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2021-08-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy in chung phòng hành chính</field>
+    </record>
+    <record id="demo_pb_009" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS009"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_016"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="ngay_phat">2022-07-07</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy in màu phòng marketing</field>
+    </record>
+    <record id="demo_pb_010" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS010"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2023-01-15</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy photo trung tâm tầng 1</field>
+    </record>
+    <record id="demo_pb_011" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS011"/>
         <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
-        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nhan_vien_4"/>
-        <field name="thoi_gian_tao">2024-01-15 09:00:00</field>
-        <field name="ghi_chu">Kiểm kê định kỳ quý I/2024</field>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_004"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="ngay_phat">2022-04-20</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy scan phòng kế toán</field>
     </record>
-    
-    <!-- Chi tiết kiểm kê máy in -->
-    <record id="demo_kiem_ke_line_may_in" model="kiem_ke_tai_san_line">
-        <field name="kiem_ke_tai_san_id" ref="demo_kiem_ke_ke_toan"/>
-        <field name="phan_bo_tai_san_id" ref="demo_phan_bo_may_in"/>
-        <field name="so_luong_thuc_te">1</field>
-        <field name="so_luong_ly_thuyet">1</field>
-        <field name="trang_thai">finished</field>
-        <field name="trang_thai_tai_san">good</field>
-        <field name="ghi_chu">Máy hoạt động tốt</field>
+    <record id="demo_pb_012" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS012"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_014"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="ngay_phat">2020-06-17</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Xe công ty - lái xe chuyên trách</field>
     </record>
+    <record id="demo_pb_013" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS013"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_014"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="ngay_phat">2019-03-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Xe đưa đón khách VIP</field>
+    </record>
+    <record id="demo_pb_014" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS014"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_007"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2021-10-07</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Xe giao hàng nội bộ</field>
+    </record>
+    <record id="demo_pb_015" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS015"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_001"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="ngay_phat">2022-02-16</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Điều hoà phòng giám đốc</field>
+    </record>
+    <record id="demo_pb_016" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS016"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_010"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2022-09-01</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Điều hoà phòng họp lớn</field>
+    </record>
+    <record id="demo_pb_017" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS017"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2021-05-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Tủ lạnh pantry tầng 3</field>
+    </record>
+    <record id="demo_pb_018" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS018"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_007"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="ngay_phat">2020-11-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Bàn làm việc nhân viên KD</field>
+    </record>
+    <record id="demo_pb_019" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS019"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_001"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="ngay_phat">2021-03-17</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Ghế trưởng phòng kinh doanh</field>
+    </record>
+    <record id="demo_pb_020" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS020"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_004"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="ngay_phat">2020-08-27</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Tủ tài liệu phòng kế toán</field>
+    </record>
+    <record id="demo_pb_021" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS021"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_007"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2022-09-14</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy chiếu phòng họp A</field>
+    </record>
+    <record id="demo_pb_022" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS022"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2023-03-10</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Tivi phòng họp lớn</field>
+    </record>
+    <record id="demo_pb_023" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS023"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_012"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2022-11-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Màn hình lập trình phòng KT</field>
+    </record>
+    <record id="demo_pb_024" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS024"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_010"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2022-06-17</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Camera hành lang</field>
+    </record>
+    <record id="demo_pb_025" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS025"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_007"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2021-12-03</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Hệ thống kiểm soát vào ra</field>
+    </record>
+    <record id="demo_pb_026" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS026"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_018"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2022-04-27</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Khóa điện tử phòng server</field>
+    </record>
+    <record id="demo_pb_027" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS027"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_018"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2022-01-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">UPS bảo vệ server</field>
+    </record>
+    <record id="demo_pb_028" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS028"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_010"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2020-07-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy phát điện dự phòng</field>
+    </record>
+    <record id="demo_pb_029" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS029"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2023-05-17</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Bảng thông minh phòng họp B</field>
+    </record>
+    <record id="demo_pb_030" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS030"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_010"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2021-09-07</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Điện thoại bàn lễ tân</field>
+    </record>
+    <record id="demo_pb_031" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS031"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_009"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="ngay_phat">2023-09-03</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Macbook thiết kế đồ hoạ</field>
+    </record>
+    <record id="demo_pb_032" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS032"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_016"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2023-02-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Webcam phòng họp online</field>
+    </record>
+    <record id="demo_pb_033" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS033"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_004"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="ngay_phat">2022-10-20</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy hủy tài liệu mật</field>
+    </record>
+    <record id="demo_pb_034" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS034"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_014"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="ngay_phat">2021-07-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Sofa phòng giám đốc</field>
+    </record>
+    <record id="demo_pb_035" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS035"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_014"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="ngay_phat">2020-05-16</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Tủ sắt hồ sơ mật</field>
+    </record>
+    <record id="demo_pb_036" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS036"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_012"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="ngay_phat">2023-07-27</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Access point WiFi các tầng</field>
+    </record>
+    <record id="demo_pb_037" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS037"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_002"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2022-12-07</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy lọc nước pantry</field>
+    </record>
+    <record id="demo_pb_038" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS038"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_017"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="ngay_phat">2021-04-12</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">hu_hong</field>
+        <field name="ghi_chu">Bảng flipchart - bị hỏng chân</field>
+    </record>
+    <record id="demo_pb_039" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS039"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_004"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="ngay_phat">2022-08-10</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Máy đếm tiền</field>
+    </record>
+    <record id="demo_pb_040" model="phan_bo_tai_san">
+        <field name="tai_san_id" ref="demo_ts_TS040"/>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_su_dung_id" ref="nhan_su.demo_nv_007"/>
+        <field name="vi_tri_tai_san_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="ngay_phat">2023-04-22</field>
+        <field name="trang_thai">in-use</field>
+        <field name="tinh_trang">binh_thuong</field>
+        <field name="ghi_chu">Điều hoà hội thảo</field>
+    </record>
+
+    <!-- ==================== LỊCH SỬ KHẤU HAO (120 records) ==================== -->
+    <record id="demo_lskh_001" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS001-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS001"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5000000</field>
+        <field name="gia_tri_con_lai">20000000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_002" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS001-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS001"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5000000</field>
+        <field name="gia_tri_con_lai">15000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_003" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS001-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS001"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5000000</field>
+        <field name="gia_tri_con_lai">10000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_004" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS001-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS001"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5000000</field>
+        <field name="gia_tri_con_lai">5000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_005" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS001-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS001"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5000000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_006" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS002-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS002"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">14400000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_007" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS002-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS002"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">10800000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_008" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS002-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS002"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">7200000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_009" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS002-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS002"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">3600000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_010" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS002-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS002"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_011" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS003-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS003"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4400000</field>
+        <field name="gia_tri_con_lai">17600000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_012" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS003-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS003"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4400000</field>
+        <field name="gia_tri_con_lai">13200000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_013" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS003-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS003"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4400000</field>
+        <field name="gia_tri_con_lai">8800000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_014" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS003-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS003"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4400000</field>
+        <field name="gia_tri_con_lai">4400000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_015" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS003-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS003"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4400000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_016" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS004-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS004"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">12857143</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_017" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS004-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS004"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">10714286</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_018" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS004-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS004"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">8571429</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_019" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS004-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS004"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">6428571</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_020" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS004-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS004"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">4285714</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_021" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS005-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS005"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2357143</field>
+        <field name="gia_tri_con_lai">14142857</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_022" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS005-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS005"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2357143</field>
+        <field name="gia_tri_con_lai">11785714</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_023" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS005-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS005"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2357143</field>
+        <field name="gia_tri_con_lai">9428571</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_024" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS005-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS005"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2357143</field>
+        <field name="gia_tri_con_lai">7071429</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_025" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS005-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS005"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2357143</field>
+        <field name="gia_tri_con_lai">4714286</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_026" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS006-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS006"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">25714286</field>
+        <field name="gia_tri_con_lai">154285714</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_027" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS006-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS006"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">25714286</field>
+        <field name="gia_tri_con_lai">128571429</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_028" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS006-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS006"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">25714286</field>
+        <field name="gia_tri_con_lai">102857143</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_029" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS006-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS006"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">25714286</field>
+        <field name="gia_tri_con_lai">77142857</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_030" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS006-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS006"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">25714286</field>
+        <field name="gia_tri_con_lai">51428571</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_031" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS007-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS007"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4000000</field>
+        <field name="gia_tri_con_lai">24000000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_032" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS007-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS007"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4000000</field>
+        <field name="gia_tri_con_lai">20000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_033" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS007-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS007"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4000000</field>
+        <field name="gia_tri_con_lai">16000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_034" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS007-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS007"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4000000</field>
+        <field name="gia_tri_con_lai">12000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_035" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS007-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS007"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4000000</field>
+        <field name="gia_tri_con_lai">8000000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_036" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS008-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS008"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2400000</field>
+        <field name="gia_tri_con_lai">9600000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_037" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS008-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS008"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2400000</field>
+        <field name="gia_tri_con_lai">7200000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_038" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS008-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS008"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2400000</field>
+        <field name="gia_tri_con_lai">4800000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_039" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS008-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS008"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2400000</field>
+        <field name="gia_tri_con_lai">2400000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_040" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS008-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS008"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2400000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_041" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS009-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS009"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">14400000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_042" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS009-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS009"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">10800000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_043" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS009-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS009"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">7200000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_044" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS009-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS009"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">3600000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_045" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS009-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS009"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">3600000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_046" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS010-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS010"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">11875000</field>
+        <field name="gia_tri_con_lai">83125000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_047" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS010-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS010"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">11875000</field>
+        <field name="gia_tri_con_lai">71250000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_048" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS010-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS010"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">11875000</field>
+        <field name="gia_tri_con_lai">59375000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_049" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS010-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS010"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">11875000</field>
+        <field name="gia_tri_con_lai">47500000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_050" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS010-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS010"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">11875000</field>
+        <field name="gia_tri_con_lai">35625000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_051" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS011-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS011"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1700000</field>
+        <field name="gia_tri_con_lai">6800000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_052" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS011-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS011"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1700000</field>
+        <field name="gia_tri_con_lai">5100000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_053" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS011-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS011"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1700000</field>
+        <field name="gia_tri_con_lai">3400000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_054" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS011-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS011"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1700000</field>
+        <field name="gia_tri_con_lai">1700000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_055" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS011-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS011"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1700000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_056" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS012-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS012"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">105000000</field>
+        <field name="gia_tri_con_lai">945000000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_057" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS012-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS012"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">105000000</field>
+        <field name="gia_tri_con_lai">840000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_058" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS012-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS012"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">105000000</field>
+        <field name="gia_tri_con_lai">735000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_059" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS012-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS012"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">105000000</field>
+        <field name="gia_tri_con_lai">630000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_060" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS012-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS012"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">105000000</field>
+        <field name="gia_tri_con_lai">525000000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_061" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS013-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS013"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">82000000</field>
+        <field name="gia_tri_con_lai">738000000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_062" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS013-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS013"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">82000000</field>
+        <field name="gia_tri_con_lai">656000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_063" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS013-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS013"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">82000000</field>
+        <field name="gia_tri_con_lai">574000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_064" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS013-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS013"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">82000000</field>
+        <field name="gia_tri_con_lai">492000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_065" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS013-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS013"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">82000000</field>
+        <field name="gia_tri_con_lai">410000000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_066" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS015-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS015"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1200000</field>
+        <field name="gia_tri_con_lai">10800000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_067" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS015-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS015"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1200000</field>
+        <field name="gia_tri_con_lai">9600000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_068" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS015-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS015"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1200000</field>
+        <field name="gia_tri_con_lai">8400000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_069" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS015-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS015"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1200000</field>
+        <field name="gia_tri_con_lai">7200000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_070" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS015-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS015"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1200000</field>
+        <field name="gia_tri_con_lai">6000000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_071" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS016-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS016"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2200000</field>
+        <field name="gia_tri_con_lai">19800000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_072" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS016-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS016"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2200000</field>
+        <field name="gia_tri_con_lai">17600000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_073" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS016-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS016"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2200000</field>
+        <field name="gia_tri_con_lai">15400000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_074" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS016-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS016"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2200000</field>
+        <field name="gia_tri_con_lai">13200000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_075" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS016-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS016"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2200000</field>
+        <field name="gia_tri_con_lai">11000000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_076" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS021-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS021"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2571429</field>
+        <field name="gia_tri_con_lai">15428571</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_077" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS021-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS021"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2571429</field>
+        <field name="gia_tri_con_lai">12857143</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_078" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS021-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS021"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2571429</field>
+        <field name="gia_tri_con_lai">10285714</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_079" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS021-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS021"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2571429</field>
+        <field name="gia_tri_con_lai">7714286</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_080" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS021-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS021"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2571429</field>
+        <field name="gia_tri_con_lai">5142857</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_081" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS023-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS023"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1960000</field>
+        <field name="gia_tri_con_lai">7840000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_082" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS023-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS023"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1960000</field>
+        <field name="gia_tri_con_lai">5880000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_083" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS023-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS023"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1960000</field>
+        <field name="gia_tri_con_lai">3920000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_084" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS023-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS023"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1960000</field>
+        <field name="gia_tri_con_lai">1960000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_085" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS023-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS023"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">1960000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_086" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS024-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS024"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">642857</field>
+        <field name="gia_tri_con_lai">3857143</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_087" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS024-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS024"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">642857</field>
+        <field name="gia_tri_con_lai">3214286</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_088" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS024-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS024"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">642857</field>
+        <field name="gia_tri_con_lai">2571429</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_089" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS024-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS024"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">642857</field>
+        <field name="gia_tri_con_lai">1928571</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_090" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS024-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS024"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">642857</field>
+        <field name="gia_tri_con_lai">1285714</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_091" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS025-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS025"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">8500000</field>
+        <field name="gia_tri_con_lai">76500000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_092" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS025-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS025"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">8500000</field>
+        <field name="gia_tri_con_lai">68000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_093" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS025-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS025"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">8500000</field>
+        <field name="gia_tri_con_lai">59500000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_094" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS025-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS025"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">8500000</field>
+        <field name="gia_tri_con_lai">51000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_095" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS025-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS025"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">8500000</field>
+        <field name="gia_tri_con_lai">42500000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_096" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS027-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS027"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">12857143</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_097" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS027-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS027"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">10714286</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_098" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS027-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS027"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">8571429</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_099" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS027-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS027"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">6428571</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_100" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS027-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS027"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">2142857</field>
+        <field name="gia_tri_con_lai">4285714</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_101" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS028-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS028"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5666667</field>
+        <field name="gia_tri_con_lai">79333333</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_102" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS028-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS028"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5666667</field>
+        <field name="gia_tri_con_lai">73666667</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_103" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS028-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS028"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5666667</field>
+        <field name="gia_tri_con_lai">68000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_104" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS028-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS028"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5666667</field>
+        <field name="gia_tri_con_lai">62333333</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_105" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS028-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS028"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">5666667</field>
+        <field name="gia_tri_con_lai">56666667</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_106" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS031-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS031"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">9000000</field>
+        <field name="gia_tri_con_lai">36000000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_107" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS031-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS031"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">9000000</field>
+        <field name="gia_tri_con_lai">27000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_108" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS031-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS031"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">9000000</field>
+        <field name="gia_tri_con_lai">18000000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_109" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS031-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS031"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">9000000</field>
+        <field name="gia_tri_con_lai">9000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_110" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS031-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS031"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">9000000</field>
+        <field name="gia_tri_con_lai">0</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_111" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS033-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS033"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">475000</field>
+        <field name="gia_tri_con_lai">3325000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_112" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS033-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS033"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">475000</field>
+        <field name="gia_tri_con_lai">2850000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_113" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS033-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS033"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">475000</field>
+        <field name="gia_tri_con_lai">2375000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_114" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS033-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS033"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">475000</field>
+        <field name="gia_tri_con_lai">1900000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_115" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS033-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS033"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">475000</field>
+        <field name="gia_tri_con_lai">1425000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_116" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS040-20211231</field>
+        <field name="ma_ts" ref="demo_ts_TS040"/>
+        <field name="ngay_khau_hao">2021-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4500000</field>
+        <field name="gia_tri_con_lai">40500000</field>
+        <field name="ghi_chu">Khấu hao năm 1 - 2021</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_117" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS040-20221231</field>
+        <field name="ma_ts" ref="demo_ts_TS040"/>
+        <field name="ngay_khau_hao">2022-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4500000</field>
+        <field name="gia_tri_con_lai">36000000</field>
+        <field name="ghi_chu">Khấu hao năm 2 - 2022</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_118" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS040-20231231</field>
+        <field name="ma_ts" ref="demo_ts_TS040"/>
+        <field name="ngay_khau_hao">2023-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4500000</field>
+        <field name="gia_tri_con_lai">31500000</field>
+        <field name="ghi_chu">Khấu hao năm 3 - 2023</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_119" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS040-20241231</field>
+        <field name="ma_ts" ref="demo_ts_TS040"/>
+        <field name="ngay_khau_hao">2024-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4500000</field>
+        <field name="gia_tri_con_lai">27000000</field>
+        <field name="ghi_chu">Khấu hao năm 4 - 2024</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+    <record id="demo_lskh_120" model="lich_su_khau_hao">
+        <field name="ma_phieu_khau_hao">KH-TS040-20251231</field>
+        <field name="ma_ts" ref="demo_ts_TS040"/>
+        <field name="ngay_khau_hao">2025-12-31 00:00:00</field>
+        <field name="so_tien_khau_hao">4500000</field>
+        <field name="gia_tri_con_lai">22500000</field>
+        <field name="ghi_chu">Khấu hao năm 5 - 2025</field>
+        <field name="loai_phieu">automatic</field>
+    </record>
+
+    <!-- ==================== ĐỀ XUẤT MUA TÀI SẢN (20 records + lines) ==================== -->
+    <record id="demo_dx_001" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024001</field>
+        <field name="ten_de_xuat">Nâng cấp thiết bị phòng kinh doanh Q4/2024</field>
+        <field name="ngay_de_xuat">2024-10-05</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Thiết bị cũ, cần thay thế để đảm bảo hiệu suất làm việc</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_001" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_001"/>
+        <field name="ten_thiet_bi">Laptop Dell Inspiron 15</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">3</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">22000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Dell Việt Nam</field>
+    </record>
+    <record id="demo_dxl_002" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_001"/>
+        <field name="ten_thiet_bi">Màn hình Dell 24 inch</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">3</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">6500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Dell Việt Nam</field>
+    </record>
+    <record id="demo_dx_002" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024002</field>
+        <field name="ten_de_xuat">Trang bị thiết bị văn phòng mới Q4/2024</field>
+        <field name="ngay_de_xuat">2024-10-12</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Bổ sung thiết bị cho nhân viên mới tuyển dụng</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_003" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_002"/>
+        <field name="ten_thiet_bi">Bàn làm việc 1m4</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">2800000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dxl_004" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_002"/>
+        <field name="ten_thiet_bi">Ghế xoay ergonomic</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">3500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">8</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dxl_005" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_002"/>
+        <field name="ten_thiet_bi">Máy in HP LaserJet</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">11500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Thiết bị VP XYZ</field>
+    </record>
+    <record id="demo_dx_003" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024003</field>
+        <field name="ten_de_xuat">Nâng cấp hạ tầng mạng nội bộ</field>
+        <field name="ngay_de_xuat">2024-10-18</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Hạ tầng mạng cũ, cần nâng cấp để hỗ trợ tốc độ cao hơn</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_006" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_003"/>
+        <field name="ten_thiet_bi">Switch 48 port Cisco</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">45000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Cisco Việt Nam</field>
+    </record>
+    <record id="demo_dxl_007" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_003"/>
+        <field name="ten_thiet_bi">Access Point WiFi 6</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">4</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">4800000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Ubiquiti</field>
+    </record>
+    <record id="demo_dxl_008" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_003"/>
+        <field name="ten_thiet_bi">Cáp mạng Cat6 (100m)</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">850000</field>
+        <field name="pp_khau_hao">none</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="nha_cung_cap">Nhà cung cấp A</field>
+    </record>
+    <record id="demo_dx_004" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024004</field>
+        <field name="ten_de_xuat">Thiết bị sản xuất nội dung marketing</field>
+        <field name="ngay_de_xuat">2024-11-03</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Cần thiết bị chuyên nghiệp để nâng cao chất lượng nội dung</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_009" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_004"/>
+        <field name="ten_thiet_bi">Máy ảnh Sony A7 IV</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">85000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Sony Việt Nam</field>
+    </record>
+    <record id="demo_dxl_010" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_004"/>
+        <field name="ten_thiet_bi">Đèn studio LED Ring</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">4500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Thiết bị quay chụp</field>
+    </record>
+    <record id="demo_dxl_011" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_004"/>
+        <field name="ten_thiet_bi">Microphone Rode NT1</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">6800000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Thiết bị quay chụp</field>
+    </record>
+    <record id="demo_dx_005" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024005</field>
+        <field name="ten_de_xuat">Trang bị phòng đào tạo nội bộ</field>
+        <field name="ngay_de_xuat">2024-11-10</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Xây dựng phòng đào tạo chuẩn cho các buổi onboarding</field>
+        <field name="state">draft</field>
+    </record>
+    <record id="demo_dxl_012" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_005"/>
+        <field name="ten_thiet_bi">Bảng thông minh 75 inch</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">22000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Samsung</field>
+    </record>
+    <record id="demo_dxl_013" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_005"/>
+        <field name="ten_thiet_bi">Bàn ghế phòng học (bộ 10)</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">1500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dxl_014" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_005"/>
+        <field name="ten_thiet_bi">Webcam hội nghị 4K</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">8500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Logitech</field>
+    </record>
+    <record id="demo_dx_006" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024006</field>
+        <field name="ten_de_xuat">Thiết bị bảo mật phòng kế toán</field>
+        <field name="ngay_de_xuat">2024-11-18</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Tăng cường bảo mật tài liệu tài chính quan trọng</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_015" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_006"/>
+        <field name="ten_thiet_bi">Két sắt bảo mật điện tử</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">12000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">15</field>
+        <field name="nha_cung_cap">Safeguard</field>
+    </record>
+    <record id="demo_dxl_016" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_006"/>
+        <field name="ten_thiet_bi">Máy hủy tài liệu 10 tờ</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM002"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">4500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">8</field>
+        <field name="nha_cung_cap">Fellowes</field>
+    </record>
+    <record id="demo_dxl_017" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_006"/>
+        <field name="ten_thiet_bi">Khóa cửa điện tử vân tay</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">3500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Samsung</field>
+    </record>
+    <record id="demo_dx_007" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024007</field>
+        <field name="ten_de_xuat">Thiết bị phục vụ demo sản phẩm</field>
+        <field name="ngay_de_xuat">2024-12-02</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Phục vụ buổi demo cho khách hàng lớn cuối năm</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_018" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_007"/>
+        <field name="ten_thiet_bi">Máy chiếu Full HD Epson</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">22000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Epson Việt Nam</field>
+    </record>
+    <record id="demo_dxl_019" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_007"/>
+        <field name="ten_thiet_bi">Màn chiếu điện 120 inch</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM006"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">8500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Thiết bị hội nghị</field>
+    </record>
+    <record id="demo_dx_008" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2024008</field>
+        <field name="ten_de_xuat">Bổ sung camera an ninh tầng 4-5</field>
+        <field name="ngay_de_xuat">2024-12-08</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Mở rộng hệ thống giám sát an ninh toàn nhà</field>
+        <field name="state">rejected</field>
+    </record>
+    <record id="demo_dxl_020" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_008"/>
+        <field name="ten_thiet_bi">Camera IP 4MP Hikvision</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="so_luong">8</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">4500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Hikvision</field>
+    </record>
+    <record id="demo_dxl_021" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_008"/>
+        <field name="ten_thiet_bi">Đầu ghi hình 16 kênh</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM007"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">8500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">Hikvision</field>
+    </record>
+    <record id="demo_dx_009" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025009</field>
+        <field name="ten_de_xuat">Dự phòng UPS hệ thống</field>
+        <field name="ngay_de_xuat">2025-01-05</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Đảm bảo uptime 99.9% cho hệ thống server</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_022" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_009"/>
+        <field name="ten_thiet_bi">UPS APC Smart 5000VA</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM008"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">28000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">7</field>
+        <field name="nha_cung_cap">APC</field>
+    </record>
+    <record id="demo_dxl_023" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_009"/>
+        <field name="ten_thiet_bi">Battery Cabinet APC</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM008"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">15000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">APC</field>
+    </record>
+    <record id="demo_dx_010" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025010</field>
+        <field name="ten_de_xuat">Trang bị laptop cho team marketing</field>
+        <field name="ngay_de_xuat">2025-01-12</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Team marketing mở rộng 3 người, cần trang bị laptop mới</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_024" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_010"/>
+        <field name="ten_thiet_bi">Laptop MacBook Air M2</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">3</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">32000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Apple Việt Nam</field>
+    </record>
+    <record id="demo_dxl_025" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_010"/>
+        <field name="ten_thiet_bi">Chuột Magic Mouse</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">3</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">1800000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Apple Việt Nam</field>
+    </record>
+    <record id="demo_dx_011" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025011</field>
+        <field name="ten_de_xuat">Nâng cấp hệ thống điện lạnh tầng 2</field>
+        <field name="ngay_de_xuat">2025-01-20</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Điều hoà tầng 2 cũ hơn 8 năm, hiệu suất giảm 40%</field>
+        <field name="state">draft</field>
+    </record>
+    <record id="demo_dxl_026" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_011"/>
+        <field name="ten_thiet_bi">Điều hoà 2HP Daikin inverter</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="so_luong">4</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">22000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Daikin Việt Nam</field>
+    </record>
+    <record id="demo_dxl_027" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_011"/>
+        <field name="ten_thiet_bi">Điều hoà 1HP Daikin inverter</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM004"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">15000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Daikin Việt Nam</field>
+    </record>
+    <record id="demo_dx_012" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025012</field>
+        <field name="ten_de_xuat">Trang bị xe công vụ mới</field>
+        <field name="ngay_de_xuat">2025-02-03</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Xe cũ hơn 6 năm, chi phí bảo dưỡng cao, cần thay thế</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_028" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_012"/>
+        <field name="ten_thiet_bi">Xe Toyota Camry 2.5Q</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM003"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">1350000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Toyota Việt Nam</field>
+    </record>
+    <record id="demo_dx_013" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025013</field>
+        <field name="ten_de_xuat">Phần mềm kế toán và bảo mật</field>
+        <field name="ngay_de_xuat">2025-02-10</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Nâng cấp phần mềm và bảo mật hệ thống kế toán</field>
+        <field name="state">approved</field>
+    </record>
+    <record id="demo_dxl_029" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_013"/>
+        <field name="ten_thiet_bi">Phần mềm kế toán MISA 50 user</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">85000000</field>
+        <field name="pp_khau_hao">none</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="nha_cung_cap">MISA</field>
+    </record>
+    <record id="demo_dxl_030" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_013"/>
+        <field name="ten_thiet_bi">Antivirus Kaspersky Business 50 PC</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">1</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">12000000</field>
+        <field name="pp_khau_hao">none</field>
+        <field name="thoi_gian_su_dung">0</field>
+        <field name="nha_cung_cap">Kaspersky</field>
+    </record>
+    <record id="demo_dx_014" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025014</field>
+        <field name="ten_de_xuat">Trang bị phòng làm việc mới</field>
+        <field name="ngay_de_xuat">2025-02-20</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Mở rộng văn phòng tầng 5, cần trang bị đầy đủ</field>
+        <field name="state">draft</field>
+    </record>
+    <record id="demo_dxl_031" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_014"/>
+        <field name="ten_thiet_bi">Bàn làm việc 1m6 (10 bộ)</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">3200000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dxl_032" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_014"/>
+        <field name="ten_thiet_bi">Ghế văn phòng ergonomic</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">10</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">4200000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">8</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dxl_033" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_014"/>
+        <field name="ten_thiet_bi">Kệ đựng tài liệu</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM005"/>
+        <field name="so_luong">5</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">1200000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">10</field>
+        <field name="nha_cung_cap">Nội thất ABC</field>
+    </record>
+    <record id="demo_dx_015" model="de_xuat_mua_tai_san">
+        <field name="ma_de_xuat">DX2025015</field>
+        <field name="ten_de_xuat">Thiết bị hỗ trợ bán hàng Q1/2025</field>
+        <field name="ngay_de_xuat">2025-03-01</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="don_vi_tien_te">vnd</field>
+        <field name="ly_do">Trang bị cho nhân viên sales mới ký hợp đồng</field>
+        <field name="state">submitted</field>
+    </record>
+    <record id="demo_dxl_034" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_015"/>
+        <field name="ten_thiet_bi">Laptop Dell Vostro 15</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">18500000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Dell Việt Nam</field>
+    </record>
+    <record id="demo_dxl_035" model="de_xuat_mua_tai_san.line">
+        <field name="de_xuat_id" ref="demo_dx_015"/>
+        <field name="ten_thiet_bi">Điện thoại iPhone 14</field>
+        <field name="danh_muc_ts_id" ref="demo_dm_DM001"/>
+        <field name="so_luong">2</field>
+        <field name="don_vi_tinh">Chiếc</field>
+        <field name="don_gia">22000000</field>
+        <field name="pp_khau_hao">straight-line</field>
+        <field name="thoi_gian_su_dung">5</field>
+        <field name="nha_cung_cap">Apple Việt Nam</field>
+    </record>
+
+    <!-- ==================== ĐƠN MƯỢN TÀI SẢN (25 records) ==================== -->
+    <record id="demo_don_muon_001" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024001</field>
+        <field name="ten_don_muon">Mượn laptop demo cho khách hàng</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_muon">2024-10-08 08:00:00</field>
+        <field name="thoi_gian_tra">2024-10-10 17:00:00</field>
+        <field name="ly_do">Cần laptop demo cho buổi gặp KH lớn</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_002" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024002</field>
+        <field name="ten_don_muon">Mượn máy chiếu phòng họp A</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_003"/>
+        <field name="thoi_gian_muon">2024-10-15 13:00:00</field>
+        <field name="thoi_gian_tra">2024-10-15 17:00:00</field>
+        <field name="ly_do">Họp nội bộ Q3</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_003" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024003</field>
+        <field name="ten_don_muon">Mượn thiết bị kiểm tra mạng</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_muon">2024-10-22 08:00:00</field>
+        <field name="thoi_gian_tra">2024-10-23 17:00:00</field>
+        <field name="ly_do">Kiểm tra hạ tầng mạng tầng 4</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_004" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024004</field>
+        <field name="ten_don_muon">Mượn máy ảnh chụp sự kiện</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_005"/>
+        <field name="thoi_gian_muon">2024-11-05 07:00:00</field>
+        <field name="thoi_gian_tra">2024-11-05 20:00:00</field>
+        <field name="ly_do">Chụp ảnh sự kiện ra mắt sản phẩm</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_005" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024005</field>
+        <field name="ten_don_muon">Mượn xe công ty đi công tác</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_006"/>
+        <field name="thoi_gian_muon">2024-11-12 06:00:00</field>
+        <field name="thoi_gian_tra">2024-11-14 18:00:00</field>
+        <field name="ly_do">Công tác Hà Nội 2 ngày</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_006" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024006</field>
+        <field name="ten_don_muon">Mượn máy chiếu họp KH</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_007"/>
+        <field name="thoi_gian_muon">2024-11-18 09:00:00</field>
+        <field name="thoi_gian_tra">2024-11-18 12:00:00</field>
+        <field name="ly_do">Họp với đối tác chiến lược</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_007" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024007</field>
+        <field name="ten_don_muon">Mượn laptop đào tạo nhân viên</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_008"/>
+        <field name="thoi_gian_muon">2024-11-25 08:00:00</field>
+        <field name="thoi_gian_tra">2024-11-25 17:00:00</field>
+        <field name="ly_do">Buổi đào tạo onboarding nhân viên mới</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_008" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024008</field>
+        <field name="ten_don_muon">Mượn máy photo tài liệu</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_009"/>
+        <field name="thoi_gian_muon">2024-12-02 08:00:00</field>
+        <field name="thoi_gian_tra">2024-12-02 11:00:00</field>
+        <field name="ly_do">Photo hồ sơ quyết toán năm</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_009" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024009</field>
+        <field name="ten_don_muon">Mượn tivi phòng họp lớn</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_010"/>
+        <field name="thoi_gian_muon">2024-12-08 14:00:00</field>
+        <field name="thoi_gian_tra">2024-12-08 17:00:00</field>
+        <field name="ly_do">Họp giao ban toàn công ty</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_010" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2024010</field>
+        <field name="ten_don_muon">Mượn xe đưa đón khách VIP</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_011"/>
+        <field name="thoi_gian_muon">2024-12-15 08:00:00</field>
+        <field name="thoi_gian_tra">2024-12-15 20:00:00</field>
+        <field name="ly_do">Đón đối tác từ sân bay</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_011" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025011</field>
+        <field name="ten_don_muon">Mượn laptop trình bày dự án</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_012"/>
+        <field name="thoi_gian_muon">2025-01-08 09:00:00</field>
+        <field name="thoi_gian_tra">2025-01-08 17:00:00</field>
+        <field name="ly_do">Trình bày dự án cho ban giám đốc</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_012" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025012</field>
+        <field name="ten_don_muon">Mượn thiết bị đo lường điện</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_013"/>
+        <field name="thoi_gian_muon">2025-01-15 08:00:00</field>
+        <field name="thoi_gian_tra">2025-01-16 17:00:00</field>
+        <field name="ly_do">Bảo trì hệ thống điện tầng 3</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_013" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025013</field>
+        <field name="ten_don_muon">Mượn bảng thông minh đào tạo</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_014"/>
+        <field name="thoi_gian_muon">2025-01-20 08:00:00</field>
+        <field name="thoi_gian_tra">2025-01-20 17:00:00</field>
+        <field name="ly_do">Đào tạo kỹ năng mềm Q1/2025</field>
+        <field name="trang_thai">da_tra</field>
+    </record>
+    <record id="demo_don_muon_014" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025014</field>
+        <field name="ten_don_muon">Mượn máy chiếu hội thảo</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_015"/>
+        <field name="thoi_gian_muon">2025-02-05 08:00:00</field>
+        <field name="thoi_gian_tra">2025-02-05 17:00:00</field>
+        <field name="ly_do">Hội thảo marketing đầu năm</field>
+        <field name="trang_thai">dang_muon</field>
+    </record>
+    <record id="demo_don_muon_015" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025015</field>
+        <field name="ten_don_muon">Mượn xe công tác khách hàng</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_016"/>
+        <field name="thoi_gian_muon">2025-02-10 06:00:00</field>
+        <field name="thoi_gian_tra">2025-02-11 18:00:00</field>
+        <field name="ly_do">Thăm khách hàng tỉnh 2 ngày</field>
+        <field name="trang_thai">dang_muon</field>
+    </record>
+    <record id="demo_don_muon_016" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025016</field>
+        <field name="ten_don_muon">Mượn camera chụp nhân sự</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_017"/>
+        <field name="thoi_gian_muon">2025-02-17 08:00:00</field>
+        <field name="thoi_gian_tra">2025-02-17 17:00:00</field>
+        <field name="ly_do">Chụp ảnh thẻ nhân viên mới</field>
+        <field name="trang_thai">cho_duyet</field>
+    </record>
+    <record id="demo_don_muon_017" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025017</field>
+        <field name="ten_don_muon">Mượn máy scan tài liệu năm</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_018"/>
+        <field name="thoi_gian_muon">2025-02-24 08:00:00</field>
+        <field name="thoi_gian_tra">2025-02-24 17:00:00</field>
+        <field name="ly_do">Scan toàn bộ hồ sơ năm 2024</field>
+        <field name="trang_thai">da_duyet</field>
+    </record>
+    <record id="demo_don_muon_018" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025018</field>
+        <field name="ten_don_muon">Mượn UPS kiểm tra tải</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_001"/>
+        <field name="thoi_gian_muon">2025-03-03 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-03 17:00:00</field>
+        <field name="ly_do">Kiểm tra tải hệ thống điện mới</field>
+        <field name="trang_thai">cho_duyet</field>
+    </record>
+    <record id="demo_don_muon_019" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025019</field>
+        <field name="ten_don_muon">Mượn webcam họp quốc tế</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_009"/>
+        <field name="thoi_gian_muon">2025-03-05 09:00:00</field>
+        <field name="thoi_gian_tra">2025-03-05 12:00:00</field>
+        <field name="ly_do">Họp với đối tác nước ngoài</field>
+        <field name="trang_thai">cho_duyet</field>
+    </record>
+    <record id="demo_don_muon_020" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025020</field>
+        <field name="ten_don_muon">Mượn laptop chạy demo phần mềm</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_020"/>
+        <field name="thoi_gian_muon">2025-03-10 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-10 17:00:00</field>
+        <field name="ly_do">Demo phần mềm CRM cho KH tiềm năng</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+    <record id="demo_don_muon_021" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025021</field>
+        <field name="ten_don_muon">Mượn máy photo cuối tháng</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_007"/>
+        <field name="thoi_gian_muon">2025-03-12 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-12 12:00:00</field>
+        <field name="ly_do">Photo hồ sơ lương tháng 3</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+    <record id="demo_don_muon_022" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025022</field>
+        <field name="ten_don_muon">Mượn bảng thông minh họp NS</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_017"/>
+        <field name="thoi_gian_muon">2025-03-15 14:00:00</field>
+        <field name="thoi_gian_tra">2025-03-15 17:00:00</field>
+        <field name="ly_do">Họp đánh giá KPI Q1/2025</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+    <record id="demo_don_muon_023" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025023</field>
+        <field name="ten_don_muon">Mượn máy tính để bàn kế toán</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_muon">2025-03-17 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-20 17:00:00</field>
+        <field name="ly_do">Máy kế toán bị hỏng tạm mượn</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+    <record id="demo_don_muon_024" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025024</field>
+        <field name="ten_don_muon">Mượn màn hình thêm</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_008"/>
+        <field name="thoi_gian_muon">2025-03-18 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-21 17:00:00</field>
+        <field name="ly_do">Cần màn hình phụ cho báo cáo tháng</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+    <record id="demo_don_muon_025" model="don_muon_tai_san">
+        <field name="ma_don_muon">DM2025025</field>
+        <field name="ten_don_muon">Mượn điều hoà di động</field>
+        <field name="phong_ban_cho_muon_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_muon_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_muon">2025-03-19 08:00:00</field>
+        <field name="thoi_gian_tra">2025-03-19 17:00:00</field>
+        <field name="ly_do">Phòng họp phụ chưa có điều hoà</field>
+        <field name="trang_thai">nhap</field>
+    </record>
+
+    <!-- ==================== KIỂM KÊ TÀI SẢN (15 phiếu) ==================== -->
+    <record id="demo_kk_001" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-001</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê tài sản Q1/2024</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_001"/>
+        <field name="thoi_gian_tao">2024-03-28 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê định kỳ Q1</field>
+    </record>
+    <record id="demo_kk_002" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-002</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê tài sản Q2/2024</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_tao">2024-06-27 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê định kỳ Q2</field>
+    </record>
+    <record id="demo_kk_003" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-003</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê tài sản Q3/2024</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_003"/>
+        <field name="thoi_gian_tao">2024-09-26 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê định kỳ Q3</field>
+    </record>
+    <record id="demo_kk_004" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-004</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê tài sản Q4/2024</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_tao">2024-12-26 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê định kỳ cuối năm</field>
+    </record>
+    <record id="demo_kk_005" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-005</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Kinh doanh</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_007"/>
+        <field name="thoi_gian_tao">2024-11-05 08:00:00</field>
+        <field name="ghi_chu">Kiểm kê chuyên sâu phòng KD</field>
+    </record>
+    <record id="demo_kk_006" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-006</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê thiết bị CNTT</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_012"/>
+        <field name="thoi_gian_tao">2024-10-15 08:00:00</field>
+        <field name="ghi_chu">Kiểm tra server và thiết bị mạng</field>
+    </record>
+    <record id="demo_kk_007" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-007</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê xe công ty</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_014"/>
+        <field name="thoi_gian_tao">2024-11-20 07:00:00</field>
+        <field name="ghi_chu">Kiểm tra tình trạng xe</field>
+    </record>
+    <record id="demo_kk_008" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2024-008</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Kế toán</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_tao">2024-09-10 08:00:00</field>
+        <field name="ghi_chu">Đảm bảo thiết bị bảo mật hoạt động</field>
+    </record>
+    <record id="demo_kk_009" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-001</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê đầu năm 2025</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_010"/>
+        <field name="thoi_gian_tao">2025-01-10 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê toàn bộ tài sản đầu năm</field>
+    </record>
+    <record id="demo_kk_010" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-002</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê thiết bị marketing</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_009"/>
+        <field name="thoi_gian_tao">2025-02-03 08:00:00</field>
+        <field name="ghi_chu">Kiểm kê thiết bị sản xuất nội dung</field>
+    </record>
+    <record id="demo_kk_011" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-003</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Nhân sự</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_017"/>
+        <field name="thoi_gian_tao">2025-02-18 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê sau khi chuyển văn phòng</field>
+    </record>
+    <record id="demo_kk_012" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-004</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Kỹ thuật</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_018"/>
+        <field name="thoi_gian_tao">2025-03-05 08:00:00</field>
+        <field name="ghi_chu">Kiểm tra hạ tầng sau nâng cấp</field>
+    </record>
+    <record id="demo_kk_013" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-005</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Hành chính</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_tao">2025-03-10 09:00:00</field>
+        <field name="ghi_chu">Kiểm kê định kỳ tháng 3</field>
+    </record>
+    <record id="demo_kk_014" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-006</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê phòng Giám đốc</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_014"/>
+        <field name="thoi_gian_tao">2025-03-12 10:00:00</field>
+        <field name="ghi_chu">Kiểm kê tài sản phòng GĐ</field>
+    </record>
+    <record id="demo_kk_015" model="kiem_ke_tai_san">
+        <field name="ma_phieu_kiem_ke">KKTS-2025-007</field>
+        <field name="ten_phieu_kiem_ke">Kiểm kê thiết bị an ninh</field>
+        <field name="phong_ban_id" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="nhan_vien_kiem_ke_id" ref="nhan_su.demo_nv_010"/>
+        <field name="thoi_gian_tao">2025-03-17 08:00:00</field>
+        <field name="ghi_chu">Kiểm tra hệ thống camera và kiểm soát</field>
+    </record>
+
+    <!-- ==================== LUÂN CHUYỂN TÀI SẢN (15 phiếu) ==================== -->
+    <record id="demo_lc_001" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-001</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="thoi_gian_luan_chuyen">2024-10-15 10:00:00</field>
+        <field name="ghi_chu">Nhân viên chuyển phòng ban</field>
+    </record>
+    <record id="demo_lc_002" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-002</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="thoi_gian_luan_chuyen">2024-10-22 09:00:00</field>
+        <field name="ghi_chu">Điều phối thiết bị theo nhu cầu</field>
+    </record>
+    <record id="demo_lc_003" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-003</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="thoi_gian_luan_chuyen">2024-11-05 10:00:00</field>
+        <field name="ghi_chu">Thiết bị dư thừa chuyển sang kế toán</field>
+    </record>
+    <record id="demo_lc_004" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-004</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="thoi_gian_luan_chuyen">2024-11-12 09:00:00</field>
+        <field name="ghi_chu">Hỗ trợ thiết bị cho phòng kinh doanh</field>
+    </record>
+    <record id="demo_lc_005" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-005</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="thoi_gian_luan_chuyen">2024-11-20 10:00:00</field>
+        <field name="ghi_chu">Tái phân bổ sau kiểm kê</field>
+    </record>
+    <record id="demo_lc_006" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-006</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="thoi_gian_luan_chuyen">2024-12-03 09:00:00</field>
+        <field name="ghi_chu">Phân bổ xe cho phòng kinh doanh</field>
+    </record>
+    <record id="demo_lc_007" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-007</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="thoi_gian_luan_chuyen">2024-12-10 10:00:00</field>
+        <field name="ghi_chu">Chuyển máy chiếu cho marketing</field>
+    </record>
+    <record id="demo_lc_008" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2024-008</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="thoi_gian_luan_chuyen">2024-12-17 09:00:00</field>
+        <field name="ghi_chu">Luân chuyển máy tính cũ</field>
+    </record>
+    <record id="demo_lc_009" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-001</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="thoi_gian_luan_chuyen">2025-01-08 10:00:00</field>
+        <field name="ghi_chu">Cân đối thiết bị đầu năm</field>
+    </record>
+    <record id="demo_lc_010" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-002</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="thoi_gian_luan_chuyen">2025-01-15 09:00:00</field>
+        <field name="ghi_chu">Hỗ trợ thiết bị cho phòng NS</field>
+    </record>
+    <record id="demo_lc_011" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-003</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_hanh_chinh"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="thoi_gian_luan_chuyen">2025-01-22 10:00:00</field>
+        <field name="ghi_chu">Chuyển máy photo cho kế toán</field>
+    </record>
+    <record id="demo_lc_012" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-004</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="thoi_gian_luan_chuyen">2025-02-05 09:00:00</field>
+        <field name="ghi_chu">Luân chuyển laptop giữa phòng ban</field>
+    </record>
+    <record id="demo_lc_013" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-005</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_ky_thuat"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_giam_doc"/>
+        <field name="thoi_gian_luan_chuyen">2025-02-12 10:00:00</field>
+        <field name="ghi_chu">Nâng cấp thiết bị phòng GĐ</field>
+    </record>
+    <record id="demo_lc_014" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-006</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_nhan_su"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_marketing"/>
+        <field name="thoi_gian_luan_chuyen">2025-03-03 09:00:00</field>
+        <field name="ghi_chu">Hỗ trợ sự kiện marketing</field>
+    </record>
+    <record id="demo_lc_015" model="luan_chuyen_tai_san">
+        <field name="ma_phieu_luan_chuyen">LCTS-2025-007</field>
+        <field name="bo_phan_nguon" ref="nhan_su.demo_phong_ban_ke_toan"/>
+        <field name="bo_phan_dich" ref="nhan_su.demo_phong_ban_kinh_doanh"/>
+        <field name="thoi_gian_luan_chuyen">2025-03-12 10:00:00</field>
+        <field name="ghi_chu">Tái phân bổ thiết bị sau kiểm kê</field>
+    </record>
+
+    <!-- ==================== THANH LÝ TÀI SẢN (10 records) ==================== -->
+    <record id="demo_tl_TL_2024_001" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2024-001</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS038"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_thanh_ly">2024-10-20 10:00:00</field>
+        <field name="ly_do_thanh_ly">Bảng flipchart hỏng chân không sửa được</field>
+        <field name="gia_ban">200000</field>
+    </record>
+    <record id="demo_tl_TL_2024_002" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2024-002</field>
+        <field name="hanh_dong">huy</field>
+        <field name="tai_san_id" ref="demo_ts_TS030"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_010"/>
+        <field name="thoi_gian_thanh_ly">2024-11-08 09:00:00</field>
+        <field name="ly_do_thanh_ly">Điện thoại IP hỏng linh kiện ngừng sx</field>
+        <field name="gia_ban">0</field>
+    </record>
+    <record id="demo_tl_TL_2024_003" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2024-003</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS004"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_012"/>
+        <field name="thoi_gian_thanh_ly">2024-11-25 10:00:00</field>
+        <field name="ly_do_thanh_ly">Máy tính để bàn cũ kém hiệu suất</field>
+        <field name="gia_ban">2000000</field>
+    </record>
+    <record id="demo_tl_TL_2024_004" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2024-004</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS020"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_thanh_ly">2024-12-05 09:00:00</field>
+        <field name="ly_do_thanh_ly">Tủ tài liệu cũ thay mới</field>
+        <field name="gia_ban">500000</field>
+    </record>
+    <record id="demo_tl_TL_2024_005" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2024-005</field>
+        <field name="hanh_dong">huy</field>
+        <field name="tai_san_id" ref="demo_ts_TS005"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_017"/>
+        <field name="thoi_gian_thanh_ly">2024-12-18 10:00:00</field>
+        <field name="ly_do_thanh_ly">Máy tính hỏng bo mạch chủ, chi phí sửa > giá trị</field>
+        <field name="gia_ban">0</field>
+    </record>
+    <record id="demo_tl_TL_2025_001" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2025-001</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS008"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_002"/>
+        <field name="thoi_gian_thanh_ly">2025-01-10 09:00:00</field>
+        <field name="ly_do_thanh_ly">Máy in cũ thay thế bằng máy mới</field>
+        <field name="gia_ban">1500000</field>
+    </record>
+    <record id="demo_tl_TL_2025_002" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2025-002</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS014"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_007"/>
+        <field name="thoi_gian_thanh_ly">2025-01-22 10:00:00</field>
+        <field name="ly_do_thanh_ly">Xe máy cũ bán lại thanh lý</field>
+        <field name="gia_ban">5000000</field>
+    </record>
+    <record id="demo_tl_TL_2025_003" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2025-003</field>
+        <field name="hanh_dong">huy</field>
+        <field name="tai_san_id" ref="demo_ts_TS032"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_009"/>
+        <field name="thoi_gian_thanh_ly">2025-02-08 09:00:00</field>
+        <field name="ly_do_thanh_ly">Webcam hỏng không sửa được</field>
+        <field name="gia_ban">0</field>
+    </record>
+    <record id="demo_tl_TL_2025_004" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2025-004</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS011"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_004"/>
+        <field name="thoi_gian_thanh_ly">2025-02-20 10:00:00</field>
+        <field name="ly_do_thanh_ly">Máy scan cũ nâng cấp lên máy mới</field>
+        <field name="gia_ban">1000000</field>
+    </record>
+    <record id="demo_tl_TL_2025_005" model="thanh_ly_tai_san">
+        <field name="ma_thanh_ly">TL-2025-005</field>
+        <field name="hanh_dong">ban</field>
+        <field name="tai_san_id" ref="demo_ts_TS018"/>
+        <field name="nguoi_thanh_ly_id" ref="nhan_su.demo_nv_007"/>
+        <field name="thoi_gian_thanh_ly">2025-03-05 09:00:00</field>
+        <field name="ly_do_thanh_ly">Bàn văn phòng cũ thanh lý khi mua mới</field>
+        <field name="gia_ban">300000</field>
+    </record>
+
+    <!-- ==================== LỊCH SỬ KỸ THUẬT (50 records) ==================== -->
+    <record id="demo_lskt_001" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS001"/>
+        <field name="ngay">2024-10-10</field>
+        <field name="noi_dung">Bàn phím bị kẹt một số phím, đã vệ sinh và thay keycap</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_002" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS002"/>
+        <field name="ngay">2024-10-18</field>
+        <field name="noi_dung">Pin laptop giảm còn 60%, thông báo người dùng</field>
+        <field name="ghi_chu">Đang theo dõi</field>
+    </record>
+    <record id="demo_lskt_003" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS003"/>
+        <field name="ngay">2024-11-05</field>
+        <field name="noi_dung">Màn hình xuất hiện điểm chết nhỏ ở góc trên</field>
+        <field name="ghi_chu">Đang theo dõi</field>
+    </record>
+    <record id="demo_lskt_004" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS004"/>
+        <field name="ngay">2024-10-25</field>
+        <field name="noi_dung">Quạt CPU kêu tiếng lạ, đã vệ sinh sạch bụi</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_005" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS005"/>
+        <field name="ngay">2024-11-12</field>
+        <field name="noi_dung">Ổ cứng có bad sector, đã backup và scan lại</field>
+        <field name="ghi_chu">Cần theo dõi thêm</field>
+    </record>
+    <record id="demo_lskt_006" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS006"/>
+        <field name="ngay">2024-10-08</field>
+        <field name="noi_dung">RAM server tăng lên 64GB theo kế hoạch nâng cấp</field>
+        <field name="ghi_chu">Hoàn thành nâng cấp</field>
+    </record>
+    <record id="demo_lskt_007" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS007"/>
+        <field name="ngay">2024-11-20</field>
+        <field name="noi_dung">Port 12 bị lỗi, đã tắt và cấu hình lại</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_008" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS008"/>
+        <field name="ngay">2024-10-30</field>
+        <field name="noi_dung">Hết mực in lần 3 trong năm, đã thay cartridge mới</field>
+        <field name="ghi_chu">Bình thường</field>
+    </record>
+    <record id="demo_lskt_009" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS009"/>
+        <field name="ngay">2024-11-08</field>
+        <field name="noi_dung">Đầu in màu bị tắc, đã làm sạch đầu in</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_010" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS010"/>
+        <field name="ngay">2024-10-15</field>
+        <field name="noi_dung">Cụm trống in bị mòn, đã thay cụm drum mới</field>
+        <field name="ghi_chu">Hoàn thành bảo dưỡng</field>
+    </record>
+    <record id="demo_lskt_011" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS012"/>
+        <field name="ngay">2024-10-22</field>
+        <field name="noi_dung">Lốp xe mòn ngưỡng an toàn, đã thay 4 lốp mới</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_012" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS012"/>
+        <field name="ngay">2024-11-15</field>
+        <field name="noi_dung">Dầu nhớt đến kỳ thay, đã bảo dưỡng định kỳ</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_013" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS013"/>
+        <field name="ngay">2024-10-28</field>
+        <field name="noi_dung">Gương chiếu hậu phải bị vỡ, đã thay mới</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_014" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS015"/>
+        <field name="ngay">2024-10-12</field>
+        <field name="noi_dung">Điều hoà ra hơi không lạnh, đã bơm thêm gas</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_015" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS016"/>
+        <field name="ngay">2024-11-18</field>
+        <field name="noi_dung">Lọc khí bẩn, đã vệ sinh và thay lọc mới</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_016" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS021"/>
+        <field name="ngay">2024-10-20</field>
+        <field name="noi_dung">Bóng đèn máy chiếu sắp hết tuổi thọ (2800h)</field>
+        <field name="ghi_chu">Cần thay bóng sớm</field>
+    </record>
+    <record id="demo_lskt_017" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS023"/>
+        <field name="ngay">2024-11-10</field>
+        <field name="noi_dung">Màn hình bị sọc dọc nhẹ, đã cập nhật driver</field>
+        <field name="ghi_chu">Đang theo dõi</field>
+    </record>
+    <record id="demo_lskt_018" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS024"/>
+        <field name="ngay">2024-10-16</field>
+        <field name="noi_dung">Camera tầng 1 bị mờ, đã vệ sinh lens</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_019" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS025"/>
+        <field name="ngay">2024-11-22</field>
+        <field name="noi_dung">Cập nhật firmware hệ thống kiểm soát vào ra v2.5</field>
+        <field name="ghi_chu">Hoàn thành cập nhật</field>
+    </record>
+    <record id="demo_lskt_020" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS027"/>
+        <field name="ngay">2024-10-24</field>
+        <field name="noi_dung">Test UPS: thời gian dự phòng đạt 45 phút</field>
+        <field name="ghi_chu">Hoạt động bình thường</field>
+    </record>
+    <record id="demo_lskt_021" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS028"/>
+        <field name="ngay">2024-11-28</field>
+        <field name="noi_dung">Thay bugi và lọc dầu theo lịch bảo dưỡng</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_022" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS031"/>
+        <field name="ngay">2024-11-14</field>
+        <field name="noi_dung">Cập nhật macOS 14.2, tất cả ứng dụng hoạt động tốt</field>
+        <field name="ghi_chu">Bình thường</field>
+    </record>
+    <record id="demo_lskt_023" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS036"/>
+        <field name="ngay">2025-01-08</field>
+        <field name="noi_dung">Cập nhật firmware Access Point v6.5.28</field>
+        <field name="ghi_chu">Hoàn thành cập nhật</field>
+    </record>
+    <record id="demo_lskt_024" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS001"/>
+        <field name="ngay">2025-01-20</field>
+        <field name="noi_dung">Pin laptop test lần 2: còn 80% sức khoẻ</field>
+        <field name="ghi_chu">Theo dõi định kỳ</field>
+    </record>
+    <record id="demo_lskt_025" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS006"/>
+        <field name="ngay">2025-02-05</field>
+        <field name="noi_dung">Thêm SSD NVMe 2TB để mở rộng storage server</field>
+        <field name="ghi_chu">Nâng cấp thành công</field>
+    </record>
+    <record id="demo_lskt_026" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS007"/>
+        <field name="ngay">2025-02-12</field>
+        <field name="noi_dung">Kiểm tra toàn bộ 48 port: hoạt động bình thường</field>
+        <field name="ghi_chu">Kiểm tra định kỳ</field>
+    </record>
+    <record id="demo_lskt_027" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS012"/>
+        <field name="ngay">2025-02-18</field>
+        <field name="noi_dung">Thay nhớt và bình ắc quy sau 1 năm sử dụng</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_028" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS010"/>
+        <field name="ngay">2025-02-25</field>
+        <field name="noi_dung">Cụm sấy mực bị hỏng, đã gọi kỹ thuật viên sửa</field>
+        <field name="ghi_chu">Đã sửa xong</field>
+    </record>
+    <record id="demo_lskt_029" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS015"/>
+        <field name="ngay">2025-03-03</field>
+        <field name="noi_dung">Bơm gas lần 2, điều hoà đã lạnh ổn định</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_030" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS025"/>
+        <field name="ngay">2025-03-10</field>
+        <field name="noi_dung">Thay pin dự phòng cho toàn bộ reader card</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_031" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS003"/>
+        <field name="ngay">2025-01-15</field>
+        <field name="noi_dung">Vệ sinh laptop, thay keo tản nhiệt CPU</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_032" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS005"/>
+        <field name="ngay">2025-01-25</field>
+        <field name="noi_dung">Nâng cấp RAM từ 8GB lên 16GB</field>
+        <field name="ghi_chu">Nâng cấp thành công</field>
+    </record>
+    <record id="demo_lskt_033" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS008"/>
+        <field name="ngay">2025-02-08</field>
+        <field name="noi_dung">Thay trống in lần 2 do hết tuổi thọ</field>
+        <field name="ghi_chu">Bình thường</field>
+    </record>
+    <record id="demo_lskt_034" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS017"/>
+        <field name="ngay">2025-02-14</field>
+        <field name="noi_dung">Tủ lạnh kêu tiếng lạ, đã kiểm tra quạt dàn lạnh</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_035" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS022"/>
+        <field name="ngay">2025-03-01</field>
+        <field name="noi_dung">Cập nhật firmware Smart TV, thêm ứng dụng Teams</field>
+        <field name="ghi_chu">Hoàn thành cập nhật</field>
+    </record>
+    <record id="demo_lskt_036" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS040"/>
+        <field name="ngay">2025-03-08</field>
+        <field name="noi_dung">Kiểm tra điều hoà âm trần sau lắp đặt 1 năm</field>
+        <field name="ghi_chu">Hoạt động bình thường</field>
+    </record>
+    <record id="demo_lskt_037" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS002"/>
+        <field name="ngay">2025-01-12</field>
+        <field name="noi_dung">Thay pin laptop mới: 100% sức khoẻ</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_038" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS009"/>
+        <field name="ngay">2025-02-20</field>
+        <field name="noi_dung">Thay hộp mực màu đen và xanh</field>
+        <field name="ghi_chu">Bình thường</field>
+    </record>
+    <record id="demo_lskt_039" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS013"/>
+        <field name="ngay">2025-03-07</field>
+        <field name="noi_dung">Bảo dưỡng xe định kỳ 50.000 km</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_040" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS026"/>
+        <field name="ngay">2025-01-18</field>
+        <field name="noi_dung">Test khóa điện tử: pin yếu, đã thay pin mới</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_041" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS029"/>
+        <field name="ngay">2025-02-28</field>
+        <field name="noi_dung">Cập nhật phần mềm bảng thông minh v3.2</field>
+        <field name="ghi_chu">Hoàn thành cập nhật</field>
+    </record>
+    <record id="demo_lskt_042" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS037"/>
+        <field name="ngay">2025-03-05</field>
+        <field name="noi_dung">Thay lõi lọc RO lần 3</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_043" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS011"/>
+        <field name="ngay">2025-01-22</field>
+        <field name="noi_dung">Vệ sinh kính scanner, scan thử OK</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_044" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS019"/>
+        <field name="ngay">2025-02-10</field>
+        <field name="noi_dung">Ghế bị lỏng bánh xe, đã siết lại</field>
+        <field name="ghi_chu">Đã xử lý xong</field>
+    </record>
+    <record id="demo_lskt_045" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS035"/>
+        <field name="ngay">2025-03-15</field>
+        <field name="noi_dung">Kiểm tra két sắt: cơ chế khoá hoạt động tốt</field>
+        <field name="ghi_chu">Kiểm tra định kỳ</field>
+    </record>
+    <record id="demo_lskt_046" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS024"/>
+        <field name="ngay">2025-01-28</field>
+        <field name="noi_dung">Thay IR LED camera tầng 2, image sắc nét hơn</field>
+        <field name="ghi_chu">Đã nâng cấp</field>
+    </record>
+    <record id="demo_lskt_047" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS027"/>
+        <field name="ngay">2025-02-22</field>
+        <field name="noi_dung">Kiểm tra battery UPS: còn 85% capacity</field>
+        <field name="ghi_chu">Theo dõi định kỳ</field>
+    </record>
+    <record id="demo_lskt_048" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS033"/>
+        <field name="ngay">2025-03-12</field>
+        <field name="noi_dung">Vệ sinh dao cắt máy hủy tài liệu</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_049" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS016"/>
+        <field name="ngay">2025-01-30</field>
+        <field name="noi_dung">Vệ sinh tổng thể điều hoà, thay lọc</field>
+        <field name="ghi_chu">Bảo dưỡng định kỳ</field>
+    </record>
+    <record id="demo_lskt_050" model="lich_su_ky_thuat">
+        <field name="tai_san_id" ref="demo_ts_TS004"/>
+        <field name="ngay">2025-03-18</field>
+        <field name="noi_dung">Nâng cấp SSD 256GB, cài lại Windows 11</field>
+        <field name="ghi_chu">Nâng cấp thành công</field>
+    </record>
+
     </data>
 </odoo>

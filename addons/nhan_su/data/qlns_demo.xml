@@ -1,120 +1,399 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- ==================== CHỨC VỤ MẪU ==================== -->
+<data noupdate="0">
+
+    <!-- ==================== CHỨC VỤ ==================== -->
     <record id="demo_chuc_vu_giam_doc" model="chuc_vu">
         <field name="ma_chuc_vu">CV001</field>
         <field name="ten_chuc_vu">Giám đốc</field>
     </record>
-    
     <record id="demo_chuc_vu_pho_giam_doc" model="chuc_vu">
         <field name="ma_chuc_vu">CV002</field>
         <field name="ten_chuc_vu">Phó giám đốc</field>
     </record>
-    
     <record id="demo_chuc_vu_truong_phong" model="chuc_vu">
         <field name="ma_chuc_vu">CV003</field>
         <field name="ten_chuc_vu">Trưởng phòng</field>
     </record>
-    
     <record id="demo_chuc_vu_pho_phong" model="chuc_vu">
         <field name="ma_chuc_vu">CV004</field>
         <field name="ten_chuc_vu">Phó phòng</field>
     </record>
-    
     <record id="demo_chuc_vu_nhan_vien" model="chuc_vu">
         <field name="ma_chuc_vu">CV005</field>
         <field name="ten_chuc_vu">Nhân viên</field>
     </record>
-    
     <record id="demo_chuc_vu_chuyen_vien" model="chuc_vu">
         <field name="ma_chuc_vu">CV006</field>
         <field name="ten_chuc_vu">Chuyên viên</field>
     </record>
-    
     <record id="demo_chuc_vu_ke_toan_truong" model="chuc_vu">
         <field name="ma_chuc_vu">CV007</field>
         <field name="ten_chuc_vu">Kế toán trưởng</field>
     </record>
-    
-    <!-- ==================== PHÒNG BAN MẪU ==================== -->
+    <record id="demo_chuc_vu_ky_su" model="chuc_vu">
+        <field name="ma_chuc_vu">CV008</field>
+        <field name="ten_chuc_vu">Kỹ sư</field>
+    </record>
+    <record id="demo_chuc_vu_lai_xe" model="chuc_vu">
+        <field name="ma_chuc_vu">CV009</field>
+        <field name="ten_chuc_vu">Lái xe</field>
+    </record>
+
+    <!-- ==================== PHÒNG BAN ==================== -->
     <record id="demo_phong_ban_giam_doc" model="phong_ban">
         <field name="ma_phong_ban">PB001</field>
         <field name="ten_phong_ban">Ban Giám đốc</field>
     </record>
-    
     <record id="demo_phong_ban_hanh_chinh" model="phong_ban">
         <field name="ma_phong_ban">PB002</field>
         <field name="ten_phong_ban">Phòng Hành chính - Tổng hợp</field>
     </record>
-    
     <record id="demo_phong_ban_ke_toan" model="phong_ban">
         <field name="ma_phong_ban">PB003</field>
         <field name="ten_phong_ban">Phòng Kế toán - Tài chính</field>
     </record>
-    
     <record id="demo_phong_ban_kinh_doanh" model="phong_ban">
         <field name="ma_phong_ban">PB004</field>
         <field name="ten_phong_ban">Phòng Kinh doanh</field>
     </record>
-    
     <record id="demo_phong_ban_ky_thuat" model="phong_ban">
         <field name="ma_phong_ban">PB005</field>
         <field name="ten_phong_ban">Phòng Kỹ thuật</field>
     </record>
-    
     <record id="demo_phong_ban_nhan_su" model="phong_ban">
         <field name="ma_phong_ban">PB006</field>
         <field name="ten_phong_ban">Phòng Nhân sự</field>
     </record>
-    
-    <!-- ==================== NHÂN VIÊN MẪU ==================== -->
-    <record id="demo_nhan_vien_1" model="nhan_vien">
+    <!-- PHÒNG MỚI: cần thiết cho module tài sản -->
+    <record id="demo_phong_ban_marketing" model="phong_ban">
+        <field name="ma_phong_ban">PB007</field>
+        <field name="ten_phong_ban">Phòng Marketing</field>
+    </record>
+
+    <!-- ==================== NHÂN VIÊN (20 người - IDs mới cho module tài sản) ==================== -->
+    <!-- demo_nv_001: Trưởng phòng Kinh doanh -->
+    <record id="demo_nv_001" model="nhan_vien">
         <field name="ma_dinh_danh">NV001</field>
         <field name="ho_ten">Nguyễn Văn An</field>
-        <field name="ngay_sinh">1980-05-15</field>
+        <field name="ngay_sinh">1985-03-15</field>
+        <field name="gioi_tinh">nam</field>
         <field name="que_quan">Hà Nội</field>
         <field name="email">nguyen.van.an@company.com</field>
         <field name="so_dien_thoai">0912345678</field>
+        <field name="ngay_vao_lam">2018-01-15</field>
+        <field name="trang_thai">dang_lam</field>
     </record>
-    
-    <record id="demo_nhan_vien_2" model="nhan_vien">
+    <!-- demo_nv_002: Nhân viên Hành chính -->
+    <record id="demo_nv_002" model="nhan_vien">
         <field name="ma_dinh_danh">NV002</field>
         <field name="ho_ten">Trần Thị Bình</field>
-        <field name="ngay_sinh">1985-08-22</field>
+        <field name="ngay_sinh">1990-07-22</field>
+        <field name="gioi_tinh">nu</field>
         <field name="que_quan">Hải Phòng</field>
         <field name="email">tran.thi.binh@company.com</field>
         <field name="so_dien_thoai">0923456789</field>
+        <field name="ngay_vao_lam">2019-03-01</field>
+        <field name="trang_thai">dang_lam</field>
     </record>
-    
-    <record id="demo_nhan_vien_3" model="nhan_vien">
+    <!-- demo_nv_003: Nhân viên Kỹ thuật -->
+    <record id="demo_nv_003" model="nhan_vien">
         <field name="ma_dinh_danh">NV003</field>
         <field name="ho_ten">Lê Văn Cường</field>
-        <field name="ngay_sinh">1990-03-10</field>
+        <field name="ngay_sinh">1988-11-05</field>
+        <field name="gioi_tinh">nam</field>
         <field name="que_quan">Đà Nẵng</field>
         <field name="email">le.van.cuong@company.com</field>
         <field name="so_dien_thoai">0934567890</field>
+        <field name="ngay_vao_lam">2017-06-10</field>
+        <field name="trang_thai">dang_lam</field>
     </record>
-    
-    <record id="demo_nhan_vien_4" model="nhan_vien">
+    <!-- demo_nv_004: Kế toán trưởng -->
+    <record id="demo_nv_004" model="nhan_vien">
         <field name="ma_dinh_danh">NV004</field>
         <field name="ho_ten">Phạm Thị Dung</field>
-        <field name="ngay_sinh">1992-11-30</field>
+        <field name="ngay_sinh">1987-04-18</field>
+        <field name="gioi_tinh">nu</field>
         <field name="que_quan">TP.Hồ Chí Minh</field>
         <field name="email">pham.thi.dung@company.com</field>
         <field name="so_dien_thoai">0945678901</field>
+        <field name="ngay_vao_lam">2016-08-20</field>
+        <field name="trang_thai">dang_lam</field>
     </record>
-    
-    <record id="demo_nhan_vien_5" model="nhan_vien">
+    <!-- demo_nv_005: Nhân viên Marketing -->
+    <record id="demo_nv_005" model="nhan_vien">
         <field name="ma_dinh_danh">NV005</field>
         <field name="ho_ten">Hoàng Văn Em</field>
-        <field name="ngay_sinh">1995-07-18</field>
+        <field name="ngay_sinh">1993-09-30</field>
+        <field name="gioi_tinh">nam</field>
         <field name="que_quan">Cần Thơ</field>
         <field name="email">hoang.van.em@company.com</field>
         <field name="so_dien_thoai">0956789012</field>
+        <field name="ngay_vao_lam">2020-04-15</field>
+        <field name="trang_thai">dang_lam</field>
     </record>
-    
-    <!-- ==================== LỊCH SỬ CÔNG TÁC MẪU ==================== -->
-    <!-- Lịch sử công tác cho Nguyễn Văn An (Giám đốc) -->
+    <!-- demo_nv_006: Nhân viên Kinh doanh -->
+    <record id="demo_nv_006" model="nhan_vien">
+        <field name="ma_dinh_danh">NV006</field>
+        <field name="ho_ten">Vũ Thị Phương</field>
+        <field name="ngay_sinh">1992-01-25</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Nam Định</field>
+        <field name="email">vu.thi.phuong@company.com</field>
+        <field name="so_dien_thoai">0967890123</field>
+        <field name="ngay_vao_lam">2019-11-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_007: Nhân viên Hành chính cấp cao -->
+    <record id="demo_nv_007" model="nhan_vien">
+        <field name="ma_dinh_danh">NV007</field>
+        <field name="ho_ten">Đỗ Minh Quân</field>
+        <field name="ngay_sinh">1986-06-12</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Thái Bình</field>
+        <field name="email">do.minh.quan@company.com</field>
+        <field name="so_dien_thoai">0978901234</field>
+        <field name="ngay_vao_lam">2015-02-10</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_008: Nhân viên Nhân sự -->
+    <record id="demo_nv_008" model="nhan_vien">
+        <field name="ma_dinh_danh">NV008</field>
+        <field name="ho_ten">Ngô Thị Hà</field>
+        <field name="ngay_sinh">1994-08-08</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Bắc Ninh</field>
+        <field name="email">ngo.thi.ha@company.com</field>
+        <field name="so_dien_thoai">0989012345</field>
+        <field name="ngay_vao_lam">2021-07-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_009: Nhân viên Marketing/thiết kế -->
+    <record id="demo_nv_009" model="nhan_vien">
+        <field name="ma_dinh_danh">NV009</field>
+        <field name="ho_ten">Bùi Thanh Hùng</field>
+        <field name="ngay_sinh">1995-12-20</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Quảng Ninh</field>
+        <field name="email">bui.thanh.hung@company.com</field>
+        <field name="so_dien_thoai">0901234567</field>
+        <field name="ngay_vao_lam">2022-01-10</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_010: Nhân viên Hành chính (quản lý tài sản HC) -->
+    <record id="demo_nv_010" model="nhan_vien">
+        <field name="ma_dinh_danh">NV010</field>
+        <field name="ho_ten">Lý Thị Kim</field>
+        <field name="ngay_sinh">1991-05-17</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Hà Tĩnh</field>
+        <field name="email">ly.thi.kim@company.com</field>
+        <field name="so_dien_thoai">0912345670</field>
+        <field name="ngay_vao_lam">2018-09-15</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_011: Nhân viên Kinh doanh -->
+    <record id="demo_nv_011" model="nhan_vien">
+        <field name="ma_dinh_danh">NV011</field>
+        <field name="ho_ten">Trịnh Văn Long</field>
+        <field name="ngay_sinh">1989-02-28</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Thanh Hoá</field>
+        <field name="email">trinh.van.long@company.com</field>
+        <field name="so_dien_thoai">0923456780</field>
+        <field name="ngay_vao_lam">2017-12-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_012: Kỹ sư mạng -->
+    <record id="demo_nv_012" model="nhan_vien">
+        <field name="ma_dinh_danh">NV012</field>
+        <field name="ho_ten">Đinh Thị Mai</field>
+        <field name="ngay_sinh">1993-10-03</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Nghệ An</field>
+        <field name="email">dinh.thi.mai@company.com</field>
+        <field name="so_dien_thoai">0934567801</field>
+        <field name="ngay_vao_lam">2020-06-20</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_013: Kỹ sư điện -->
+    <record id="demo_nv_013" model="nhan_vien">
+        <field name="ma_dinh_danh">NV013</field>
+        <field name="ho_ten">Cao Đình Nam</field>
+        <field name="ngay_sinh">1987-07-14</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Bình Dương</field>
+        <field name="email">cao.dinh.nam@company.com</field>
+        <field name="so_dien_thoai">0945678912</field>
+        <field name="ngay_vao_lam">2016-03-05</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_014: Lái xe công ty -->
+    <record id="demo_nv_014" model="nhan_vien">
+        <field name="ma_dinh_danh">NV014</field>
+        <field name="ho_ten">Phan Văn Oanh</field>
+        <field name="ngay_sinh">1980-11-09</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Hưng Yên</field>
+        <field name="email">phan.van.oanh@company.com</field>
+        <field name="so_dien_thoai">0956789023</field>
+        <field name="ngay_vao_lam">2014-05-20</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_015: Nhân viên Marketing -->
+    <record id="demo_nv_015" model="nhan_vien">
+        <field name="ma_dinh_danh">NV015</field>
+        <field name="ho_ten">Dương Thị Phúc</field>
+        <field name="ngay_sinh">1996-04-06</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Đồng Nai</field>
+        <field name="email">duong.thi.phuc@company.com</field>
+        <field name="so_dien_thoai">0967890134</field>
+        <field name="ngay_vao_lam">2022-08-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_016: Trưởng phòng Marketing -->
+    <record id="demo_nv_016" model="nhan_vien">
+        <field name="ma_dinh_danh">NV016</field>
+        <field name="ho_ten">Hồ Văn Quý</field>
+        <field name="ngay_sinh">1984-09-19</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Khánh Hoà</field>
+        <field name="email">ho.van.quy@company.com</field>
+        <field name="so_dien_thoai">0978901245</field>
+        <field name="ngay_vao_lam">2015-10-15</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_017: Chuyên viên Nhân sự -->
+    <record id="demo_nv_017" model="nhan_vien">
+        <field name="ma_dinh_danh">NV017</field>
+        <field name="ho_ten">Lương Thị Sen</field>
+        <field name="ngay_sinh">1992-03-27</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Vĩnh Phúc</field>
+        <field name="email">luong.thi.sen@company.com</field>
+        <field name="so_dien_thoai">0989012356</field>
+        <field name="ngay_vao_lam">2019-04-10</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_018: Kỹ sư IT / quản lý server -->
+    <record id="demo_nv_018" model="nhan_vien">
+        <field name="ma_dinh_danh">NV018</field>
+        <field name="ho_ten">Mạc Văn Tài</field>
+        <field name="ngay_sinh">1990-01-13</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Hải Dương</field>
+        <field name="email">mac.van.tai@company.com</field>
+        <field name="so_dien_thoai">0901234578</field>
+        <field name="ngay_vao_lam">2018-07-22</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_019: Nhân viên Kế toán -->
+    <record id="demo_nv_019" model="nhan_vien">
+        <field name="ma_dinh_danh">NV019</field>
+        <field name="ho_ten">Trần Thị Uyên</field>
+        <field name="ngay_sinh">1995-06-01</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Lào Cai</field>
+        <field name="email">tran.thi.uyen@company.com</field>
+        <field name="so_dien_thoai">0912345681</field>
+        <field name="ngay_vao_lam">2021-02-15</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <!-- demo_nv_020: Nhân viên Kinh doanh -->
+    <record id="demo_nv_020" model="nhan_vien">
+        <field name="ma_dinh_danh">NV020</field>
+        <field name="ho_ten">Nguyễn Minh Việt</field>
+        <field name="ngay_sinh">1997-08-24</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Bắc Giang</field>
+        <field name="email">nguyen.minh.viet@company.com</field>
+        <field name="so_dien_thoai">0923456792</field>
+        <field name="ngay_vao_lam">2023-01-10</field>
+        <field name="trang_thai">thu_viec</field>
+    </record>
+
+    <!-- ==================== ALIASES ngược (để tương thích với code cũ dùng demo_nhan_vien_*) ==================== -->
+    <!-- Các record dưới đây map IDs cũ sang nhân viên mới để không bị lỗi nếu code cũ vẫn ref IDs này -->
+    <record id="demo_nhan_vien_1" model="nhan_vien">
+        <field name="ma_dinh_danh">NV021</field>
+        <field name="ho_ten">Nguyễn Văn An (GD)</field>
+        <field name="ngay_sinh">1980-05-15</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Hà Nội</field>
+        <field name="email">giamdoc@company.com</field>
+        <field name="so_dien_thoai">0900000001</field>
+        <field name="ngay_vao_lam">2010-01-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_2" model="nhan_vien">
+        <field name="ma_dinh_danh">NV022</field>
+        <field name="ho_ten">Trần Thị Bình (PGD)</field>
+        <field name="ngay_sinh">1985-08-22</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Hải Phòng</field>
+        <field name="email">phogiamdoc@company.com</field>
+        <field name="so_dien_thoai">0900000002</field>
+        <field name="ngay_vao_lam">2011-03-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_3" model="nhan_vien">
+        <field name="ma_dinh_danh">NV023</field>
+        <field name="ho_ten">Lê Văn Cường (TP KD)</field>
+        <field name="ngay_sinh">1982-03-10</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Đà Nẵng</field>
+        <field name="email">tp.kinhdoanh@company.com</field>
+        <field name="so_dien_thoai">0900000003</field>
+        <field name="ngay_vao_lam">2012-06-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_4" model="nhan_vien">
+        <field name="ma_dinh_danh">NV024</field>
+        <field name="ho_ten">Phạm Thị Dung (KTT)</field>
+        <field name="ngay_sinh">1983-11-30</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">TP.HCM</field>
+        <field name="email">ketoantruong@company.com</field>
+        <field name="so_dien_thoai">0900000004</field>
+        <field name="ngay_vao_lam">2013-01-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_5" model="nhan_vien">
+        <field name="ma_dinh_danh">NV025</field>
+        <field name="ho_ten">Hoàng Văn Em (KT)</field>
+        <field name="ngay_sinh">1990-07-18</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Cần Thơ</field>
+        <field name="email">kysu.kt@company.com</field>
+        <field name="so_dien_thoai">0900000005</field>
+        <field name="ngay_vao_lam">2016-09-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_6" model="nhan_vien">
+        <field name="ma_dinh_danh">NV026</field>
+        <field name="ho_ten">Vũ Thị Phương (NS)</field>
+        <field name="ngay_sinh">1988-04-25</field>
+        <field name="gioi_tinh">nu</field>
+        <field name="que_quan">Nam Định</field>
+        <field name="email">cv.nhansu@company.com</field>
+        <field name="so_dien_thoai">0900000006</field>
+        <field name="ngay_vao_lam">2017-08-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+    <record id="demo_nhan_vien_7" model="nhan_vien">
+        <field name="ma_dinh_danh">NV027</field>
+        <field name="ho_ten">Đỗ Minh Quân (HC)</field>
+        <field name="ngay_sinh">1984-12-05</field>
+        <field name="gioi_tinh">nam</field>
+        <field name="que_quan">Thái Bình</field>
+        <field name="email">pp.hanhchinh@company.com</field>
+        <field name="so_dien_thoai">0900000007</field>
+        <field name="ngay_vao_lam">2014-02-01</field>
+        <field name="trang_thai">dang_lam</field>
+    </record>
+
+    <!-- ==================== LỊCH SỬ CÔNG TÁC ==================== -->
     <record id="demo_lich_su_an_1" model="lich_su_cong_tac">
         <field name="time_start">2020-01-01</field>
         <field name="time_end">2024-12-31</field>
@@ -122,8 +401,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_giam_doc"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_1"/>
     </record>
-    
-    <!-- Lịch sử công tác cho Trần Thị Bình (Phó giám đốc) -->
     <record id="demo_lich_su_binh_1" model="lich_su_cong_tac">
         <field name="time_start">2021-03-01</field>
         <field name="time_end">2024-12-31</field>
@@ -131,8 +408,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_pho_giam_doc"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_2"/>
     </record>
-    
-    <!-- Lịch sử công tác cho Lê Văn Cường (Trưởng phòng Kinh doanh) -->
     <record id="demo_lich_su_cuong_1" model="lich_su_cong_tac">
         <field name="time_start">2022-06-01</field>
         <field name="time_end">2024-12-31</field>
@@ -140,7 +415,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_truong_phong"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_3"/>
     </record>
-    
     <record id="demo_lich_su_cuong_2" model="lich_su_cong_tac">
         <field name="time_start">2020-01-01</field>
         <field name="time_end">2022-05-31</field>
@@ -148,8 +422,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_3"/>
     </record>
-    
-    <!-- Lịch sử công tác cho Phạm Thị Dung (Kế toán trưởng) -->
     <record id="demo_lich_su_dung_1" model="lich_su_cong_tac">
         <field name="time_start">2023-01-01</field>
         <field name="time_end">2024-12-31</field>
@@ -157,7 +429,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_ke_toan_truong"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_4"/>
     </record>
-    
     <record id="demo_lich_su_dung_2" model="lich_su_cong_tac">
         <field name="time_start">2021-07-01</field>
         <field name="time_end">2022-12-31</field>
@@ -165,8 +436,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_chuyen_vien"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_4"/>
     </record>
-    
-    <!-- Lịch sử công tác cho Hoàng Văn Em (Nhân viên Kỹ thuật) -->
     <record id="demo_lich_su_em_1" model="lich_su_cong_tac">
         <field name="time_start">2023-09-01</field>
         <field name="time_end">2024-12-31</field>
@@ -174,28 +443,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_5"/>
     </record>
-    
-    <!-- ==================== DỮ LIỆU BỔ SUNG ==================== -->
-    <!-- Thêm một số nhân viên khác -->
-    <record id="demo_nhan_vien_6" model="nhan_vien">
-        <field name="ma_dinh_danh">NV006</field>
-        <field name="ho_ten">Vũ Thị Phương</field>
-        <field name="ngay_sinh">1993-04-25</field>
-        <field name="que_quan">Nam Định</field>
-        <field name="email">vu.thi.phuong@company.com</field>
-        <field name="so_dien_thoai">0967890123</field>
-    </record>
-    
-    <record id="demo_nhan_vien_7" model="nhan_vien">
-        <field name="ma_dinh_danh">NV007</field>
-        <field name="ho_ten">Đỗ Minh Quân</field>
-        <field name="ngay_sinh">1988-12-05</field>
-        <field name="que_quan">Thái Bình</field>
-        <field name="email">do.minh.quan@company.com</field>
-        <field name="so_dien_thoai">0978901234</field>
-    </record>
-    
-    <!-- Lịch sử công tác cho Vũ Thị Phương (Chuyên viên Nhân sự) -->
     <record id="demo_lich_su_phuong_1" model="lich_su_cong_tac">
         <field name="time_start">2022-08-01</field>
         <field name="time_end">2024-12-31</field>
@@ -203,8 +450,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_chuyen_vien"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_6"/>
     </record>
-    
-    <!-- Lịch sử công tác cho Đỗ Minh Quân (Phó phòng Hành chính) -->
     <record id="demo_lich_su_quan_1" model="lich_su_cong_tac">
         <field name="time_start">2023-02-01</field>
         <field name="time_end">2024-12-31</field>
@@ -212,8 +457,6 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_pho_phong"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_7"/>
     </record>
-    
-    <!-- Lịch sử cũ cho Đỗ Minh Quân -->
     <record id="demo_lich_su_quan_2" model="lich_su_cong_tac">
         <field name="time_start">2020-01-01</field>
         <field name="time_end">2023-01-31</field>
@@ -221,4 +464,148 @@
         <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
         <field name="nhan_vien_id" ref="demo_nhan_vien_7"/>
     </record>
+
+    <!-- Lịch sử công tác cho 20 nhân viên mới -->
+    <record id="demo_ls_nv001_1" model="lich_su_cong_tac">
+        <field name="time_start">2018-01-15</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_truong_phong"/>
+        <field name="nhan_vien_id" ref="demo_nv_001"/>
+    </record>
+    <record id="demo_ls_nv002_1" model="lich_su_cong_tac">
+        <field name="time_start">2019-03-01</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_002"/>
+    </record>
+    <record id="demo_ls_nv003_1" model="lich_su_cong_tac">
+        <field name="time_start">2017-06-10</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ky_thuat"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_ky_su"/>
+        <field name="nhan_vien_id" ref="demo_nv_003"/>
+    </record>
+    <record id="demo_ls_nv004_1" model="lich_su_cong_tac">
+        <field name="time_start">2016-08-20</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_ke_toan_truong"/>
+        <field name="nhan_vien_id" ref="demo_nv_004"/>
+    </record>
+    <record id="demo_ls_nv005_1" model="lich_su_cong_tac">
+        <field name="time_start">2020-04-15</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_005"/>
+    </record>
+    <record id="demo_ls_nv006_1" model="lich_su_cong_tac">
+        <field name="time_start">2019-11-01</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_006"/>
+    </record>
+    <record id="demo_ls_nv007_1" model="lich_su_cong_tac">
+        <field name="time_start">2015-02-10</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_pho_phong"/>
+        <field name="nhan_vien_id" ref="demo_nv_007"/>
+    </record>
+    <record id="demo_ls_nv008_1" model="lich_su_cong_tac">
+        <field name="time_start">2021-07-01</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_nhan_su"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_008"/>
+    </record>
+    <record id="demo_ls_nv009_1" model="lich_su_cong_tac">
+        <field name="time_start">2022-01-10</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_chuyen_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_009"/>
+    </record>
+    <record id="demo_ls_nv010_1" model="lich_su_cong_tac">
+        <field name="time_start">2018-09-15</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_hanh_chinh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_chuyen_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_010"/>
+    </record>
+    <record id="demo_ls_nv011_1" model="lich_su_cong_tac">
+        <field name="time_start">2017-12-01</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_011"/>
+    </record>
+    <record id="demo_ls_nv012_1" model="lich_su_cong_tac">
+        <field name="time_start">2020-06-20</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ky_thuat"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_ky_su"/>
+        <field name="nhan_vien_id" ref="demo_nv_012"/>
+    </record>
+    <record id="demo_ls_nv013_1" model="lich_su_cong_tac">
+        <field name="time_start">2016-03-05</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ky_thuat"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_ky_su"/>
+        <field name="nhan_vien_id" ref="demo_nv_013"/>
+    </record>
+    <record id="demo_ls_nv014_1" model="lich_su_cong_tac">
+        <field name="time_start">2014-05-20</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_giam_doc"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_lai_xe"/>
+        <field name="nhan_vien_id" ref="demo_nv_014"/>
+    </record>
+    <record id="demo_ls_nv015_1" model="lich_su_cong_tac">
+        <field name="time_start">2022-08-01</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_015"/>
+    </record>
+    <record id="demo_ls_nv016_1" model="lich_su_cong_tac">
+        <field name="time_start">2015-10-15</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_marketing"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_truong_phong"/>
+        <field name="nhan_vien_id" ref="demo_nv_016"/>
+    </record>
+    <record id="demo_ls_nv017_1" model="lich_su_cong_tac">
+        <field name="time_start">2019-04-10</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_nhan_su"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_chuyen_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_017"/>
+    </record>
+    <record id="demo_ls_nv018_1" model="lich_su_cong_tac">
+        <field name="time_start">2018-07-22</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ky_thuat"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_ky_su"/>
+        <field name="nhan_vien_id" ref="demo_nv_018"/>
+    </record>
+    <record id="demo_ls_nv019_1" model="lich_su_cong_tac">
+        <field name="time_start">2021-02-15</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_ke_toan"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_019"/>
+    </record>
+    <record id="demo_ls_nv020_1" model="lich_su_cong_tac">
+        <field name="time_start">2023-01-10</field>
+        <field name="time_end">2024-12-31</field>
+        <field name="phong_ban_id" ref="demo_phong_ban_kinh_doanh"/>
+        <field name="chuc_vu_id" ref="demo_chuc_vu_nhan_vien"/>
+        <field name="nhan_vien_id" ref="demo_nv_020"/>
+    </record>
+
+</data>
 </odoo>

@@ -390,12 +390,14 @@ class MuonTraTaiSanLine(models.Model):
     tai_san_id = fields.Many2one(
         related='phan_bo_tai_san_id.tai_san_id',
         string='Mã tài sản',
-        store=True
+        store=True,
+        readonly=True
     )
     ten_tai_san = fields.Char(
         related='phan_bo_tai_san_id.tai_san_id.ten_tai_san',
         string='Tên tài sản',
-        store=True
+        store=True,
+        readonly=True
     )
     
     ghi_chu = fields.Text('Ghi chú khi mượn')

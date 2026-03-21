@@ -1,59 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-    <!-- ==================== KHẤU HAO TÀI SẢN MẪU ==================== -->
-    <record id="demo_khau_hao_laptop_1" model="khau_hao_tai_san">
-        <field name="tai_san_id" ref="quan_ly_tai_san.demo_tai_san_laptop_1"/>
-        <field name="ngay_bat_dau">2023-02-01</field>
-        <field name="so_nam_khau_hao">5</field>
-        <field name="trang_thai">dang_khau_hao</field>
-    </record>
-    
-    <record id="demo_khau_hao_laptop_2" model="khau_hao_tai_san">
-        <field name="tai_san_id" ref="quan_ly_tai_san.demo_tai_san_laptop_2"/>
-        <field name="ngay_bat_dau">2023-04-01</field>
-        <field name="so_nam_khau_hao">4</field>
-        <field name="trang_thai">dang_khau_hao</field>
-    </record>
-    
-    <record id="demo_khau_hao_may_in" model="khau_hao_tai_san">
-        <field name="tai_san_id" ref="quan_ly_tai_san.demo_tai_san_may_in"/>
-        <field name="ngay_bat_dau">2022-12-01</field>
-        <field name="so_nam_khau_hao">5</field>
-        <field name="trang_thai">dang_khau_hao</field>
-    </record>
-    
-    <record id="demo_khau_hao_xe_oto" model="khau_hao_tai_san">
-        <field name="tai_san_id" ref="quan_ly_tai_san.demo_tai_san_xe_oto"/>
-        <field name="ngay_bat_dau">2021-07-01</field>
-        <field name="so_nam_khau_hao">10</field>
-        <field name="trang_thai">dang_khau_hao</field>
-    </record>
-    
-    <!-- ==================== LỊCH KHẤU HAO MẪU ==================== -->
-    <record id="demo_lich_khau_hao_laptop1_nam1" model="lich_khau_hao">
-        <field name="khau_hao_id" ref="demo_khau_hao_laptop_1"/>
-        <field name="nam">1</field>
-        <field name="ngay_khau_hao">2023-12-31</field>
-        <field name="gia_tri_khau_hao">5000000</field>
-        <field name="da_ghi_nhan" eval="True"/>
-    </record>
-    
-    <record id="demo_lich_khau_hao_laptop1_nam2" model="lich_khau_hao">
-        <field name="khau_hao_id" ref="demo_khau_hao_laptop_1"/>
-        <field name="nam">2</field>
-        <field name="ngay_khau_hao">2024-12-31</field>
-        <field name="gia_tri_khau_hao">5000000</field>
-        <field name="da_ghi_nhan" eval="False"/>
-    </record>
-    
-    <record id="demo_lich_khau_hao_laptop2_nam1" model="lich_khau_hao">
-        <field name="khau_hao_id" ref="demo_khau_hao_laptop_2"/>
-        <field name="nam">1</field>
-        <field name="ngay_khau_hao">2023-12-31</field>
-        <field name="gia_tri_khau_hao">4500000</field>
-        <field name="da_ghi_nhan" eval="True"/>
-    </record>
 
     <!-- ==================== SEQUENCE CHO BÚT TOÁN ==================== -->
     <record id="seq_but_toan" model="ir.sequence">
@@ -64,16 +11,321 @@
         <field name="company_id" ref="base.main_company"/>
     </record>
 
+    <!-- ==================== KHẤU HAO TÀI SẢN ==================== -->
+    <!-- Tham chiếu đúng IDs từ tai_san_demo_full.xml -->
+
+    <record id="demo_khau_hao_ts001" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS001"/>
+        <field name="ngay_bat_dau">2022-02-01</field>
+        <field name="so_nam_khau_hao">5</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts002" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS002"/>
+        <field name="ngay_bat_dau">2022-04-01</field>
+        <field name="so_nam_khau_hao">5</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts003" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS003"/>
+        <field name="ngay_bat_dau">2021-07-01</field>
+        <field name="so_nam_khau_hao">5</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts006" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS006"/>
+        <field name="ngay_bat_dau">2021-03-01</field>
+        <field name="so_nam_khau_hao">7</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts012" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS012"/>
+        <field name="ngay_bat_dau">2020-07-01</field>
+        <field name="so_nam_khau_hao">10</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts013" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS013"/>
+        <field name="ngay_bat_dau">2019-04-01</field>
+        <field name="so_nam_khau_hao">10</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts025" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS025"/>
+        <field name="ngay_bat_dau">2022-01-01</field>
+        <field name="so_nam_khau_hao">10</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <record id="demo_khau_hao_ts028" model="khau_hao_tai_san">
+        <field name="tai_san_id" ref="quan_ly_tai_san.demo_ts_TS028"/>
+        <field name="ngay_bat_dau">2020-08-01</field>
+        <field name="so_nam_khau_hao">15</field>
+        <field name="trang_thai">dang_khau_hao</field>
+    </record>
+
+    <!-- ==================== LỊCH KHẤU HAO MẪU ==================== -->
+    <!-- TS001 - Laptop Dell XPS 15 -->
+    <record id="demo_lkh_ts001_nam1" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts001"/>
+        <field name="nam">1</field>
+        <field name="ngay_khau_hao">2022-12-31</field>
+        <field name="gia_tri_khau_hao">5000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts001_nam2" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts001"/>
+        <field name="nam">2</field>
+        <field name="ngay_khau_hao">2023-12-31</field>
+        <field name="gia_tri_khau_hao">5000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts001_nam3" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts001"/>
+        <field name="nam">3</field>
+        <field name="ngay_khau_hao">2024-12-31</field>
+        <field name="gia_tri_khau_hao">5000000</field>
+        <field name="da_ghi_nhan" eval="False"/>
+    </record>
+
+    <!-- TS006 - Server Dell PowerEdge -->
+    <record id="demo_lkh_ts006_nam1" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts006"/>
+        <field name="nam">1</field>
+        <field name="ngay_khau_hao">2021-12-31</field>
+        <field name="gia_tri_khau_hao">25714286</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts006_nam2" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts006"/>
+        <field name="nam">2</field>
+        <field name="ngay_khau_hao">2022-12-31</field>
+        <field name="gia_tri_khau_hao">25714286</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts006_nam3" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts006"/>
+        <field name="nam">3</field>
+        <field name="ngay_khau_hao">2023-12-31</field>
+        <field name="gia_tri_khau_hao">25714286</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts006_nam4" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts006"/>
+        <field name="nam">4</field>
+        <field name="ngay_khau_hao">2024-12-31</field>
+        <field name="gia_tri_khau_hao">25714286</field>
+        <field name="da_ghi_nhan" eval="False"/>
+    </record>
+
+    <!-- TS012 - Xe Toyota Fortuner -->
+    <record id="demo_lkh_ts012_nam1" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts012"/>
+        <field name="nam">1</field>
+        <field name="ngay_khau_hao">2020-12-31</field>
+        <field name="gia_tri_khau_hao">105000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts012_nam2" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts012"/>
+        <field name="nam">2</field>
+        <field name="ngay_khau_hao">2021-12-31</field>
+        <field name="gia_tri_khau_hao">105000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts012_nam3" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts012"/>
+        <field name="nam">3</field>
+        <field name="ngay_khau_hao">2022-12-31</field>
+        <field name="gia_tri_khau_hao">105000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts012_nam4" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts012"/>
+        <field name="nam">4</field>
+        <field name="ngay_khau_hao">2023-12-31</field>
+        <field name="gia_tri_khau_hao">105000000</field>
+        <field name="da_ghi_nhan" eval="True"/>
+    </record>
+    <record id="demo_lkh_ts012_nam5" model="lich_khau_hao">
+        <field name="khau_hao_id" ref="demo_khau_hao_ts012"/>
+        <field name="nam">5</field>
+        <field name="ngay_khau_hao">2024-12-31</field>
+        <field name="gia_tri_khau_hao">105000000</field>
+        <field name="da_ghi_nhan" eval="False"/>
+    </record>
+
     <!-- ==================== BÁO CÁO TÀI CHÍNH MẪU ==================== -->
-    <record id="demo_bao_cao_chi_phi_thang1" model="bao_cao_tai_chinh">
+    <record id="demo_bao_cao_chi_phi_thang1_2024" model="bao_cao_tai_chinh">
         <field name="name">Báo cáo chi phí tháng 1/2024</field>
         <field name="thang">1</field>
         <field name="nam">2024</field>
-        <field name="tong_chi_phi">171000000</field>
-        <field name="chi_phi_khau_hao">791667</field>
-        <field name="chi_phi_luong">150000000</field>
-        <field name="chi_phi_van_phong">13000000</field>
+        <field name="tong_chi_phi">185000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">155000000</field>
+        <field name="chi_phi_van_phong">17500000</field>
         <field name="trang_thai">completed</field>
     </record>
+
+    <record id="demo_bao_cao_chi_phi_thang2_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 2/2024</field>
+        <field name="thang">2</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">178000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">148000000</field>
+        <field name="chi_phi_van_phong">17500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang3_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 3/2024</field>
+        <field name="thang">3</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">192000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">160000000</field>
+        <field name="chi_phi_van_phong">19500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang4_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 4/2024</field>
+        <field name="thang">4</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">188000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">155000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang5_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 5/2024</field>
+        <field name="thang">5</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">195000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">162000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang6_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 6/2024</field>
+        <field name="thang">6</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">201000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">168000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang7_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 7/2024</field>
+        <field name="thang">7</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">198000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">165000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang8_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 8/2024</field>
+        <field name="thang">8</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">203000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">170000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang9_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 9/2024</field>
+        <field name="thang">9</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">196000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">163000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang10_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 10/2024</field>
+        <field name="thang">10</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">208000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">175000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang11_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 11/2024</field>
+        <field name="thang">11</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">215000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">182000000</field>
+        <field name="chi_phi_van_phong">20500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang12_2024" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 12/2024</field>
+        <field name="thang">12</field>
+        <field name="nam">2024</field>
+        <field name="tong_chi_phi">225000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">190000000</field>
+        <field name="chi_phi_van_phong">22500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang1_2025" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 1/2025</field>
+        <field name="thang">1</field>
+        <field name="nam">2025</field>
+        <field name="tong_chi_phi">210000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">175000000</field>
+        <field name="chi_phi_van_phong">22500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang2_2025" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 2/2025</field>
+        <field name="thang">2</field>
+        <field name="nam">2025</field>
+        <field name="tong_chi_phi">205000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">170000000</field>
+        <field name="chi_phi_van_phong">22500000</field>
+        <field name="trang_thai">completed</field>
+    </record>
+
+    <record id="demo_bao_cao_chi_phi_thang3_2025" model="bao_cao_tai_chinh">
+        <field name="name">Báo cáo chi phí tháng 3/2025</field>
+        <field name="thang">3</field>
+        <field name="nam">2025</field>
+        <field name="tong_chi_phi">218000000</field>
+        <field name="chi_phi_khau_hao">12500000</field>
+        <field name="chi_phi_luong">183000000</field>
+        <field name="chi_phi_van_phong">22500000</field>
+        <field name="trang_thai">draft</field>
+    </record>
+
     </data>
 </odoo>

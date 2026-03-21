@@ -20,7 +20,7 @@
                     <button name="action_reset_to_draft" string="Đưa về nháp" type="object" 
                             states="rejected,cancelled,approved" class="btn-warning"
                             confirm="Reset sẽ đưa đề xuất về trạng thái nháp để xóa. Bạn có chắc?"/>
-                    <field name="state" widget="statusbar" 
+                    <field name="state" widget="statusbar"
                            statusbar_visible="draft,submitted,waiting_approval,approved"/>
                 </header>
                 
@@ -63,10 +63,11 @@
                         </button>
                     </div>
                     
-                    <!-- Title -->
+                    <!-- Title: ma_de_xuat khai báo 1 lần duy nhất, readonly + force_save -->
                     <div class="oe_title">
                         <h1>
-                            <field name="ma_de_xuat" readonly="1"/>
+                            <field name="ma_de_xuat" readonly="1" force_save="1"
+                                   placeholder="Mã tự động sinh khi lưu"/>
                         </h1>
                     </div>
                     
@@ -78,11 +79,13 @@
                             <field name="nguoi_de_xuat_id" options="{'no_create': True}"/>
                             <field name="phong_ban_id" options="{'no_create': True}"/>
                             <field name="ngay_du_kien_nhan"/>
+                            <field name="state" widget="selection"
+                                   attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                         </group>
                         <group string="Tài chính">
                             <field name="don_vi_tien_te"/>
                             <field name="tong_gia_tri"/>
-                            <field name="phe_duyet_id" invisible="1"/>
+                            <field name="phe_duyet_id" invisible="1" force_save="1"/>
                         </group>
                     </group>
                     
@@ -90,7 +93,6 @@
                         <page string="Chi tiết thiết bị" name="details">
                             <field name="line_ids" context="{'default_don_vi_tinh': 'Chiếc', 'default_so_luong': 1, 'default_pp_khau_hao': 'straight-line', 'default_thoi_gian_su_dung': 5}">
                                 <tree>
-                                    <!-- BỎ editable="bottom" để tránh lỗi '_unknown' object với Many2one field -->
                                     <field name="sequence" widget="handle"/>
                                     <field name="ten_thiet_bi"/>
                                     <field name="danh_muc_ts_id"/>
@@ -209,7 +211,7 @@
                 
                 <separator name="sep1"/>
                 <filter string="Đề xuất của tôi" name="my_proposals" 
-                        domain="[('nguoi_de_xuat_id', '=', uid)]"/>
+                        domain="[('nguoi_de_xuat_id.user_id', '=', uid)]"/>
                 
                 <separator name="sep2"/>
                 <filter string="Tháng này" name="this_month" 
@@ -259,9 +261,9 @@
                                 </span>
                             </div>
                             <div class="o_kanban_record_body">
-                                <field name="nguoi_de_xuat_id" widget="many2one_avatar_user"/>
+                                <field name="nguoi_de_xuat_id"/>
                                 <br/>
-                                <i class="fa fa-calendar"/> <field name="ngay_de_xuat"/>
+                                <i class="fa fa-calendar" title="Ngày đề xuất"/> <field name="ngay_de_xuat"/>
                             </div>
                             <div class="o_kanban_record_bottom">
                                 <div class="oe_kanban_bottom_left">

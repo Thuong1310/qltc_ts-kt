@@ -280,9 +280,9 @@
                                 </span>
                             </div>
                             <div class="o_kanban_record_body">
-                                <i class="fa fa-user"/> <field name="nguoi_de_xuat_id"/>
+                                <i class="fa fa-user" title="Người đề xuất"/> <field name="nguoi_de_xuat_id"/>
                                 <br/>
-                                <i class="fa fa-calendar"/> <field name="ngay_tao"/>
+                                <i class="fa fa-calendar" title="Ngày tạo"/> <field name="ngay_tao"/>
                             </div>
                             <div class="o_kanban_record_bottom">
                                 <div class="oe_kanban_bottom_left">
