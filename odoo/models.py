@@ -3263,6 +3263,11 @@ Fields:
                     vals[name] = convert(record[name], record, use_name_get)
                 except MissingError:
                     vals.clear()
+                except AttributeError as e:
+                    if '_unknown' in str(e) or "has no attribute 'id'" in str(e):
+                        vals[name] = False
+                    else:
+                        raise
         result = [vals for record, vals in data if vals]
 
         return result

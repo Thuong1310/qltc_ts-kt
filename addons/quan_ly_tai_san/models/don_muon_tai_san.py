@@ -14,9 +14,9 @@ class DonMuonTaiSan(models.Model):
 
     # ============ THÔNG TIN CƠ BẢN ============
     ma_don_muon = fields.Char(
-        "Mã đơn mượn", 
+        "Mã đơn mượn",
         required=False,
-        default=lambda self: self.env['ir.sequence'].next_by_code('don_muon_tai_san') or 'DMT-NEW',
+        default='/',
         readonly=True,
         copy=False,
         tracking=True
@@ -29,7 +29,7 @@ class DonMuonTaiSan(models.Model):
         string='Phòng ban cho mượn', 
         required=True, 
         ondelete='restrict',
-        tracking=True
+        tracking=False
     )
     thoi_gian_muon = fields.Datetime(
         'Thời gian mượn', 
@@ -47,7 +47,7 @@ class DonMuonTaiSan(models.Model):
         string='Nhân viên mượn', 
         required=True, 
         ondelete='restrict',
-        tracking=True
+        tracking=False
     )
     
     ly_do = fields.Text('Lý do mượn', required=True)
@@ -125,17 +125,15 @@ class DonMuonTaiSan(models.Model):
         for record in self:
             record.so_tai_san = len(record.don_muon_tai_san_ids)
 
-    @api.depends('phong_ban_cho_muon_id')
+    @api.depends('phong_ban_cho_muon_id', 'don_muon_tai_san_ids')
     def _compute_ds_tai_san_chua_muon(self):
         for record in self:
-            # Chỉ lọc theo phòng ban, KHÔNG lọc theo đã chọn trong đơn này
-            # để tránh mất dòng sau khi save
-            if record.phong_ban_cho_muon_id:
-                ds_tai_san = self.env['phan_bo_tai_san'].search([
-                    ('phong_ban_id', '=', record.phong_ban_cho_muon_id.id),
-                ])
-            else:
-                ds_tai_san = self.env['phan_bo_tai_san'].search([])
+            da_muon_ids = record.don_muon_tai_san_ids.mapped('phan_bo_tai_san_id').ids
+            # Tìm tài sản thuộc phòng ban cho mượn và chưa được mượn
+            ds_tai_san = self.env['phan_bo_tai_san'].search([
+                ('phong_ban_id', '=', record.phong_ban_cho_muon_id.id if record.phong_ban_cho_muon_id else False),
+                ('id', 'not in', da_muon_ids)
+            ])
             record.ds_tai_san_chua_muon = ds_tai_san
     
     @api.depends('trang_thai', 'thoi_gian_muon', 'thoi_gian_tra')
@@ -177,7 +175,7 @@ class DonMuonTaiSan(models.Model):
     # ============ CRUD METHODS ============
     @api.model
     def create(self, vals):
-        if not vals.get('ma_don_muon') or vals.get('ma_don_muon') in ('New', 'DMT-NEW'):
+        if not vals.get('ma_don_muon') or vals.get('ma_don_muon') in ('New', '/', 'DMT-NEW'):
             vals['ma_don_muon'] = self.env['ir.sequence'].next_by_code('don_muon_tai_san') or 'DMT-' + fields.Date.today().strftime('%Y%m%d')
         return super(DonMuonTaiSan, self).create(vals)
     

@@ -79,8 +79,6 @@
                             <field name="nguoi_de_xuat_id" options="{'no_create': True}"/>
                             <field name="phong_ban_id" options="{'no_create': True}"/>
                             <field name="ngay_du_kien_nhan"/>
-                            <field name="state" widget="selection"
-                                   attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                         </group>
                         <group string="Tài chính">
                             <field name="don_vi_tien_te"/>

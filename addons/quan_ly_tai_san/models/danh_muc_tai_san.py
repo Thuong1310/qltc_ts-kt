@@ -8,15 +8,33 @@ class DanhMucTaiSan(models.Model):
     _sql_constraints = [
         ("ma_danh_muc_ts_unique", "unique(ma_danh_muc_ts)", "Mã loại tài sản đã tồn tại !"),
     ]
-    
+
     ma_danh_muc_ts = fields.Char('Mã loại tài sản', required=True)
     ten_danh_muc_ts = fields.Char('Tên loại tài sản', required=True)
     mo_ta_danh_muc_ts = fields.Char('Mô tả loại tài sản')
 
-    so_luong_tong = fields.Integer(string = 'Số lượng hiện có',compute = "_compute_so_luong_tong", store=True)
+    so_luong_tong = fields.Integer(
+        string='Số lượng hiện có',
+        compute='_compute_so_luong_tong',
+        store=True
+    )
+
     @api.depends('tai_san_ids')
     def _compute_so_luong_tong(self):
         for record in self:
             record.so_luong_tong = len(record.tai_san_ids)
 
     tai_san_ids = fields.One2many('tai_san', 'danh_muc_ts_id', string='Tài sản')
+
+    # Thêm name_get để tránh lỗi khi Odoo gọi .name trên object này
+    def name_get(self):
+        result = []
+        for record in self:
+            name = record.ten_danh_muc_ts or record.ma_danh_muc_ts or str(record.id)
+            result.append((record.id, name))
+        return result
+
+    # Thêm property name để tránh AttributeError '_unknown' object has no attribute 'name'
+    @property
+    def name(self):
+        return self.ten_danh_muc_ts

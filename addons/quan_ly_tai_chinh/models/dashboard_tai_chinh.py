@@ -173,7 +173,7 @@ class DashboardTaiChinh(models.TransientModel):
         if 'phe_duyet_cho_duyet' in fields_list:
             res['phe_duyet_cho_duyet'] = phe_duyet_obj.search_count([('state', '=', 'draft')])
         if 'phe_duyet_da_duyet' in fields_list:
-            res['phe_duyet_da_duyet'] = phe_duyet_obj.search_count([('state', '=', 'approved')])
+            res['phe_duyet_da_duyet'] = phe_duyet_obj.search_count([('state', 'in', ['approved', 'done'])])
         if 'phe_duyet_hoan_thanh' in fields_list:
             res['phe_duyet_hoan_thanh'] = phe_duyet_obj.search_count([('state', '=', 'done')])
         if 'phe_duyet_bi_tu_choi' in fields_list:
@@ -259,7 +259,7 @@ class DashboardTaiChinh(models.TransientModel):
                 # Đếm theo trạng thái
                 record.tong_phe_duyet = phe_duyet_obj.search_count([])
                 record.phe_duyet_cho_duyet = phe_duyet_obj.search_count([('state', '=', 'draft')])
-                record.phe_duyet_da_duyet = phe_duyet_obj.search_count([('state', '=', 'approved')])
+                record.phe_duyet_da_duyet = phe_duyet_obj.search_count([('state', 'in', ['approved', 'done'])])
                 record.phe_duyet_hoan_thanh = phe_duyet_obj.search_count([('state', '=', 'done')])
                 record.phe_duyet_bi_tu_choi = phe_duyet_obj.search_count([('state', '=', 'rejected')])
                 

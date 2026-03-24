@@ -1,0 +1,158 @@
+/home/tct1310/qltc_ts-kt
+├── CONTRIBUTING.md
+├── COPYRIGHT
+├── LICENSE
+├── MANIFEST.in
+├── README.md
+├── SECURITY.md
+├── Tree.txt
+├── addons
+│   ├── nhan_su
+│   │   ├── __init__.py
+│   │   ├── __manifest__.py
+│   │   ├── controllers
+│   │   │   ├── __init__.py
+│   │   │   └── controllers.py
+│   │   ├── data
+│   │   │   ├── qlns_demo.xml
+│   │   │   ├── qlns_demo_full.xml
+│   │   │   └── sequence.xml
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── cham_cong.py
+│   │   │   ├── chuc_vu.py
+│   │   │   ├── hop_dong_lao_dong.py
+│   │   │   ├── kpi.py
+│   │   │   ├── lich_su_cong_tac.py
+│   │   │   ├── luong.py
+│   │   │   ├── nhan_vien.py
+│   │   │   └── phong_ban.py
+│   │   ├── security
+│   │   │   └── ir.model.access.csv
+│   │   ├── static
+│   │   │   └── description
+│   │   └── views
+│   │       ├── cham_cong.xml
+│   │       ├── chuc_vu.xml
+│   │       ├── hop_dong_lao_dong.xml
+│   │       ├── kpi.xml
+│   │       ├── lich_su_cong_tac.xml
+│   │       ├── luong.xml
+│   │       ├── menu.xml
+│   │       ├── nghi_phep.xml
+│   │       ├── nhan_vien.xml
+│   │       └── phong_ban.xml
+│   ├── quan_ly_tai_chinh
+│   │   ├── __init__.py
+│   │   ├── __manifest__.py
+│   │   ├── controllers
+│   │   │   ├── __init__.py
+│   │   │   └── controllers.py
+│   │   ├── data
+│   │   │   ├── sequence.xml
+│   │   │   └── tai_chinh_demo.xml
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── bao_cao_tai_chinh.py
+│   │   │   ├── but_toan.py
+│   │   │   ├── dashboard_tai_chinh.py
+│   │   │   ├── khau_hao_tai_san.py
+│   │   │   ├── phe_duyet_mua_tai_san.py
+│   │   │   ├── tai_khoan_quan_tri.py
+│   │   │   ├── tinh_toan_khau_hao.py
+│   │   │   └── wizard_sao_chep.py
+│   │   ├── report
+│   │   │   └── bao_cao_tai_chinh_report.xml
+│   │   ├── security
+│   │   │   └── ir.model.access.csv
+│   │   ├── static
+│   │   │   ├── css
+│   │   │   │   ├── bao_cao_style.css
+│   │   │   │   └── dashboard_style.css
+│   │   │   └── js
+│   │   │       ├── bao_cao_charts.js
+│   │   │       └── dashboard_charts.js
+│   │   └── views
+│   │       ├── bao_cao_tai_chinh_views.xml
+│   │       ├── but_toan_views.xml
+│   │       ├── dashboard_tai_chinh_views.xml
+│   │       ├── khau_hao_tai_san_views.xml
+│   │       ├── menu.xml
+│   │       ├── phe_duyet_mua_tai_san_views.xml
+│   │       ├── tai_khoan_quan_tri_views.xml
+│   │       ├── tinh_toan_khau_hao_views.xml
+│   │       └── wizard_sao_chep_views.xml
+│   └── quan_ly_tai_san
+│       ├── __init__.py
+│       ├── __manifest__.py
+│       ├── controllers
+│       │   ├── __init__.py
+│       │   └── controllers.py
+│       ├── data
+│       │   ├── sequence.xml
+│       │   └── tai_san_demo.xml
+│       ├── models
+│       │   ├── __init__.py
+│       │   ├── danh_muc_tai_san.py
+│       │   ├── dashboard.py
+│       │   ├── de_xuat_mua_tai_san.py
+│       │   ├── don_muon_tai_san.py
+│       │   ├── don_muon_tai_san_line.py
+│       │   ├── kiem_ke_tai_san.py
+│       │   ├── kiem_ke_tai_san_line.py
+│       │   ├── lich_su_khau_hao.py
+│       │   ├── lich_su_ky_thuat.py
+│       │   ├── luan_chuyen_tai_san.py
+│       │   ├── luan_chuyen_tai_san_line.py
+│       │   ├── muon_tra_tai_san.py
+│       │   ├── muon_tra_tai_san_line.py
+│       │   ├── phan_bo_tai_san.py
+│       │   ├── tai_san.py
+│       │   └── thanh_ly_tai_san.py
+│       ├── security
+│       │   └── ir.model.access.csv
+│       ├── static
+│       │   └── src
+│       │       ├── css
+│       │       │   └── dashboard.css
+│       │       └── js
+│       │           ├── dashboard_borrowing.js
+│       │           ├── dashboard_overview.js
+│       │           ├── date_picker_fix.js
+│       │           └── moment_locale_fix.js
+│       ├── views
+│       │   ├── danh_muc_tai_san.xml
+│       │   ├── dashboard_borrowing.xml
+│       │   ├── dashboard_overview.xml
+│       │   ├── de_xuat_mua_tai_san_views.xml
+│       │   ├── don_muon_tai_san.xml
+│       │   ├── kiem_ke_tai_san.xml
+│       │   ├── lich_su_khau_hao.xml
+│       │   ├── lich_su_ky_thuat_views.xml
+│       │   ├── luan_chuyen_tai_san.xml
+│       │   ├── menu.xml
+│       │   ├── muon_tra_tai_san.xml
+│       │   ├── phan_bo_tai_san.xml
+│       │   ├── tai_san.xml
+│       │   └── thanh_ly_tai_san.xml
+│       └── wizard
+│           ├── __init__.py
+│           ├── muon_tra_wizard.py
+│           ├── muon_tra_wizard_views.xml
+│           └── xac_nhan_tra_wizard.py
+├── cautruc.md
+├── cautruc.txt
+├── debian
+├── doc
+├── docker-compose.yml
+├── docs
+├── odoo
+├── odoo-bin
+├── odoo-bin.py
+├── odoo.conf
+├── odoo.conf.template
+├── requirements.txt
+├── setup
+├── setup.cfg
+├── setup.py
+└── venv

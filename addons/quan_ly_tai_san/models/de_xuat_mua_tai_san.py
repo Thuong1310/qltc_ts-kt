@@ -14,36 +14,24 @@ class DeXuatMuaTaiSan(models.Model):
     _order = 'ngay_de_xuat desc'
 
     ma_de_xuat = fields.Char(
-        string='Mã đề xuất',
-        required=False,
-        copy=False,
-        readonly=True,
-        # KHÔNG dùng default lambda sequence ở đây vì gây conflict với create()
-        # Giá trị sẽ được gán trong create() và default_get()
-        tracking=True,
+        string='Mã đề xuất', required=True,
+        copy=False, default='New', tracking=True,
     )
     ten_de_xuat = fields.Char(string='Tiêu đề đề xuất', required=True, tracking=True)
     ngay_de_xuat = fields.Date(string='Ngày đề xuất', default=fields.Date.context_today, required=True, tracking=True)
-
-    # QUAN TRỌNG: Bỏ tracking=True cho các Many2one cross-module
-    # vì mail tracking sẽ cố gọi .id trên _unknown object → crash
     nguoi_de_xuat_id = fields.Many2one(
         'nhan_vien',
         string='Người đề xuất',
+        default=lambda self: self.env['nhan_vien'].search([('user_id', '=', self.env.uid)], limit=1),
         ondelete='set null',
-        tracking=False,  # Tắt tracking để tránh lỗi _unknown trong mail.tracking.value
+        tracking=True
     )
-    phong_ban_id = fields.Many2one(
-        'phong_ban',
-        string='Phòng ban',
-        ondelete='set null',
-        tracking=False,  # Tắt tracking
-    )
+    phong_ban_id = fields.Many2one('phong_ban', string='Phòng ban', ondelete='set null', tracking=True)
     line_ids = fields.One2many('de_xuat_mua_tai_san.line', 'de_xuat_id', string='Chi tiết thiết bị')
     tong_gia_tri = fields.Float(string='Tổng giá trị', compute='_compute_tong_gia_tri', store=True, tracking=True)
     don_vi_tien_te = fields.Selection([('vnd', 'VNĐ'), ('usd', 'USD')], string='Đơn vị tiền tệ', default='vnd', required=True)
     ly_do = fields.Text(string='Lý do đề xuất', required=True, tracking=True)
-    mo_ta = fields.Html(string='Mô tả chi tiết', tracking=False)
+    mo_ta = fields.Html(string='Mô tả chi tiết', tracking=True)
     dinh_kem_ids = fields.Many2many('ir.attachment', string='File đính kèm')
     state = fields.Selection([
         ('draft', 'Nháp'),
@@ -54,18 +42,10 @@ class DeXuatMuaTaiSan(models.Model):
         ('cancelled', 'Đã hủy'),
     ], string='Trạng thái', default='draft', required=True, tracking=True)
     ngay_du_kien_nhan = fields.Date(string='Ngày dự kiến nhận hàng', tracking=True)
-    phe_duyet_id = fields.Many2one(
-        'phe_duyet_mua_tai_san',
-        string='Đơn phê duyệt',
-        readonly=True,
-        ondelete='set null',
-        tracking=False,  # Tắt tracking
-    )
+    phe_duyet_id = fields.Many2one('phe_duyet_mua_tai_san', string='Đơn phê duyệt', readonly=True, ondelete='set null', tracking=True)
     tai_san_ids = fields.Many2many('tai_san', string='Tài sản đã tạo', readonly=True)
     tai_san_count = fields.Integer(string='Số lượng tài sản', compute='_compute_tai_san_count')
     ghi_chu = fields.Text(string='Ghi chú', tracking=True)
-
-    # ============ COMPUTE METHODS ============
 
     @api.depends('tai_san_ids')
     def _compute_tai_san_count(self):
@@ -77,74 +57,27 @@ class DeXuatMuaTaiSan(models.Model):
         for record in self:
             record.tong_gia_tri = sum(record.line_ids.mapped('thanh_tien'))
 
-    # ============ FIX _unknown: override _read_format ============
-
-    def _get_m2o_field_names(self):
-        return [fname for fname, f in self._fields.items() if f.type == 'many2one']
-
-    def _fix_unknown_in_cache(self):
-        """Xóa các entry _unknown khỏi env.cache để buộc đọc lại từ DB."""
-        cache = self.env.cache
-        for record in self:
-            for fname in self._get_m2o_field_names():
-                field_obj = self._fields[fname]
-                try:
-                    val = cache.get(record, field_obj)
-                    try:
-                        _ = val.id
-                    except AttributeError:
-                        cache.remove(record, field_obj)
-                        _logger.warning('Fixed _unknown cache: %s.%s record=%s', self._name, fname, record.id)
-                except Exception:
-                    pass
-
-    def _read_format(self, fnames, load='_classic_read'):
-        """Override để bắt _unknown trong _read_format, xóa cache rồi đọc lại."""
-        try:
-            return super()._read_format(fnames=fnames, load=load)
-        except AttributeError as e:
-            if '_unknown' not in str(e) and "has no attribute 'id'" not in str(e):
-                raise
-            _logger.warning('de_xuat_mua_tai_san._read_format: fixing _unknown. Error: %s', e)
-            self._fix_unknown_in_cache()
-            try:
-                return super()._read_format(fnames=fnames, load=load)
-            except AttributeError as e2:
-                _logger.error('de_xuat_mua_tai_san._read_format: still failing: %s', e2)
-                m2o_names = set(self._get_m2o_field_names())
-                safe_fnames = [f for f in fnames if f not in m2o_names]
-                result = super()._read_format(fnames=safe_fnames, load=load)
-                for row in result:
-                    for fname in m2o_names:
-                        if fname in fnames and fname not in row:
-                            row[fname] = False
-                return result
-
-    # ============ DEFAULT_GET ============
-
     @api.model
     def default_get(self, fields_list):
+        """
+        Override default_get để đảm bảo các trường Many2one cross-module
+        không tạo ra _unknown object khi onchange chạy trên record mới.
+        """
         res = super().default_get(fields_list)
-        # Gán mã đề xuất ngay khi mở form mới
-        if 'ma_de_xuat' in fields_list and not res.get('ma_de_xuat'):
-            res['ma_de_xuat'] = self.env['ir.sequence'].next_by_code('de_xuat_mua_tai_san') or 'New'
-        # Gán người đề xuất an toàn (không dùng lambda để tránh _unknown)
-        if 'nguoi_de_xuat_id' in fields_list and not res.get('nguoi_de_xuat_id'):
-            try:
-                nv = self.env['nhan_vien'].search([('user_id', '=', self.env.uid)], limit=1)
-                if nv and isinstance(nv.id, int) and nv.id > 0:
-                    res['nguoi_de_xuat_id'] = nv.id
-            except Exception:
-                pass
-        # Đảm bảo các Many2one cross-module không có giá trị invalid
-        for fname in ['phe_duyet_id', 'phong_ban_id', 'nguoi_de_xuat_id']:
+        # Các trường Many2one tham chiếu module khác có thể gây _unknown
+        cross_module_fields = ['phe_duyet_id', 'phong_ban_id']
+        for fname in cross_module_fields:
             if fname in res and not res[fname]:
+                res[fname] = False
+            elif fname not in res:
                 res[fname] = False
         return res
 
-    # ============ SANITIZE HELPERS ============
-
     def _sanitize_many2one_fields(self):
+        """
+        Sanitize tất cả trường Many2one trên record này để tránh _unknown object.
+        Được gọi trước khi Odoo tính snapshot diff trong onchange.
+        """
         many2one_fields = [
             fname for fname, field in self._fields.items()
             if field.type == 'many2one'
@@ -156,6 +89,7 @@ class DeXuatMuaTaiSan(models.Model):
                     continue
                 try:
                     rec_id = val.id
+                    # _unknown object: id là NewId hoặc không phải int dương
                     if rec_id and not isinstance(rec_id, int):
                         self[fname] = False
                 except AttributeError:
@@ -163,29 +97,17 @@ class DeXuatMuaTaiSan(models.Model):
             except Exception:
                 pass
 
-    def _sanitize_vals_many2one(self, vals):
-        """Sanitize dict vals: đảm bảo các Many2one không có giá trị _unknown."""
-        for fname in self._get_m2o_field_names():
-            if fname not in vals:
-                continue
-            v = vals[fname]
-            if not v:
-                vals[fname] = False
-            elif isinstance(v, int) and v > 0:
-                pass  # hợp lệ
-            elif isinstance(v, (list, tuple)):
-                pass  # command tuple
-            else:
-                vals[fname] = False
-        return vals
-
-    # ============ ONCHANGE ============
-
     @api.onchange('nguoi_de_xuat_id', 'phong_ban_id', 'phe_duyet_id')
     def _onchange_sanitize_many2one(self):
+        """Sanitize Many2one fields khi onchange để tránh _unknown crash"""
         self._sanitize_many2one_fields()
 
     def onchange(self, values, field_name, field_onchange):
+        """
+        Override Odoo onchange để bắt lỗi _unknown object trong snapshot diff.
+        Xóa các Many2one field có giá trị invalid trước khi tính diff.
+        """
+        # Sanitize values dict trước khi truyền vào Odoo
         many2one_fields = [
             fname for fname, field in self._fields.items()
             if field.type == 'many2one'
@@ -193,9 +115,10 @@ class DeXuatMuaTaiSan(models.Model):
         for fname in many2one_fields:
             if fname in values:
                 val = values[fname]
+                # Giá trị Many2one từ client là [id, name] hoặc False/None
                 if isinstance(val, (list, tuple)) and len(val) >= 1:
                     try:
-                        int(val[0])
+                        int(val[0])  # Kiểm tra id có phải số hợp lệ không
                     except (TypeError, ValueError):
                         values[fname] = False
                 elif val and not isinstance(val, int):
@@ -204,38 +127,23 @@ class DeXuatMuaTaiSan(models.Model):
             return super().onchange(values, field_name, field_onchange)
         except AttributeError as e:
             if '_unknown' in str(e) or 'has no attribute' in str(e):
-                _logger.warning('de_xuat_mua_tai_san onchange: _unknown caught. Error: %s', e)
+                import logging
+                logging.getLogger(__name__).warning(
+                    'de_xuat_mua_tai_san onchange: caught _unknown object error, '
+                    'returning empty result. Error: %s', e
+                )
                 return {}
             raise
 
-    # ============ CRUD ============
-
     @api.model
     def create(self, vals):
-        # Tạo mã nếu chưa có
-        if not vals.get('ma_de_xuat') or vals.get('ma_de_xuat') == 'New':
+        if vals.get('ma_de_xuat', 'New') == 'New':
             vals['ma_de_xuat'] = self.env['ir.sequence'].next_by_code('de_xuat_mua_tai_san') or 'New'
-        # Sanitize tất cả Many2one trong vals
-        vals = self._sanitize_vals_many2one(vals)
+        # Đảm bảo các trường Many2one cross-module không có giá trị invalid
+        for fname in ['phe_duyet_id', 'phong_ban_id']:
+            if fname in vals and not vals[fname]:
+                vals[fname] = False
         return super().create(vals)
-
-    def write(self, vals):
-        # Sanitize Many2one trong vals trước khi write (tránh _unknown vào tracking)
-        vals = self._sanitize_vals_many2one(dict(vals))
-        if 'state' in vals and vals['state'] in ['approved', 'rejected']:
-            bypass = (
-                self.env.context.get('from_finance_approval')
-                or self.env.context.get('install_mode')
-            )
-            if not bypass:
-                raise UserError(_(
-                    'Đề xuất mua tài sản chỉ có thể được phê duyệt thông qua '
-                    'module Quản lý Tài chính.\n\n'
-                    'Vui lòng vào: Tài chính > Phê duyệt mua tài sản.'
-                ))
-        return super().write(vals)
-
-    # ============ ACTION METHODS ============
 
     def action_submit(self):
         for record in self:
@@ -246,8 +154,6 @@ class DeXuatMuaTaiSan(models.Model):
                     raise UserError(_('Vui lòng chọn danh mục tài sản cho thiết bị: %s') % (line.ten_thiet_bi or '(Chưa đặt tên)'))
             if record.tong_gia_tri <= 0:
                 raise UserError(_('Tổng giá trị phải lớn hơn 0.'))
-            # Sanitize record trước khi write state (tránh mail tracking bị _unknown)
-            record._sanitize_many2one_fields()
             record.state = 'submitted'
             record._create_approval_request()
             record.state = 'waiting_approval'
@@ -278,27 +184,12 @@ class DeXuatMuaTaiSan(models.Model):
                 'nha_cung_cap': line.nha_cung_cap or '',
             }))
 
-        # Lấy ID an toàn cho các Many2one
-        nguoi_id = False
-        try:
-            if self.nguoi_de_xuat_id and isinstance(self.nguoi_de_xuat_id.id, int):
-                nguoi_id = self.nguoi_de_xuat_id.id
-        except AttributeError:
-            pass
-
-        phong_ban_id = False
-        try:
-            if self.phong_ban_id and isinstance(self.phong_ban_id.id, int):
-                phong_ban_id = self.phong_ban_id.id
-        except AttributeError:
-            pass
-
         phe_duyet_vals = {
             'de_xuat_mua_id': self.id,
             'ten_de_xuat': self.ten_de_xuat or '',
             'ngay_de_xuat': self.ngay_de_xuat or fields.Date.today(),
-            'nguoi_de_xuat_id': nguoi_id,
-            'phong_ban_id': phong_ban_id,
+            'nguoi_de_xuat_id': self.nguoi_de_xuat_id.id if self.nguoi_de_xuat_id else False,
+            'phong_ban_id': self.phong_ban_id.id if self.phong_ban_id else False,
             'tong_gia_tri': self.tong_gia_tri or 0.0,
             'don_vi_tien_te': self.don_vi_tien_te or 'vnd',
             'ly_do': self.ly_do or '',
@@ -307,12 +198,7 @@ class DeXuatMuaTaiSan(models.Model):
             'line_ids': line_vals,
         }
         phe_duyet = self.env['phe_duyet_mua_tai_san'].create(phe_duyet_vals)
-        # Gán phe_duyet_id trực tiếp qua SQL để tránh write() trigger tracking
-        self.env.cr.execute(
-            "UPDATE de_xuat_mua_tai_san SET phe_duyet_id = %s WHERE id = %s",
-            (phe_duyet.id, self.id)
-        )
-        self.invalidate_cache(['phe_duyet_id'], [self.id])
+        self.phe_duyet_id = phe_duyet.id
 
         try:
             finance_users = self.env.ref('quan_ly_tai_chinh.group_finance_manager').users
@@ -330,7 +216,7 @@ class DeXuatMuaTaiSan(models.Model):
         for record in self:
             if record.state == 'approved':
                 raise UserError(_('Không thể hủy đề xuất đã được phê duyệt.'))
-            if record.phe_duyet_id and isinstance(record.phe_duyet_id.id, int) and record.phe_duyet_id.state == 'draft':
+            if record.phe_duyet_id and record.phe_duyet_id.state == 'draft':
                 record.phe_duyet_id.action_cancel()
             record.state = 'cancelled'
 
@@ -368,7 +254,20 @@ class DeXuatMuaTaiSan(models.Model):
             'context': {'create': False}
         }
 
-    # ============ FINANCE MODULE CALLBACKS ============
+    def write(self, vals):
+        if 'state' in vals and vals['state'] in ['approved', 'rejected']:
+            # Cho phép bypass khi load demo/data (install_mode) hoặc gọi từ module tài chính
+            bypass = (
+                self.env.context.get('from_finance_approval')
+                or self.env.context.get('install_mode')
+            )
+            if not bypass:
+                raise UserError(_(
+                    'Đề xuất mua tài sản chỉ có thể được phê duyệt thông qua '
+                    'module Quản lý Tài chính.\n\n'
+                    'Vui lòng vào: Tài chính > Phê duyệt mua tài sản.'
+                ))
+        return super().write(vals)
 
     def _on_approval_approved(self):
         self.ensure_one()
@@ -428,6 +327,7 @@ class DeXuatMuaTaiSanLine(models.Model):
 
     @api.onchange('danh_muc_ts_id')
     def _onchange_danh_muc_ts_id(self):
+        """Xử lý an toàn _unknown object trong onchange"""
         try:
             if not self.danh_muc_ts_id:
                 return

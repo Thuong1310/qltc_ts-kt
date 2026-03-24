@@ -637,7 +637,13 @@ class PheDuyetMuaTaiSan(models.Model):
             # Tạo từng tài sản theo số lượng
             for i in range(int(line.so_luong)):
                 # Tạo mã tài sản duy nhất
+                # Tạo mã tài sản duy nhất, thêm timestamp để tránh trùng
+                import time as _time
+                ts = int(_time.time() * 1000) % 100000
                 asset_code = f"{self.ma_phe_duyet}-{line.sequence or line.id}-{i+1:03d}"
+                # Kiểm tra nếu mã đã tồn tại thì thêm suffix
+                if self.env['tai_san'].sudo().search([('ma_tai_san', '=', asset_code)], limit=1):
+                    asset_code = f"{self.ma_phe_duyet}-{line.sequence or line.id}-{i+1:03d}-{ts}"
                 
                 # Chuẩn bị dữ liệu tài sản
                 asset_vals = {
@@ -679,7 +685,7 @@ class PheDuyetMuaTaiSan(models.Model):
                     ) % (
                         line.ten_thiet_bi, i+1, int(line.so_luong), str(e),
                         asset_code, line.ten_thiet_bi, 
-                        line.danh_muc_ts_id.name if line.danh_muc_ts_id else 'N/A',
+                        (line.danh_muc_ts_id.ten_danh_muc_ts or line.danh_muc_ts_id.ma_danh_muc_ts) if line.danh_muc_ts_id else 'N/A',
                         line.don_gia, self.don_vi_tien_te or 'VND'
                     ))
         

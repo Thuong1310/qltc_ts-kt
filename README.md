@@ -97,7 +97,34 @@ Người sử d ụng truy cập theo đường dẫn http://localhost:8069 đ�
 ## 📝 5. License    n 
 
 © 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
+``+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
     
+0
